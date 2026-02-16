@@ -1,0 +1,264 @@
+#!/usr/bin/env python3
+"""
+Simple arXiv subscriber for Computer Science papers.
+Fetches new papers and tracks what has been seen.
+"""
+
+import xml.etree.ElementTree as ET
+import urllib.request
+import urllib.parse
+import json
+import os
+from datetime import datetime, timedelta
+from dataclasses import dataclass, asdict
+from typing import List, Set
+import time
+
+# arXiv API endpoint
+ARXIV_API_URL = "http://export.arxiv.org/api/query"
+
+# Computer Science categories - you can customize these
+CS_CATEGORIES = [
+    "cs.AI",   # Artificial Intelligence
+    "cs.CL",   # Computation and Language (NLP)
+    "cs.CV",   # Computer Vision
+    "cs.LG",   # Machine Learning
+    "cs.SE",   # Software Engineering
+    "cs.DB",   # Databases
+    "cs.DC",   # Distributed Computing
+    "cs.CR",   # Cryptography and Security
+    "cs.NE",   # Neural and Evolutionary Computing
+    "cs.OS",   # Operating Systems
+    "cs.PL",   # Programming Languages
+    "cs.RO",   # Robotics
+]
+
+
+@dataclass
+class Paper:
+    """Represents an arXiv paper."""
+    arxiv_id: str
+    title: str
+    authors: List[str]
+    summary: str
+    published: str
+    updated: str
+    categories: List[str]
+    link: str
+    first_seen: str = None
+
+    def __post_init__(self):
+        if self.first_seen is None:
+            self.first_seen = datetime.now().isoformat()
+
+
+class ArxivSubscriber:
+    """Main class for subscribing to arXiv papers."""
+
+    def __init__(self, data_file: str = "papers.json"):
+        self.data_file = data_file
+        self.seen_ids: Set[str] = set()
+        self.papers: List[Paper] = []
+        self._load_data()
+
+    def _load_data(self):
+        """Load previously seen papers from disk."""
+        if os.path.exists(self.data_file):
+            with open(self.data_file, 'r') as f:
+                data = json.load(f)
+                for p in data.get('papers', []):
+                    paper = Paper(**p)
+                    self.papers.append(paper)
+                    self.seen_ids.add(paper.arxiv_id)
+            print(f"Loaded {len(self.papers)} previously seen papers")
+
+    def _save_data(self):
+        """Save papers to disk."""
+        data = {
+            'last_updated': datetime.now().isoformat(),
+            'papers': [asdict(p) for p in self.papers]
+        }
+        with open(self.data_file, 'w') as f:
+            json.dump(data, f, indent=2)
+
+    def _fetch_papers(self, categories: List[str], max_results: int = 50) -> List[Paper]:
+        """Fetch papers from arXiv API for given categories."""
+        papers = []
+
+        # Build query: OR all categories
+        cat_query = " OR ".join([f"cat:{cat}" for cat in categories])
+
+        params = {
+            'search_query': cat_query,
+            'sortBy': 'submittedDate',
+            'sortOrder': 'descending',
+            'max_results': max_results
+        }
+
+        url = f"{ARXIV_API_URL}?{urllib.parse.urlencode(params)}"
+
+        try:
+            req = urllib.request.Request(
+                url,
+                headers={'User-Agent': 'arxiv-subscriber/1.0'}
+            )
+
+            with urllib.request.urlopen(req, timeout=30) as response:
+                data = response.read()
+
+            # Parse Atom feed
+            root = ET.fromstring(data)
+
+            # Define namespaces
+            ns = {
+                'atom': 'http://www.w3.org/2005/Atom',
+                'arxiv': 'http://arxiv.org/schemas/atom'
+            }
+
+            for entry in root.findall('atom:entry', ns):
+                # Skip the arXiv query result entry
+                if entry.find('atom:title', ns) is None:
+                    continue
+
+                arxiv_id = entry.find('atom:id', ns)
+                if arxiv_id is None:
+                    continue
+
+                # Extract ID from URL
+                id_text = arxiv_id.text.split('/')[-1]
+                if 'v' in id_text:
+                    id_text = id_text.split('v')[0]  # Remove version
+
+                title = entry.find('atom:title', ns)
+                summary = entry.find('atom:summary', ns)
+                published = entry.find('atom:published', ns)
+                updated = entry.find('atom:updated', ns)
+                link = entry.find('atom:link[@title="pdf"]', ns)
+
+                # Get authors
+                authors = []
+                for author in entry.findall('atom:author', ns):
+                    name = author.find('atom:name', ns)
+                    if name is not None:
+                        authors.append(name.text)
+
+                # Get categories
+                categories = []
+                for cat in entry.findall('atom:category', ns):
+                    term = cat.get('term')
+                    if term:
+                        categories.append(term)
+
+                paper = Paper(
+                    arxiv_id=id_text,
+                    title=title.text.strip() if title is not None else "",
+                    authors=authors,
+                    summary=summary.text.strip() if summary is not None else "",
+                    published=published.text if published is not None else "",
+                    updated=updated.text if updated is not None else "",
+                    categories=categories,
+                    link=link.get('href') if link is not None else ""
+                )
+
+                papers.append(paper)
+
+            # Rate limiting - be nice to arXiv
+            time.sleep(3)
+
+        except Exception as e:
+            print(f"Error fetching papers: {e}")
+
+        return papers
+
+    def check_for_new_papers(self) -> List[Paper]:
+        """Check for new papers and return any that haven't been seen."""
+        print(f"Fetching papers from {len(CS_CATEGORIES)} CS categories...")
+
+        fetched_papers = self._fetch_papers(CS_CATEGORIES, max_results=100)
+        new_papers = []
+
+        for paper in fetched_papers:
+            if paper.arxiv_id not in self.seen_ids:
+                new_papers.append(paper)
+                self.papers.append(paper)
+                self.seen_ids.add(paper.arxiv_id)
+
+        # Save updated data
+        self._save_data()
+
+        return new_papers
+
+    def get_recent_papers(self, days: int = 7) -> List[Paper]:
+        """Get papers published in the last N days."""
+        cutoff = datetime.now() - timedelta(days=days)
+        recent = []
+
+        for paper in self.papers:
+            try:
+                published = datetime.fromisoformat(paper.published.replace('Z', '+00:00'))
+                if published > cutoff:
+                    recent.append(paper)
+            except:
+                pass
+
+        return recent
+
+    def list_categories(self):
+        """List all categories we've seen papers from."""
+        cats = set()
+        for paper in self.papers:
+            cats.update(paper.categories)
+        return sorted(cats)
+
+    def search_papers(self, keyword: str) -> List[Paper]:
+        """Search papers by keyword in title or summary."""
+        keyword = keyword.lower()
+        results = []
+
+        for paper in self.papers:
+            if keyword in paper.title.lower() or keyword in paper.summary.lower():
+                results.append(paper)
+
+        return results
+
+
+def print_paper(paper: Paper, show_summary: bool = False):
+    """Pretty print a paper."""
+    print(f"\n{'='*70}")
+    print(f"ID: {paper.arxiv_id}")
+    print(f"Title: {paper.title}")
+    print(f"Authors: {', '.join(paper.authors[:3])}{'...' if len(paper.authors) > 3 else ''}")
+    print(f"Categories: {', '.join(paper.categories)}")
+    print(f"Published: {paper.published}")
+    print(f"Link: {paper.link}")
+    if show_summary:
+        print(f"\nSummary:\n{paper.summary[:500]}...")
+
+
+def main():
+    """Main entry point."""
+    subscriber = ArxivSubscriber()
+
+    print("=" * 70)
+    print("arXiv CS Subscriber")
+    print("=" * 70)
+
+    # Check for new papers
+    new_papers = subscriber.check_for_new_papers()
+
+    if new_papers:
+        print(f"\n📬 Found {len(new_papers)} new papers!")
+        for paper in new_papers[:5]:  # Show first 5
+            print_paper(paper)
+
+        if len(new_papers) > 5:
+            print(f"\n... and {len(new_papers) - 5} more")
+    else:
+        print("\n📭 No new papers found.")
+
+    print(f"\nTotal papers tracked: {len(subscriber.papers)}")
+    print(f"Categories tracked: {len(subscriber.list_categories())}")
+
+
+if __name__ == "__main__":
+    main()
