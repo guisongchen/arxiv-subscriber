@@ -14,8 +14,19 @@ from dataclasses import dataclass, asdict
 from typing import List, Set
 import time
 
+# Load environment variables from .env file if python-dotenv is available
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 # arXiv API endpoint
 ARXIV_API_URL = "http://export.arxiv.org/api/query"
+
+# Notion API
+NOTION_API_KEY = os.getenv("NOTION_API_KEY", "")
+NOTION_DATABASE_ID = os.getenv("NOTION_DATABASE_ID", "")
 
 # Computer Science categories - you can customize these
 CS_CATEGORIES = [
@@ -52,13 +63,79 @@ class Paper:
             self.first_seen = datetime.now().isoformat()
 
 
+class NotionClient:
+    """Client for sending papers to Notion database."""
+
+    def __init__(self, api_key: str, database_id: str):
+        self.api_key = api_key
+        self.database_id = database_id
+        self.base_url = "https://api.notion.com/v1"
+
+    def add_paper(self, paper: Paper) -> bool:
+        """Add a paper to the Notion database."""
+        if not self.api_key or not self.database_id:
+            return False
+
+        url = f"{self.base_url}/pages"
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json",
+            "Notion-Version": "2022-06-28"
+        }
+
+        # Prepare the data
+        data = {
+            "parent": {"database_id": self.database_id},
+            "properties": {
+                "Name": {
+                    "title": [{"text": {"content": paper.title[:100]}}]
+                },
+                "Title": {
+                    "rich_text": [{"text": {"content": paper.title}}]
+                },
+                "Authors": {
+                    "rich_text": [{"text": {"content": ", ".join(paper.authors[:5])}}]
+                },
+                "Categories": {
+                    "multi_select": [{"name": cat[:100]} for cat in paper.categories]
+                },
+                "Published": {
+                    "date": {"start": paper.published[:10]}
+                },
+                "Link": {
+                    "url": paper.link
+                },
+                "Summary": {
+                    "rich_text": [{"text": {"content": paper.summary[:2000]}}]
+                }
+            }
+        }
+
+        try:
+            req = urllib.request.Request(
+                url,
+                data=json.dumps(data).encode('utf-8'),
+                headers=headers,
+                method='POST'
+            )
+
+            with urllib.request.urlopen(req, timeout=30) as response:
+                if response.status == 200:
+                    return True
+        except Exception as e:
+            print(f"  ⚠️  Failed to add to Notion: {e}")
+
+        return False
+
+
 class ArxivSubscriber:
     """Main class for subscribing to arXiv papers."""
 
-    def __init__(self, data_file: str = "papers.json"):
+    def __init__(self, data_file: str = "papers.json", notion_client: NotionClient = None):
         self.data_file = data_file
         self.seen_ids: Set[str] = set()
         self.papers: List[Paper] = []
+        self.notion = notion_client
         self._load_data()
 
     def _load_data(self):
@@ -183,6 +260,13 @@ class ArxivSubscriber:
                 self.papers.append(paper)
                 self.seen_ids.add(paper.arxiv_id)
 
+                # Send to Notion if configured
+                if self.notion:
+                    success = self.notion.add_paper(paper)
+                    if success:
+                        print(f"  ✓ Sent to Notion: {paper.title[:50]}...")
+                    time.sleep(0.5)  # Rate limit for Notion API
+
         # Save updated data
         self._save_data()
 
@@ -237,7 +321,13 @@ def print_paper(paper: Paper, show_summary: bool = False):
 
 def main():
     """Main entry point."""
-    subscriber = ArxivSubscriber()
+    # Initialize Notion client if credentials are available
+    notion_client = None
+    if NOTION_API_KEY and NOTION_DATABASE_ID:
+        notion_client = NotionClient(NOTION_API_KEY, NOTION_DATABASE_ID)
+        print("Notion integration enabled")
+
+    subscriber = ArxivSubscriber(notion_client=notion_client)
 
     print("=" * 70)
     print("arXiv CS Subscriber")
