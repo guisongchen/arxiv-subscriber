@@ -20,16 +20,16 @@ ARXIV_API_URL = "http://export.arxiv.org/api/query"
 # Computer Science categories - you can customize these
 CS_CATEGORIES = [
     "cs.AI",   # Artificial Intelligence
-    "cs.CL",   # Computation and Language (NLP)
+    # "cs.CL",   # Computation and Language (NLP)
     "cs.CV",   # Computer Vision
     "cs.LG",   # Machine Learning
-    "cs.SE",   # Software Engineering
-    "cs.DB",   # Databases
-    "cs.DC",   # Distributed Computing
-    "cs.CR",   # Cryptography and Security
-    "cs.NE",   # Neural and Evolutionary Computing
-    "cs.OS",   # Operating Systems
-    "cs.PL",   # Programming Languages
+    # "cs.SE",   # Software Engineering
+    # "cs.DB",   # Databases
+    # "cs.DC",   # Distributed Computing
+    # "cs.CR",   # Cryptography and Security
+    # "cs.NE",   # Neural and Evolutionary Computing
+    # "cs.OS",   # Operating Systems
+    # "cs.PL",   # Programming Languages
     "cs.RO",   # Robotics
 ]
 
