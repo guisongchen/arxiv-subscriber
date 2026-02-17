@@ -9,9 +9,10 @@ import urllib.request
 import urllib.parse
 import json
 import os
+import re
 from datetime import datetime, timedelta
 from dataclasses import dataclass, asdict
-from typing import List, Set
+from typing import List, Set, Optional
 import time
 
 # Load environment variables from .env file if python-dotenv is available
@@ -45,6 +46,27 @@ CS_CATEGORIES = [
 ]
 
 
+def extract_code_url(text: str) -> Optional[str]:
+    """Extract code repository URL from text (summary/title).
+
+    Looks for common code hosting platforms like GitHub, GitLab, Bitbucket.
+    Returns the first match found, or None if no code URL detected.
+    """
+    # Pattern for common code repository URLs
+    patterns = [
+        r'https?://github\.com/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+',
+        r'https?://gitlab\.com/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+',
+        r'https?://bitbucket\.org/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+',
+    ]
+
+    for pattern in patterns:
+        match = re.search(pattern, text)
+        if match:
+            return match.group(0)
+
+    return None
+
+
 @dataclass
 class Paper:
     """Represents an arXiv paper."""
@@ -57,10 +79,16 @@ class Paper:
     categories: List[str]
     link: str
     first_seen: str = None
+    code_url: str = None
 
     def __post_init__(self):
         if self.first_seen is None:
             self.first_seen = datetime.now().isoformat()
+        # Auto-detect code URL if not already set
+        if self.code_url is None:
+            # Check both title and summary for code URLs
+            combined_text = f"{self.title} {self.summary}"
+            self.code_url = extract_code_url(combined_text)
 
 
 class NotionClient:
@@ -84,22 +112,33 @@ class NotionClient:
         }
 
         # Prepare the data
+        properties = {
+            "Name": {
+                "title": [{"text": {"content": paper.title[:100]}}]
+            },
+            "Has Code": {
+                "checkbox": paper.code_url is not None
+            },
+            "Published": {
+                "date": {"start": paper.published[:10]}
+            },
+            "Link": {
+                "url": paper.link
+            },
+            "Summary": {
+                "rich_text": [{"text": {"content": paper.summary[:2000]}}]
+            }
+        }
+
+        # Add code URL if available
+        if paper.code_url:
+            properties["Code URL"] = {
+                "url": paper.code_url
+            }
+
         data = {
             "parent": {"database_id": self.database_id},
-            "properties": {
-                "Name": {
-                    "title": [{"text": {"content": paper.title[:100]}}]
-                },
-                "Published": {
-                    "date": {"start": paper.published[:10]}
-                },
-                "Link": {
-                    "url": paper.link
-                },
-                "Summary": {
-                    "rich_text": [{"text": {"content": paper.summary[:2000]}}]
-                }
-            }
+            "properties": properties
         }
 
         try:
@@ -306,6 +345,8 @@ def print_paper(paper: Paper, show_summary: bool = False):
     print(f"Categories: {', '.join(paper.categories)}")
     print(f"Published: {paper.published}")
     print(f"Link: {paper.link}")
+    if paper.code_url:
+        print(f"Code: {paper.code_url}")
     if show_summary:
         print(f"\nSummary:\n{paper.summary[:500]}...")
 
