@@ -15,6 +15,55 @@ from dataclasses import dataclass, asdict
 from typing import List, Set, Optional
 import time
 
+# Translation API (OpenRouter)
+TRANSLATE_API_TOKEN = os.getenv("TRANSLATE_API_TOKEN", "")
+TRANSLATION_AVAILABLE = bool(TRANSLATE_API_TOKEN)
+
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+
+# Initialize OpenAI for OpenRouter if token available
+def translate_with_llm(text: str) -> Optional[str]:
+    """Translate text to Chinese using OpenRouter LLM API."""
+    if not TRANSLATION_AVAILABLE or not text:
+        return None
+
+    try:
+        import openai
+        # Set up OpenAI with OpenRouter base URL
+        openai.api_key = TRANSLATE_API_TOKEN
+        openai.api_base = OPENROUTER_BASE_URL
+    except ImportError:
+        return None
+
+    # Truncate if too long
+    truncated = text[:3000] if len(text) > 3000 else text
+
+    prompt = f"""Translate the following academic paper summary to Chinese. Keep it concise and accurate.
+
+Text to translate:
+{truncated}
+
+Chinese translation:"""
+
+    try:
+        response = openai.ChatCompletion.create(
+            model="google/gemini-2.5-flash",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=2000,
+            temperature=0.3,
+            headers={
+                "HTTP-Referer": "https://github.com/guisongchen/arxiv-subscriber",
+                "X-Title": "arXiv Subscriber"
+            }
+        )
+        if response.choices and len(response.choices) > 0:
+            translated = response.choices[0].message.content.strip()
+            return translated
+    except Exception as e:
+        print(f"  ⚠️  Translation failed: {e}")
+
+    return None
+
 # Load environment variables from .env file if python-dotenv is available
 try:
     from dotenv import load_dotenv
@@ -109,6 +158,14 @@ def extract_code_url(text: str) -> Optional[str]:
     return None
 
 
+def translate_to_chinese(text: str, max_retries: int = 2) -> Optional[str]:
+    """Translate text to Chinese using OpenRouter LLM API.
+
+    Returns translated text or None if translation fails.
+    """
+    return translate_with_llm(text)
+
+
 @dataclass
 class Paper:
     """Represents an arXiv paper."""
@@ -122,6 +179,7 @@ class Paper:
     link: str
     first_seen: str = None
     code_url: str = None
+    summary_zh: str = None
 
     def __post_init__(self):
         if self.first_seen is None:
@@ -131,6 +189,9 @@ class Paper:
             # Check both title and summary for code URLs
             combined_text = f"{self.title} {self.summary}"
             self.code_url = extract_code_url(combined_text)
+        # Translate summary to Chinese if not already done
+        if self.summary_zh is None and TRANSLATION_AVAILABLE:
+            self.summary_zh = translate_to_chinese(self.summary)
 
 
 class NotionClient:
@@ -174,6 +235,12 @@ class NotionClient:
                 }
             }
         }
+
+        # Add Chinese summary if available
+        if paper.summary_zh:
+            data["properties"]["Summary (中文)"] = {
+                "rich_text": [{"text": {"content": paper.summary_zh[:2000]}}]
+            }
 
         try:
             req = urllib.request.Request(
@@ -461,6 +528,8 @@ def print_paper(paper: Paper, show_summary: bool = False):
         print(f"Code: {paper.code_url}")
     if show_summary:
         print(f"\nSummary:\n{paper.summary[:500]}...")
+    if show_summary and paper.summary_zh:
+        print(f"\nSummary (中文):\n{paper.summary_zh[:500]}...")
 
 
 def main():
@@ -472,6 +541,9 @@ def main():
         print("Notion integration enabled")
 
     subscriber = ArxivSubscriber(notion_client=notion_client)
+
+    if TRANSLATION_AVAILABLE:
+        print("Translation enabled (DeepL)")
 
     print("=" * 70)
     print("arXiv CS Subscriber")
