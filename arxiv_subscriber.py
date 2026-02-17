@@ -222,6 +222,84 @@ class ArxivSubscriber:
         with open(self.data_file, 'w') as f:
             json.dump(data, f, indent=2)
 
+    def _archive_old_papers(self, days: int = 30):
+        """Archive papers older than N days to separate files in archive/ folder.
+
+        Organizes archives by month (e.g., archive/papers_2026-02.json).
+        Returns number of papers archived.
+        """
+        cutoff = datetime.now() - timedelta(days=days)
+        to_archive = []
+        to_keep = []
+
+        for paper in self.papers:
+            try:
+                first_seen = datetime.fromisoformat(paper.first_seen.replace('Z', '+00:00'))
+                if first_seen < cutoff:
+                    to_archive.append(paper)
+                else:
+                    to_keep.append(paper)
+            except:
+                # If date parsing fails, keep the paper
+                to_keep.append(paper)
+
+        if not to_archive:
+            return 0
+
+        # Create archive folder if it doesn't exist
+        archive_dir = os.path.join(os.path.dirname(self.data_file) or '.', 'archive')
+        os.makedirs(archive_dir, exist_ok=True)
+
+        # Group papers by month
+        by_month = {}
+        for paper in to_archive:
+            try:
+                first_seen = datetime.fromisoformat(paper.first_seen.replace('Z', '+00:00'))
+                month_key = first_seen.strftime("%Y-%m")
+            except:
+                month_key = "unknown"
+
+            if month_key not in by_month:
+                by_month[month_key] = []
+            by_month[month_key].append(paper)
+
+        # Save each month to separate archive file
+        archived_count = 0
+        for month_key, papers in by_month.items():
+            archive_file = os.path.join(archive_dir, f"papers_{month_key}.json")
+
+            # Load existing archive if present
+            existing_papers = []
+            if os.path.exists(archive_file):
+                with open(archive_file, 'r') as f:
+                    try:
+                        data = json.load(f)
+                        existing_papers = data.get('papers', [])
+                    except:
+                        pass
+
+            # Merge and save
+            all_papers = existing_papers + [asdict(p) for p in papers]
+            data = {
+                'archived_at': datetime.now().isoformat(),
+                'paper_count': len(all_papers),
+                'papers': all_papers
+            }
+
+            with open(archive_file, 'w') as f:
+                json.dump(data, f, indent=2)
+
+            archived_count += len(papers)
+
+        # Update in-memory list to only keep recent papers
+        self.papers = to_keep
+        self.seen_ids = {p.arxiv_id for p in to_keep}
+
+        # Save the reduced main file
+        self._save_data()
+
+        return archived_count
+
     def _fetch_papers(self, categories: List[str], max_results: int = 50) -> List[Paper]:
         """Fetch papers from arXiv API for given categories."""
         papers = []
@@ -398,6 +476,11 @@ def main():
     print("=" * 70)
     print("arXiv CS Subscriber")
     print("=" * 70)
+
+    # Archive papers older than 30 days
+    archived = subscriber._archive_old_papers(days=30)
+    if archived > 0:
+        print(f"📦 Archived {archived} old papers to archive/ folder")
 
     # Check for new papers
     new_papers = subscriber.check_for_new_papers()
