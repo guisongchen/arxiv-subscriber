@@ -8,6 +8,7 @@ papers.json
 papers.db
 *.sqlite
 *.sqlite3
+archive/
 
 # Logs
 logs/
@@ -197,7 +198,7 @@ out/
 .DS_Store
 .AppleDouble
 .LSOverride
-Icon
+Icon
 ._*
 .DocumentRevisions-V100
 .fseventsd
