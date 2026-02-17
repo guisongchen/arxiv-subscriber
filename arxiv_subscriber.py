@@ -90,15 +90,6 @@ class NotionClient:
                 "Name": {
                     "title": [{"text": {"content": paper.title[:100]}}]
                 },
-                "Title": {
-                    "rich_text": [{"text": {"content": paper.title}}]
-                },
-                "Authors": {
-                    "rich_text": [{"text": {"content": ", ".join(paper.authors[:5])}}]
-                },
-                "Categories": {
-                    "multi_select": [{"name": cat[:100]} for cat in paper.categories]
-                },
                 "Published": {
                     "date": {"start": paper.published[:10]}
                 },
