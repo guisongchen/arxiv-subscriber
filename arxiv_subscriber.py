@@ -21,6 +21,13 @@ TRANSLATE_API_URL = os.getenv("TRANSLATE_API_URL", "https://openrouter.ai/api/v1
 TRANSLATE_MODEL = os.getenv("TRANSLATE_MODEL", "google/gemini-2.5-flash")
 TRANSLATION_AVAILABLE = bool(TRANSLATE_API_TOKEN)
 
+# Topic filtering - comma-separated keywords in .env
+TOPIC_KEYWORDS = [k.strip().lower() for k in os.getenv("TOPIC_KEYWORDS", "").split(",") if k.strip()]
+EXCLUDE_KEYWORDS = [k.strip().lower() for k in os.getenv("EXCLUDE_KEYWORDS", "").split(",") if k.strip()]
+
+# Fetch settings
+MAX_RESULTS = int(os.getenv("MAX_RESULTS", "300"))
+
 # Initialize OpenAI for OpenRouter if token available
 def translate_with_llm(text: str) -> Optional[str]:
     """Translate text to Chinese using OpenRouter LLM API."""
@@ -459,12 +466,23 @@ class ArxivSubscriber:
     def check_for_new_papers(self) -> List[Paper]:
         """Check for new papers and return any that haven't been seen."""
         print(f"Fetching papers from {len(CS_CATEGORIES)} CS categories...")
+        if TOPIC_KEYWORDS:
+            print(f"Filtering for topics: {', '.join(TOPIC_KEYWORDS)}")
+        if EXCLUDE_KEYWORDS:
+            print(f"Excluding topics: {', '.join(EXCLUDE_KEYWORDS)}")
 
-        fetched_papers = self._fetch_papers(CS_CATEGORIES, max_results=100)
+        fetched_papers = self._fetch_papers(CS_CATEGORIES, max_results=MAX_RESULTS)
         new_papers = []
+        filtered_count = 0
 
         for paper in fetched_papers:
             if paper.arxiv_id not in self.seen_ids:
+                # Check topic filter
+                if not self.matches_topics(paper):
+                    filtered_count += 1
+                    self.seen_ids.add(paper.arxiv_id)  # Mark as seen to skip next time
+                    continue
+
                 new_papers.append(paper)
                 self.papers.append(paper)
                 self.seen_ids.add(paper.arxiv_id)
@@ -478,6 +496,9 @@ class ArxivSubscriber:
 
         # Save updated data
         self._save_data()
+
+        if filtered_count > 0:
+            print(f"  (Filtered out {filtered_count} papers not matching topics)")
 
         return new_papers
 
@@ -514,6 +535,25 @@ class ArxivSubscriber:
 
         return results
 
+    def matches_topics(self, paper: Paper) -> bool:
+        """Check if paper matches topic keywords. Returns True if no keywords configured."""
+        if not TOPIC_KEYWORDS:
+            return True
+
+        text = (paper.title + " " + paper.summary).lower()
+
+        # Check exclude keywords first
+        for kw in EXCLUDE_KEYWORDS:
+            if kw in text:
+                return False
+
+        # Check include keywords - must match at least one
+        for kw in TOPIC_KEYWORDS:
+            if kw in text:
+                return True
+
+        return False
+
 
 def print_paper(paper: Paper, show_summary: bool = False):
     """Pretty print a paper."""
@@ -544,6 +584,11 @@ def main():
 
     if TRANSLATION_AVAILABLE:
         print("Translation enabled (DeepL)")
+
+    if TOPIC_KEYWORDS:
+        print(f"Topic filter active: {', '.join(TOPIC_KEYWORDS)}")
+    if EXCLUDE_KEYWORDS:
+        print(f"Exclusion filter active: {', '.join(EXCLUDE_KEYWORDS)}")
 
     print("=" * 70)
     print("arXiv CS Subscriber")
