@@ -1,20 +1,77 @@
 # arXiv CS Subscriber
 
-A simple Python tool to track new Computer Science papers from arXiv.
+A simple Python tool to track new Computer Science papers from arXiv with Notion integration and Chinese translation.
 
 ## Features
 
-- Fetches papers from 12 CS categories (AI, ML, NLP, CV, SE, etc.)
+- Fetches papers from CS categories (AI, ML, CV, Robotics)
 - Tracks which papers you've already seen
-- Stores paper metadata locally in JSON format
+- **Notion integration** - automatically sync papers to Notion database
+- **Code repository detection** - auto-detects GitHub/GitLab/HuggingFace URLs
+- **Chinese translation** - translates summaries using LLM
+- **Automatic archiving** - archives papers older than 30 days
 - Search functionality
-- No notifications (to be implemented later)
+
+## Setup
+
+### 1. Clone and install dependencies
+
+```bash
+git clone https://github.com/guisongchen/arxiv-subscriber.git
+cd arxiv-subscriber
+
+# Using uv (recommended)
+uv sync
+
+# Or using pip
+pip install -r requirements.txt
+```
+
+### 2. Configure environment
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` with your values:
+
+```bash
+# Required for Notion integration
+NOTION_API_KEY=your_notion_integration_token
+NOTION_DATABASE_ID=your_database_id
+
+# Optional - for Chinese translation
+TRANSLATE_API_TOKEN=your_openrouter_token
+TRANSLATE_API_URL=https://openrouter.ai/api/v1
+TRANSLATE_MODEL=google/gemini-2.5-flash
+```
+
+Get your Notion integration token: https://www.notion.so/my-integrations
+
+Get your OpenRouter token: https://openrouter.ai/keys
+
+### 3. Setup Notion Database
+
+Create a database with these properties:
+
+| Property | Type |
+|----------|------|
+| Name | Title |
+| Has Code | Checkbox |
+| Published | Date |
+| Link | URL |
+| Summary | Rich Text |
+| Summary (中文) | Rich Text |
 
 ## Usage
 
 ### Run once to fetch new papers
 
 ```bash
+# Using uv
+uv run python arxiv_subscriber.py
+
+# Or using python directly
 python arxiv_subscriber.py
 ```
 
@@ -22,35 +79,40 @@ python arxiv_subscriber.py
 
 Add to your crontab:
 ```bash
-0 9 * * * cd /path/to/arxiv_subscriber && python arxiv_subscriber.py
+0 9 * * * cd /path/to/arxiv_subscriber && uv run python arxiv_subscriber.py
 ```
 
 ## Data Storage
 
-- `papers.json` - Stores all tracked papers and their metadata
-- Automatically created on first run
+- `papers.json` - Active papers (last 30 days)
+- `archive/papers_YYYY-MM.json` - Archived papers by month
+- Both are gitignored and created automatically
 
 ## Customization
 
-Edit `CS_CATEGORIES` in `arxiv_subscriber.py` to change which categories you subscribe to:
+### Categories
+
+Edit `CS_CATEGORIES` in `arxiv_subscriber.py`:
 
 | Category | Description |
 |----------|-------------|
 | cs.AI | Artificial Intelligence |
-| cs.CL | Computation and Language (NLP) |
 | cs.CV | Computer Vision |
 | cs.LG | Machine Learning |
-| cs.SE | Software Engineering |
-| cs.DB | Databases |
-| cs.DC | Distributed Computing |
-| cs.CR | Cryptography and Security |
-| cs.NE | Neural and Evolutionary Computing |
-| cs.OS | Operating Systems |
-| cs.PL | Programming Languages |
 | cs.RO | Robotics |
+
+### Translation Settings
+
+All translation settings are configurable via environment variables:
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `TRANSLATE_API_TOKEN` | - | API token for translation service |
+| `TRANSLATE_API_URL` | `https://openrouter.ai/api/v1` | Base API URL |
+| `TRANSLATE_MODEL` | `google/gemini-2.5-flash` | Model to use |
 
 ## API Notes
 
-- Uses arXiv's public API
-- Rate limited to ~1 request every 3 seconds
+- Uses arXiv's public API (rate limited to ~1 request every 3 seconds)
+- Uses OpenRouter for translation (OpenAI-compatible API)
 - Respects arXiv's terms of service

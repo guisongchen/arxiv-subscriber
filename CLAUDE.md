@@ -3,8 +3,48 @@
 > Instructions for Claude Code when working on this project
 
 ## Project Overview
-Python tool to subscribe to and track new Computer Science papers from arXiv.
+Python tool to subscribe to and track new Computer Science papers from arXiv with Notion integration.
 Repository: https://github.com/guisongchen/arxiv-subscriber
+
+## Features Implemented
+
+- **Paper fetching** from arXiv CS categories (AI, CV, ML, Robotics)
+- **Notion integration** - syncs papers to Notion database automatically
+- **Code repository detection** - auto-detects GitHub/GitLab/HuggingFace URLs in summaries
+- **Chinese translation** - translates paper summaries using OpenRouter LLM API
+- **Automatic archiving** - moves papers older than 30 days to `archive/` folder
+- **Duplicate prevention** - tracks seen paper IDs to avoid duplicates
+
+## Project Structure
+
+| File | Description |
+|------|-------------|
+| `arxiv_subscriber.py` | Main script - fetches, processes, and syncs papers |
+| `papers.json` | Active papers database (gitignored, last 30 days) |
+| `archive/papers_YYYY-MM.json` | Archived papers by month (gitignored) |
+| `pyproject.toml` | Python dependencies (managed by uv) |
+| `.env` | Environment variables (gitignored) |
+
+## Notion Database Schema
+
+Required properties:
+- `Name` (Title) - paper title
+- `Has Code` (Checkbox) - true if code URL detected
+- `Published` (Date) - original arXiv publication date
+- `Link` (URL) - PDF link
+- `Summary` (Rich Text) - paper abstract
+- `Summary (中文)` (Rich Text) - Chinese translation (optional)
+
+## Environment Variables
+
+### Required
+- `NOTION_API_KEY` - Notion integration token
+- `NOTION_DATABASE_ID` - Notion database ID
+
+### Optional (for translation)
+- `TRANSLATE_API_TOKEN` - OpenRouter API token
+- `TRANSLATE_API_URL` - Base URL (default: https://openrouter.ai/api/v1)
+- `TRANSLATE_MODEL` - Model name (default: google/gemini-2.5-flash)
 
 ## Development Preferences
 
@@ -15,34 +55,52 @@ Repository: https://github.com/guisongchen/arxiv-subscriber
 - Push commits after completing logical units of work
 
 ### Code Style
-- Python 3.8+
+- Python 3.12+
 - Use type hints where helpful
 - Follow PEP 8
 - Use descriptive variable names
 
-### Project Structure
-- `arxiv_subscriber.py` - Main script
-- `papers.json` - Local data file (gitignored)
-- Keep it simple - avoid over-engineering
+### Dependencies
+- Managed with `uv` (modern Python package manager)
+- Key deps: `openai`, `python-dotenv`
 
 ## Commands
 
 ### Run
 ```bash
+# Using uv (recommended)
+uv run python3 arxiv_subscriber.py
+
+# Direct
 python3 arxiv_subscriber.py
+```
+
+### Install dependencies
+```bash
+uv sync
 ```
 
 ### Schedule (cron)
 ```bash
-0 9 * * * cd /home/ccc/vibe_projects/arxiv_subscriber && python3 arxiv_subscriber.py
+0 9 * * * cd /home/ccc/vibe_projects/arxiv_subscriber && uv run python3 arxiv_subscriber.py
 ```
 
-## Future Plans (To Be Implemented)
-- [ ] Notification system (email/Discord/Slack)
+## Architecture Notes
+
+- `Paper` dataclass: stores paper metadata, auto-detects code URLs on init
+- `ArxivSubscriber`: main class, handles fetch/store/archive lifecycle
+- `NotionClient`: sends papers to Notion with rate limiting
+- Archive logic: papers older than 30 days moved to `archive/papers_YYYY-MM.json`
+- Translation: uses OpenAI-compatible API via OpenRouter
+
+## API Limits
+
+- arXiv: ~1 request per 3 seconds (built-in rate limiting)
+- Notion: 0.5s delay between requests
+- OpenRouter: depends on account credits
+
+## Future Plans
+
 - [ ] Keyword filtering for papers
 - [ ] CLI for browsing stored papers
-- [ ] Configuration file support
-
-## Notes
-- arXiv API rate limit: ~1 request per 3 seconds
-- Data stored in `papers.json` (not tracked in git)
+- [ ] Web interface
