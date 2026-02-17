@@ -49,20 +49,62 @@ CS_CATEGORIES = [
 def extract_code_url(text: str) -> Optional[str]:
     """Extract code repository URL from text (summary/title).
 
-    Looks for common code hosting platforms like GitHub, GitLab, Bitbucket.
+    Looks for common code hosting platforms like GitHub, GitLab, HuggingFace.
+    Also detects shortened URLs and validates context with code-related keywords.
     Returns the first match found, or None if no code URL detected.
     """
-    # Pattern for common code repository URLs
-    patterns = [
-        r'https?://github\.com/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+',
-        r'https?://gitlab\.com/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+',
-        r'https?://bitbucket\.org/[a-zA-Z0-9_-]+/[a-zA-Z0-9_-]+',
+    # Code-related keywords that suggest the URL is actually code
+    code_keywords = [
+        'code', 'source', 'implementation', 'repository', 'repo',
+        'github', 'gitlab', 'huggingface', 'model', 'checkpoint',
+        'script', 'available at', 'released', 'open-sourced'
     ]
 
-    for pattern in patterns:
-        match = re.search(pattern, text)
+    # Pattern for common code hosting platforms
+    # Group 1: platform domain, Group 2: org/user (required), Group 3: repo (optional)
+    patterns = [
+        (r'(https?://github\.com)/([a-zA-Z0-9_-]+)(?:/([a-zA-Z0-9_.-]+))?', 'github'),
+        (r'(https?://gitlab\.com)/([a-zA-Z0-9_-]+)(?:/([a-zA-Z0-9_.-]+))?', 'gitlab'),
+        (r'(https?://huggingface\.co)/([a-zA-Z0-9_-]+)(?:/([a-zA-Z0-9_.-]+))?', 'huggingface'),
+    ]
+
+    # Shortened URL patterns
+    short_patterns = [
+        r'https?://git\.io/[a-zA-Z0-9]+',
+        r'https?://bit\.ly/[a-zA-Z0-9]+',
+        r'https?://tinyurl\.com/[a-zA-Z0-9]+',
+        r'https?://t\.co/[a-zA-Z0-9]+',
+    ]
+
+    # Check shortened URLs first
+    for pattern in short_patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
         if match:
             return match.group(0)
+
+    # Check main platforms
+    for pattern, platform in patterns:
+        for match in re.finditer(pattern, text, re.IGNORECASE):
+            url = match.group(0)
+            org = match.group(2)
+            repo = match.group(3)
+
+            # For GitHub/GitLab: require a specific repo (user/repo format)
+            # For HuggingFace: user/model format is valid (allow these)
+            if not repo and platform in ('github', 'gitlab'):
+                continue
+
+            # Skip common non-code paths
+            if repo and repo.lower() in ['issues', 'pulls', 'discussions', 'wiki', 'blob', 'tree']:
+                continue
+
+            # Check for code context in surrounding text (200 chars window)
+            start_pos = max(0, match.start() - 100)
+            end_pos = min(len(text), match.end() + 100)
+            context = text[start_pos:end_pos].lower()
+
+            if any(kw in context for kw in code_keywords):
+                return url
 
     return None
 
@@ -112,33 +154,25 @@ class NotionClient:
         }
 
         # Prepare the data
-        properties = {
-            "Name": {
-                "title": [{"text": {"content": paper.title[:100]}}]
-            },
-            "Has Code": {
-                "checkbox": paper.code_url is not None
-            },
-            "Published": {
-                "date": {"start": paper.published[:10]}
-            },
-            "Link": {
-                "url": paper.link
-            },
-            "Summary": {
-                "rich_text": [{"text": {"content": paper.summary[:2000]}}]
-            }
-        }
-
-        # Add code URL if available
-        if paper.code_url:
-            properties["Code URL"] = {
-                "url": paper.code_url
-            }
-
         data = {
             "parent": {"database_id": self.database_id},
-            "properties": properties
+            "properties": {
+                "Name": {
+                    "title": [{"text": {"content": paper.title[:100]}}]
+                },
+                "Has Code": {
+                    "checkbox": paper.code_url is not None
+                },
+                "Published": {
+                    "date": {"start": paper.published[:10]}
+                },
+                "Link": {
+                    "url": paper.link
+                },
+                "Summary": {
+                    "rich_text": [{"text": {"content": paper.summary[:2000]}}]
+                }
+            }
         }
 
         try:
