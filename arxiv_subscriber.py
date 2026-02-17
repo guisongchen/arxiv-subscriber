@@ -17,9 +17,9 @@ import time
 
 # Translation API (OpenRouter)
 TRANSLATE_API_TOKEN = os.getenv("TRANSLATE_API_TOKEN", "")
+TRANSLATE_API_URL = os.getenv("TRANSLATE_API_URL", "https://openrouter.ai/api/v1")
+TRANSLATE_MODEL = os.getenv("TRANSLATE_MODEL", "google/gemini-2.5-flash")
 TRANSLATION_AVAILABLE = bool(TRANSLATE_API_TOKEN)
-
-OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 # Initialize OpenAI for OpenRouter if token available
 def translate_with_llm(text: str) -> Optional[str]:
@@ -29,9 +29,9 @@ def translate_with_llm(text: str) -> Optional[str]:
 
     try:
         import openai
-        # Set up OpenAI with OpenRouter base URL
+        # Set up OpenAI with configured base URL
         openai.api_key = TRANSLATE_API_TOKEN
-        openai.api_base = OPENROUTER_BASE_URL
+        openai.api_base = TRANSLATE_API_URL
     except ImportError:
         return None
 
@@ -47,7 +47,7 @@ Chinese translation:"""
 
     try:
         response = openai.ChatCompletion.create(
-            model="google/gemini-2.5-flash",
+            model=TRANSLATE_MODEL,
             messages=[{"role": "user", "content": prompt}],
             max_tokens=2000,
             temperature=0.3,
