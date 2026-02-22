@@ -14,6 +14,7 @@ Repository: https://github.com/guisongchen/arxiv-subscriber
 - **Chinese translation** - translates paper summaries using OpenRouter LLM API
 - **Automatic archiving** - moves papers older than 30 days to `archive/` folder
 - **Duplicate prevention** - tracks seen paper IDs to avoid duplicates
+- **Debug logging** - structured logging with DEBUG environment variable for troubleshooting
 
 ## Project Structure
 
@@ -46,6 +47,9 @@ Required properties:
 - `TRANSLATE_API_URL` - Base URL (default: https://openrouter.ai/api/v1)
 - `TRANSLATE_MODEL` - Model name (default: google/gemini-2.5-flash)
 
+### Optional (for debugging)
+- `DEBUG` - Set to "1" or "true" to enable verbose debug output with timestamps
+
 ## Development Preferences
 
 ### Git Workflow
@@ -73,6 +77,9 @@ uv run python3 arxiv_subscriber.py
 
 # Direct
 python3 arxiv_subscriber.py
+
+# With debug logging
+DEBUG=1 uv run python3 arxiv_subscriber.py
 ```
 
 ### Install dependencies
@@ -91,7 +98,8 @@ uv sync
 - `ArxivSubscriber`: main class, handles fetch/store/archive lifecycle
 - `NotionClient`: sends papers to Notion with rate limiting
 - Archive logic: papers older than 30 days moved to `archive/papers_YYYY-MM.json`
-- Translation: uses OpenAI-compatible API via OpenRouter
+- Translation: lazy-loaded only when sending to Notion (not during fetch)
+- Debug logging: use `DEBUG=1` to see detailed execution trace and filtered paper reasons
 
 ## API Limits
 
@@ -101,6 +109,6 @@ uv sync
 
 ## Future Plans
 
-- [ ] Keyword filtering for papers
+- [x] Keyword filtering for papers
 - [ ] CLI for browsing stored papers
 - [ ] Web interface
