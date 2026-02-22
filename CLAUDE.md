@@ -21,8 +21,8 @@ Repository: https://github.com/guisongchen/arxiv-subscriber
 | File | Description |
 |------|-------------|
 | `arxiv_subscriber.py` | Main script - fetches, processes, and syncs papers |
-| `papers.json` | Active papers database (gitignored, last 30 days) |
-| `archive/papers_YYYY-MM.json` | Archived papers by month (gitignored) |
+| `papers/YYYY-MM.json` | Papers organized by month (tracked in git) |
+| `papers/archive/YYYY-MM.json` | Archived papers older than 3 months (gitignored) |
 | `pyproject.toml` | Python dependencies (managed by uv) |
 | `.env` | Environment variables (gitignored) |
 
@@ -97,10 +97,11 @@ uv sync
 - `Paper` dataclass: stores paper metadata, auto-detects code URLs on init
 - `ArxivSubscriber`: main class, handles fetch/store/archive lifecycle
 - `NotionClient`: sends papers to Notion with rate limiting
-- Archive logic: papers older than 30 days moved to `archive/papers_YYYY-MM.json`
+- Storage: papers organized by month in `papers/YYYY-MM.json`
+- Archive logic: month files older than 3 months moved to `papers/archive/`
 - Translation: lazy-loaded only when sending to Notion (not during fetch)
 - Debug logging: use `DEBUG=1` to see detailed execution trace and filtered paper reasons
-- Multi-device: commit/push `papers.json` to git before switching devices
+- Multi-device: commit/push `papers/` directory to git before switching devices
 
 ## API Limits
 

@@ -52,15 +52,15 @@ Get your OpenRouter token: https://openrouter.ai/keys
 
 #### Multi-Device Setup
 
-The `papers.json` file tracks which papers you've already seen to prevent duplicates in Notion. To use this tool on multiple devices:
+The `papers/` directory stores which papers you've already seen to prevent duplicates in Notion, organized by month (e.g., `papers/2026-02.json`). To use this tool on multiple devices:
 
-**Commit and push papers.json after each run:**
+**Commit and push after each run:**
 
 ```bash
 # After running the script
 uv run python arxiv_subscriber.py
-git add papers.json
-git commit -m "Update papers.json"
+git add papers/
+git commit -m "Update papers"
 git push
 
 # On other devices - pull before running
@@ -68,7 +68,7 @@ git pull
 uv run python arxiv_subscriber.py
 ```
 
-The file is small (typically under 100KB) and git handles it well. The archive folder (`archive/`) remains gitignored - only the active `papers.json` needs to be synced.
+Each month's papers are stored in a separate file (`YYYY-MM.json`). Git handles these small files efficiently. Old months are automatically moved to `papers/archive/` (gitignored) after 3 months.
 
 **Note**: `.env` files should still be configured separately on each device (they contain device-specific paths and API keys).
 
@@ -106,9 +106,9 @@ Add to your crontab:
 
 ## Data Storage
 
-- `papers.json` - Active papers (last 30 days)
-- `archive/papers_YYYY-MM.json` - Archived papers by month
-- Both are gitignored and created automatically
+- `papers/YYYY-MM.json` - Papers organized by month (tracked in git)
+- `papers/archive/YYYY-MM.json` - Archived papers older than 3 months (gitignored)
+- Files are created automatically
 
 ## Customization
 

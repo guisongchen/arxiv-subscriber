@@ -309,119 +309,165 @@ class NotionClient:
 class ArxivSubscriber:
     """Main class for subscribing to arXiv papers."""
 
-    def __init__(self, data_file: str = "papers.json", notion_client: NotionClient = None):
-        self.data_file = data_file
+    def __init__(self, data_dir: str = "papers", notion_client: NotionClient = None):
+        self.data_dir = data_dir
         self.seen_ids: Set[str] = set()
         self.papers: List[Paper] = []
         self.notion = notion_client
         self._load_data()
 
+    def _get_month_file(self, date_str: str) -> str:
+        """Get the filename for a given date string (ISO format)."""
+        try:
+            dt = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+            month_key = dt.strftime("%Y-%m")
+        except:
+            month_key = "unknown"
+        return os.path.join(self.data_dir, f"{month_key}.json")
+
     def _load_data(self):
-        """Load previously seen papers from disk."""
-        logger.debug(f"Loading data from: {self.data_file}")
-        if os.path.exists(self.data_file):
-            with open(self.data_file, 'r') as f:
-                data = json.load(f)
-                for p in data.get('papers', []):
-                    paper = Paper(**p)
-                    self.papers.append(paper)
-                    self.seen_ids.add(paper.arxiv_id)
-            logger.info(f"Loaded {len(self.papers)} previously seen papers")
-        else:
-            logger.info("No existing data file found, starting fresh")
+        """Load previously seen papers from disk (all month files in papers/)."""
+        logger.debug(f"Loading data from: {self.data_dir}/")
+
+        if not os.path.exists(self.data_dir):
+            logger.info("No papers directory found, starting fresh")
+            return
+
+        # Find all YYYY-MM.json files in the papers directory
+        import glob
+        pattern = os.path.join(self.data_dir, "[0-9][0-9][0-9][0-9]-[0-9][0-9].json")
+        month_files = glob.glob(pattern)
+
+        if not month_files:
+            logger.info("No month files found in papers/, starting fresh")
+            return
+
+        for filepath in sorted(month_files):
+            filename = os.path.basename(filepath)
+            try:
+                with open(filepath, 'r') as f:
+                    data = json.load(f)
+                    file_papers = []
+                    for p in data.get('papers', []):
+                        paper = Paper(**p)
+                        file_papers.append(paper)
+                        self.papers.append(paper)
+                        self.seen_ids.add(paper.arxiv_id)
+                logger.debug(f"Loaded {len(file_papers)} papers from {filename}")
+            except Exception as e:
+                logger.warning(f"Failed to load {filename}: {e}")
+
+        logger.info(f"Loaded {len(self.papers)} previously seen papers from {len(month_files)} month files")
 
     def _save_data(self):
-        """Save papers to disk."""
-        data = {
-            'last_updated': datetime.now().isoformat(),
-            'papers': [asdict(p) for p in self.papers]
-        }
-        with open(self.data_file, 'w') as f:
-            json.dump(data, f, indent=2)
-        logger.debug(f"Saved {len(self.papers)} papers to {self.data_file}")
-
-    def _archive_old_papers(self, days: int = 30):
-        """Archive papers older than N days to separate files in archive/ folder.
-
-        Organizes archives by month (e.g., archive/papers_2026-02.json).
-        Returns number of papers archived.
-        """
-        cutoff = datetime.now() - timedelta(days=days)
-        logger.debug(f"Archiving papers older than {days} days (cutoff: {cutoff.isoformat()})")
-        to_archive = []
-        to_keep = []
-
-        for paper in self.papers:
-            try:
-                first_seen = datetime.fromisoformat(paper.first_seen.replace('Z', '+00:00'))
-                if first_seen < cutoff:
-                    to_archive.append(paper)
-                else:
-                    to_keep.append(paper)
-            except Exception as e:
-                # If date parsing fails, keep the paper
-                logger.warning(f"Failed to parse date for paper {paper.arxiv_id}: {e}")
-                if DEBUG_MODE:
-                    logger.exception("Date parsing error:")
-                to_keep.append(paper)
-
-        if not to_archive:
-            logger.debug("No papers to archive")
-            return 0
-
-        logger.info(f"Archiving {len(to_archive)} papers to archive/ folder")
-
-        # Create archive folder if it doesn't exist
-        archive_dir = os.path.join(os.path.dirname(self.data_file) or '.', 'archive')
-        os.makedirs(archive_dir, exist_ok=True)
+        """Save papers to disk, organized by month."""
+        os.makedirs(self.data_dir, exist_ok=True)
 
         # Group papers by month
-        by_month = {}
-        for paper in to_archive:
-            try:
-                first_seen = datetime.fromisoformat(paper.first_seen.replace('Z', '+00:00'))
-                month_key = first_seen.strftime("%Y-%m")
-            except:
-                month_key = "unknown"
+        by_month: dict[str, List[Paper]] = {}
+        for paper in self.papers:
+            filepath = self._get_month_file(paper.first_seen)
+            if filepath not in by_month:
+                by_month[filepath] = []
+            by_month[filepath].append(paper)
 
-            if month_key not in by_month:
-                by_month[month_key] = []
-            by_month[month_key].append(paper)
-
-        # Save each month to separate archive file
-        archived_count = 0
-        for month_key, papers in by_month.items():
-            archive_file = os.path.join(archive_dir, f"papers_{month_key}.json")
-
-            # Load existing archive if present
-            existing_papers = []
-            if os.path.exists(archive_file):
-                with open(archive_file, 'r') as f:
-                    try:
-                        data = json.load(f)
-                        existing_papers = data.get('papers', [])
-                    except Exception as e:
-                        logger.warning(f"Failed to load existing archive {archive_file}: {e}")
-
-            # Merge and save
-            all_papers = existing_papers + [asdict(p) for p in papers]
+        # Save each month to its own file
+        saved_count = 0
+        for filepath, papers in by_month.items():
             data = {
-                'archived_at': datetime.now().isoformat(),
-                'paper_count': len(all_papers),
-                'papers': all_papers
+                'last_updated': datetime.now().isoformat(),
+                'paper_count': len(papers),
+                'papers': [asdict(p) for p in papers]
             }
-
-            with open(archive_file, 'w') as f:
+            with open(filepath, 'w') as f:
                 json.dump(data, f, indent=2)
+            saved_count += len(papers)
+            logger.debug(f"Saved {len(papers)} papers to {os.path.basename(filepath)}")
 
-            archived_count += len(papers)
+        logger.debug(f"Saved {saved_count} papers total to {len(by_month)} month files")
 
-        # Update in-memory list to only keep recent papers
-        self.papers = to_keep
-        self.seen_ids = {p.arxiv_id for p in to_keep}
+    def _archive_old_papers(self, months_to_keep: int = 3):
+        """Move month files older than N months to archive/ folder.
 
-        # Save the reduced main file
-        self._save_data()
+        Returns number of papers archived.
+        """
+        if not os.path.exists(self.data_dir):
+            return 0
+
+        # Calculate cutoff month
+        now = datetime.now()
+        cutoff = now.replace(day=1)
+        for _ in range(months_to_keep):
+            # Go back one month
+            if cutoff.month == 1:
+                cutoff = cutoff.replace(year=cutoff.year - 1, month=12)
+            else:
+                cutoff = cutoff.replace(month=cutoff.month - 1)
+
+        cutoff_str = cutoff.strftime("%Y-%m")
+        logger.debug(f"Archiving month files older than {cutoff_str}")
+
+        import glob
+        pattern = os.path.join(self.data_dir, "[0-9][0-9][0-9][0-9]-[0-9][0-9].json")
+        month_files = glob.glob(pattern)
+
+        to_archive = []
+        for filepath in month_files:
+            filename = os.path.basename(filepath)
+            month_key = filename.replace('.json', '')
+            if month_key < cutoff_str:
+                to_archive.append(filepath)
+
+        if not to_archive:
+            logger.debug("No month files to archive")
+            return 0
+
+        # Create archive folder
+        archive_dir = os.path.join(self.data_dir, 'archive')
+        os.makedirs(archive_dir, exist_ok=True)
+
+        archived_count = 0
+        for filepath in to_archive:
+            filename = os.path.basename(filepath)
+            dest = os.path.join(archive_dir, filename)
+
+            # If destination exists, merge the files
+            if os.path.exists(dest):
+                try:
+                    with open(filepath, 'r') as f:
+                        src_data = json.load(f)
+                    with open(dest, 'r') as f:
+                        dest_data = json.load(f)
+
+                    # Merge papers, avoiding duplicates
+                    existing_ids = {p['arxiv_id'] for p in dest_data.get('papers', [])}
+                    new_papers = [p for p in src_data.get('papers', []) if p['arxiv_id'] not in existing_ids]
+                    dest_data['papers'].extend(new_papers)
+                    dest_data['last_updated'] = datetime.now().isoformat()
+                    dest_data['paper_count'] = len(dest_data['papers'])
+
+                    with open(dest, 'w') as f:
+                        json.dump(dest_data, f, indent=2)
+                    archived_count += len(new_papers)
+                except Exception as e:
+                    logger.warning(f"Failed to merge {filename}: {e}")
+            else:
+                # Just move the file
+                import shutil
+                shutil.move(filepath, dest)
+                try:
+                    with open(dest, 'r') as f:
+                        data = json.load(f)
+                        archived_count += len(data.get('papers', []))
+                except:
+                    pass
+
+            logger.info(f"Archived {filename} to papers/archive/")
+
+        # Reload data to reflect archived papers being removed
+        self.papers = []
+        self.seen_ids = set()
+        self._load_data()
 
         return archived_count
 
@@ -652,22 +698,22 @@ def main():
     else:
         logger.info("Notion integration disabled (missing credentials)")
 
-    subscriber = ArxivSubscriber(notion_client=notion_client)
+    subscriber = ArxivSubscriber(data_dir="papers", notion_client=notion_client)
     logger.info(f"ArxivSubscriber initialized with {len(subscriber.papers)} existing papers")
 
     # Warn about potential multi-device sync issues
     if len(subscriber.seen_ids) == 0:
-        logger.warning("First run detected - papers.json is empty. If you've run this before on another device, run 'git pull' to sync papers.json and avoid duplicates in Notion.")
+        logger.warning("First run detected - papers/ directory is empty. If you've run this before on another device, run 'git pull' to sync and avoid duplicates in Notion.")
 
     if TRANSLATION_AVAILABLE:
         logger.info("Translation enabled")
     else:
         logger.info("Translation disabled")
 
-    # Archive papers older than 30 days
-    archived = subscriber._archive_old_papers(days=30)
+    # Archive papers older than 3 months
+    archived = subscriber._archive_old_papers(months_to_keep=3)
     if archived > 0:
-        logger.info(f"Archived {archived} old papers to archive/ folder")
+        logger.info(f"Archived {archived} old papers to papers/archive/")
 
     # Check for new papers
     new_papers = subscriber.check_for_new_papers()
