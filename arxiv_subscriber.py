@@ -15,6 +15,20 @@ from dataclasses import dataclass, asdict
 from typing import List, Set, Optional
 import time
 
+# Load environment variables from .env file if python-dotenv is available
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
+# OpenAI import for translation (optional)
+try:
+    import openai
+    OPENAI_AVAILABLE = True
+except ImportError:
+    OPENAI_AVAILABLE = False
+
 # Translation API (OpenRouter)
 TRANSLATE_API_TOKEN = os.getenv("TRANSLATE_API_TOKEN", "")
 TRANSLATE_API_URL = os.getenv("TRANSLATE_API_URL", "https://openrouter.ai/api/v1")
@@ -28,19 +42,14 @@ EXCLUDE_KEYWORDS = [k.strip().lower() for k in os.getenv("EXCLUDE_KEYWORDS", "")
 # Fetch settings
 MAX_RESULTS = int(os.getenv("MAX_RESULTS", "300"))
 
-# Initialize OpenAI for OpenRouter if token available
 def translate_with_llm(text: str) -> Optional[str]:
     """Translate text to Chinese using OpenRouter LLM API."""
-    if not TRANSLATION_AVAILABLE or not text:
+    if not TRANSLATION_AVAILABLE or not text or not OPENAI_AVAILABLE:
         return None
 
-    try:
-        import openai
-        # Set up OpenAI with configured base URL
-        openai.api_key = TRANSLATE_API_TOKEN
-        openai.api_base = TRANSLATE_API_URL
-    except ImportError:
-        return None
+    # Set up OpenAI with configured base URL
+    openai.api_key = TRANSLATE_API_TOKEN
+    openai.api_base = TRANSLATE_API_URL
 
     # Truncate if too long
     truncated = text[:3000] if len(text) > 3000 else text
@@ -70,13 +79,6 @@ Chinese translation:"""
         print(f"  ⚠️  Translation failed: {e}")
 
     return None
-
-# Load environment variables from .env file if python-dotenv is available
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except ImportError:
-    pass
 
 # arXiv API endpoint
 ARXIV_API_URL = "http://export.arxiv.org/api/query"
