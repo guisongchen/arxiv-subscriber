@@ -50,23 +50,46 @@ Get your Notion integration token: https://www.notion.so/my-integrations
 
 Get your OpenRouter token: https://openrouter.ai/keys
 
-#### Multi-Device Setup
+#### Multi-Device Setup (Git Sync)
 
-The `papers/` directory stores which papers you've already seen to prevent duplicates in Notion, organized by month (e.g., `papers/2026-02.json`). To use this tool on multiple devices:
+The `papers/` directory stores which papers you've already seen to prevent duplicates in Notion, organized by month (e.g., `papers/2026-02.json`). To use this tool on multiple devices, the papers are automatically tracked in git.
 
-**Commit and push after each run:**
+**Quick Start - Use the wrapper script:**
 
 ```bash
-# After running the script
-uv run python arxiv_subscriber.py
-git add papers/
-git commit -m "Update papers"
-git push
+# Run the subscriber with auto-sync
+./run.sh
+```
 
+This will:
+1. Pull latest papers from remote
+2. Run the subscriber
+3. Auto-commit any new papers
+4. Push to remote
+
+**Manual workflow** (if not using `run.sh`):
+
+```bash
 # On other devices - pull before running
 git pull
 uv run python arxiv_subscriber.py
+
+# After running the script
+git add papers/
+git commit -m "Update papers"
+git push
 ```
+
+**Install git hooks for reminders:**
+
+```bash
+# Enable the version-controlled hooks
+git config core.hooksPath .githooks
+```
+
+This adds:
+- **post-commit**: Reminds you to push after committing papers
+- **post-merge**: Shows papers sync status after pull
 
 Each month's papers are stored in a separate file (`YYYY-MM.json`). Git handles these small files efficiently. Old months are automatically moved to `papers/archive/` (gitignored) after 3 months.
 

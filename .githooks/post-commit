@@ -1,0 +1,9 @@
+#!/bin/bash
+# Remind to push when papers are committed
+
+if git diff HEAD~1 HEAD --name-only 2>/dev/null | grep -q "^papers/"; then
+    echo ""
+    echo "📦 Papers commit detected!"
+    echo "   Run 'git push' to sync with other devices."
+    echo ""
+fi

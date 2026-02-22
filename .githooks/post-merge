@@ -1,0 +1,7 @@
+#!/bin/bash
+# After pull/merge, show papers sync status
+
+if [ -d "papers" ]; then
+    month_files=$(ls papers/*.json 2>/dev/null | wc -l)
+    echo "📚 Papers synced: $month_files month files"
+fi
