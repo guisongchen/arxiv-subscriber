@@ -50,6 +50,16 @@ Get your Notion integration token: https://www.notion.so/my-integrations
 
 Get your OpenRouter token: https://openrouter.ai/keys
 
+#### Multi-Device Setup
+
+To use this tool on multiple devices without committing API keys to git:
+
+1. **On each device**: Copy `.env.example` to `.env` and fill in your secrets
+2. **Store keys securely**: Use a password manager (1Password, Bitwarden, etc.) to sync API keys between devices
+3. **Never commit `.env`**: It's already gitignored
+
+This keeps your keys secure while allowing you to work across devices.
+
 ### 3. Setup Notion Database
 
 Create a database with these properties:
