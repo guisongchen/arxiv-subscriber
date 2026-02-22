@@ -1,0 +1,178 @@
+{
+  "last_updated": "2026-02-22T23:44:56.187031",
+  "papers": [
+    {
+      "arxiv_id": "2602.17632",
+      "title": "SMAC: Score-Matched Actor-Critics for Robust Offline-to-Online Transfer",
+      "authors": [
+        "Nathan S. de Lara",
+        "Florian Shkurti"
+      ],
+      "summary": "Modern offline Reinforcement Learning (RL) methods find performant actor-critics, however, fine-tuning these actor-critics online with value-based RL algorithms typically causes immediate drops in performance. We provide evidence consistent with the hypothesis that, in the loss landscape, offline maxima for prior algorithms and online maxima are separated by low-performance valleys that gradient-based fine-tuning traverses. Following this, we present Score Matched Actor-Critic (SMAC), an offline RL method designed to learn actor-critics that transition to online value-based RL algorithms with no drop in performance. SMAC avoids valleys between offline and online maxima by regularizing the Q-function during the offline phase to respect a first-order derivative equality between the score of the policy and action-gradient of the Q-function. We experimentally demonstrate that SMAC converges to offline maxima that are connected to better online maxima via paths with monotonically increasing reward found by first-order optimization. SMAC achieves smooth transfer to Soft Actor-Critic and TD3 in 6/6 D4RL tasks. In 4/6 environments, it reduces regret by 34-58% over the best baseline.",
+      "published": "2026-02-19T18:47:31Z",
+      "updated": "2026-02-19T18:47:31Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "link": "https://arxiv.org/pdf/2602.17632v1",
+      "first_seen": "2026-02-22T23:37:17.458957",
+      "code_url": null,
+      "summary_zh": "\u73b0\u4ee3\u79bb\u7ebf\u5f3a\u5316\u5b66\u4e60\uff08RL\uff09\u65b9\u6cd5\u80fd\u627e\u5230\u9ad8\u6027\u80fd\u7684actor-critic\uff0c\u4f46\u4f7f\u7528\u57fa\u4e8e\u4ef7\u503c\u7684RL\u7b97\u6cd5\u5728\u7ebf\u5fae\u8c03\u8fd9\u4e9bactor-critic\u901a\u5e38\u4f1a\u5bfc\u81f4\u6027\u80fd\u7acb\u5373\u4e0b\u964d\u3002\u6211\u4eec\u63d0\u51fa\u7684\u8bc1\u636e\u652f\u6301\u4ee5\u4e0b\u5047\u8bbe\uff1a\u5728\u635f\u5931\u51fd\u6570\u666f\u89c2\u4e2d\uff0c\u73b0\u6709\u7b97\u6cd5\u7684\u79bb\u7ebf\u6700\u4f18\u89e3\u4e0e\u5728\u7ebf\u6700\u4f18\u89e3\u4e4b\u95f4\u5b58\u5728\u4f4e\u6027\u80fd\u7684\u201c\u8c37\u201d\uff0c\u800c\u57fa\u4e8e\u68af\u5ea6\u7684\u5fae\u8c03\u4f1a\u7a7f\u8fc7\u8fd9\u4e9b\u201c\u8c37\u201d\u3002\u57fa\u4e8e\u6b64\uff0c\u6211\u4eec\u63d0\u51fa\u4e86Score Matched Actor-Critic (SMAC)\uff0c\u8fd9\u662f\u4e00\u79cd\u79bb\u7ebfRL\u65b9\u6cd5\uff0c\u65e8\u5728\u5b66\u4e60\u80fd\u591f\u5e73\u7a33\u8fc7\u6e21\u5230\u5728\u7ebf\u57fa\u4e8e\u4ef7\u503c\u7684RL\u7b97\u6cd5\u4e14\u6027\u80fd\u4e0d\u4e0b\u964d\u7684actor-critic\u3002SMAC\u901a\u8fc7\u5728\u79bb\u7ebf\u9636\u6bb5\u6b63\u5219\u5316Q\u51fd\u6570\uff0c\u4f7f\u5176\u9075\u5b88\u7b56\u7565\u5f97\u5206\u4e0eQ\u51fd\u6570\u52a8\u4f5c\u68af\u5ea6\u4e4b\u95f4\u7684\u4e00\u9636\u5bfc\u6570\u7b49\u5f0f\uff0c\u4ece\u800c\u907f\u514d\u4e86\u79bb\u7ebf\u548c\u5728\u7ebf\u6700\u4f18\u89e3\u4e4b\u95f4\u7684\u201c\u8c37\u201d\u3002\u5b9e\u9a8c\u8bc1\u660e\uff0cSMAC\u6536\u655b\u5230\u7684\u79bb\u7ebf\u6700\u4f18\u89e3\u901a\u8fc7\u4e00\u9636\u4f18\u5316\u53ef\u4ee5\u627e\u5230\u5956\u52b1\u5355\u8c03\u9012\u589e\u7684\u8def\u5f84\uff0c\u8fde\u63a5\u5230\u66f4\u597d\u7684\u5728\u7ebf\u6700\u4f18\u89e3\u3002SMAC\u57286\u4e2aD4RL\u4efb\u52a1\u4e2d\u5b9e\u73b0\u4e86\u5411Soft Actor-Critic\u548cTD3\u7684\u5e73\u7a33\u8fc7\u6e21\u3002\u57284\u4e2a\u73af\u5883\u4e2d\uff0c\u5b83\u5c06\u9057\u61be\u503c\u6bd4\u6700\u4f73\u57fa\u7ebf\u964d\u4f4e\u4e8634-58%\u3002"
+    },
+    {
+      "arxiv_id": "2602.17089",
+      "title": "Synergizing Transport-Based Generative Models and Latent Geometry for Stochastic Closure Modeling",
+      "authors": [
+        "Xinghao Dong",
+        "Huchen Yang",
+        "Jin-long Wu"
+      ],
+      "summary": "Diffusion models recently developed for generative AI tasks can produce high-quality samples while still maintaining diversity among samples to promote mode coverage, providing a promising path for learning stochastic closure models. Compared to other types of generative AI models, such as GANs and VAEs, the sampling speed is known as a key disadvantage of diffusion models. By systematically comparing transport-based generative models on a numerical example of 2D Kolmogorov flows, we show that flow matching in a lower-dimensional latent space is suited for fast sampling of stochastic closure models, enabling single-step sampling that is up to two orders of magnitude faster than iterative diffusion-based approaches. To control the latent space distortion and thus ensure the physical fidelity of the sampled closure term, we compare the implicit regularization offered by a joint training scheme against two explicit regularizers: metric-preserving (MP) and geometry-aware (GA) constraints. Besides offering a faster sampling speed, both explicitly and implicitly regularized latent spaces inherit the key topological information from the lower-dimensional manifold of the original complex dynamical system, which enables the learning of stochastic closure models without demanding a huge amount of training data.",
+      "published": "2026-02-19T05:24:00Z",
+      "updated": "2026-02-19T05:24:00Z",
+      "categories": [
+        "cs.LG",
+        "math.DS",
+        "physics.comp-ph"
+      ],
+      "link": "https://arxiv.org/pdf/2602.17089v1",
+      "first_seen": "2026-02-22T23:37:17.469842",
+      "code_url": null,
+      "summary_zh": "\u6269\u6563\u6a21\u578b\u5728\u751f\u6210\u9ad8\u8d28\u91cf\u6837\u672c\u548c\u4fdd\u6301\u591a\u6837\u6027\u65b9\u9762\u8868\u73b0\u51fa\u8272\uff0c\u4e3a\u968f\u673a\u95ed\u5408\u6a21\u578b\u5b66\u4e60\u63d0\u4f9b\u4e86\u65b0\u9014\u5f84\u3002\u76f8\u8f83\u4e8eGAN\u548cVAE\u7b49\u5176\u4ed6\u751f\u6210\u6a21\u578b\uff0c\u6269\u6563\u6a21\u578b\u7684\u91c7\u6837\u901f\u5ea6\u662f\u5176\u4e3b\u8981\u52a3\u52bf\u3002\u901a\u8fc7\u5bf9\u6bd42D Kolmogorov\u6d41\u7684\u4f20\u8f93\u751f\u6210\u6a21\u578b\uff0c\u6211\u4eec\u53d1\u73b0\u4f4e\u7ef4\u6f5c\u5728\u7a7a\u95f4\u4e2d\u7684\u6d41\u5339\u914d\u6280\u672f\u80fd\u5b9e\u73b0\u968f\u673a\u95ed\u5408\u6a21\u578b\u7684\u5feb\u901f\u91c7\u6837\uff0c\u5176\u5355\u6b65\u91c7\u6837\u901f\u5ea6\u6bd4\u8fed\u4ee3\u6269\u6563\u65b9\u6cd5\u5feb\u4e0a\u767e\u500d\u3002\u4e3a\u63a7\u5236\u6f5c\u5728\u7a7a\u95f4\u7578\u53d8\u5e76\u786e\u4fdd\u91c7\u6837\u95ed\u5408\u9879\u7684\u7269\u7406\u51c6\u786e\u6027\uff0c\u6211\u4eec\u6bd4\u8f83\u4e86\u8054\u5408\u8bad\u7ec3\u65b9\u6848\u7684\u9690\u5f0f\u6b63\u5219\u5316\u4e0e\u5ea6\u91cf\u4fdd\u6301\uff08MP\uff09\u548c\u51e0\u4f55\u611f\u77e5\uff08GA\uff09\u4e24\u79cd\u663e\u5f0f\u6b63\u5219\u5316\u65b9\u6cd5\u3002\u663e\u5f0f\u548c\u9690\u5f0f\u6b63\u5219\u5316\u7684\u6f5c\u5728\u7a7a\u95f4\u4e0d\u4ec5\u80fd\u52a0\u901f\u91c7\u6837\uff0c\u8fd8\u80fd\u7ee7\u627f\u539f\u59cb\u590d\u6742\u52a8\u529b\u7cfb\u7edf\u4f4e\u7ef4\u6d41\u5f62\u7684\u5173\u952e\u62d3\u6251\u4fe1\u606f\uff0c\u4ece\u800c\u5728\u65e0\u9700\u5927\u91cf\u8bad\u7ec3\u6570\u636e\u7684\u60c5\u51b5\u4e0b\u5b66\u4e60\u968f\u673a\u95ed\u5408\u6a21\u578b\u3002"
+    },
+    {
+      "arxiv_id": "2602.17038",
+      "title": "Phase-Aware Mixture of Experts for Agentic Reinforcement Learning",
+      "authors": [
+        "Shengtian Yang",
+        "Yu Li",
+        "Shuo He",
+        "Yewen Li",
+        "Qingpeng Cai",
+        "Peng Jiang",
+        "Lei Feng"
+      ],
+      "summary": "Reinforcement learning (RL) has equipped LLM agents with a strong ability to solve complex tasks. However, existing RL methods normally use a \\emph{single} policy network, causing \\emph{simplicity bias} where simple tasks occupy most parameters and dominate gradient updates, leaving insufficient capacity for complex tasks. A plausible remedy could be employing the Mixture-of-Experts (MoE) architecture in the policy network, as MoE allows different parameters (experts) to specialize in different tasks, preventing simple tasks from dominating all parameters. However, a key limitation of traditional MoE is its token-level routing, where the router assigns each token to specialized experts, which fragments phase-consistent patterns into scattered expert assignments and thus undermines expert specialization. In this paper, we propose \\textbf{Phase-Aware Mixture of Experts (PA-MoE)}. It first features a lightweight \\emph{phase router} that learns latent phase boundaries directly from the RL objective without pre-defining phase categories. Then, the phase router allocates temporally consistent assignments to the same expert, allowing experts to preserve phase-specific expertise. Experimental results demonstrate the effectiveness of our proposed PA-MoE.",
+      "published": "2026-02-19T03:18:30Z",
+      "updated": "2026-02-19T03:18:30Z",
+      "categories": [
+        "cs.AI"
+      ],
+      "link": "https://arxiv.org/pdf/2602.17038v1",
+      "first_seen": "2026-02-22T23:37:17.470900",
+      "code_url": null,
+      "summary_zh": "\u5f3a\u5316\u5b66\u4e60\uff08RL\uff09\u8d4b\u4e88\u5927\u578b\u8bed\u8a00\u6a21\u578b\uff08LLM\uff09\u667a\u80fd\u4f53\u89e3\u51b3\u590d\u6742\u4efb\u52a1\u7684\u5f3a\u5927\u80fd\u529b\u3002\u7136\u800c\uff0c\u73b0\u6709RL\u65b9\u6cd5\u901a\u5e38\u4f7f\u7528\u5355\u4e00\u7b56\u7565\u7f51\u7edc\uff0c\u5bfc\u81f4\u201c\u7b80\u5355\u6027\u504f\u5dee\u201d\uff0c\u5373\u7b80\u5355\u4efb\u52a1\u5360\u636e\u5927\u90e8\u5206\u53c2\u6570\u5e76\u4e3b\u5bfc\u68af\u5ea6\u66f4\u65b0\uff0c\u4ece\u800c\u4e3a\u590d\u6742\u4efb\u52a1\u7559\u4e0b\u7684\u5bb9\u91cf\u4e0d\u8db3\u3002\u4e00\u79cd\u53ef\u884c\u7684\u8865\u6551\u63aa\u65bd\u662f\u5728\u7b56\u7565\u7f51\u7edc\u4e2d\u91c7\u7528\u4e13\u5bb6\u6df7\u5408\uff08MoE\uff09\u67b6\u6784\uff0c\u56e0\u4e3aMoE\u5141\u8bb8\u4e0d\u540c\u53c2\u6570\uff08\u4e13\u5bb6\uff09\u4e13\u6ce8\u4e8e\u4e0d\u540c\u4efb\u52a1\uff0c\u9632\u6b62\u7b80\u5355\u4efb\u52a1\u4e3b\u5bfc\u6240\u6709\u53c2\u6570\u3002\u7136\u800c\uff0c\u4f20\u7edfMoE\u7684\u4e00\u4e2a\u4e3b\u8981\u9650\u5236\u662f\u5176\u57fa\u4e8etoken\u7684\u8def\u7531\uff0c\u8def\u7531\u5668\u5c06\u6bcf\u4e2atoken\u5206\u914d\u7ed9\u4e13\u95e8\u7684\u4e13\u5bb6\uff0c\u8fd9\u4f1a\u5c06\u9636\u6bb5\u4e00\u81f4\u7684\u6a21\u5f0f\u788e\u7247\u5316\u4e3a\u5206\u6563\u7684\u4e13\u5bb6\u5206\u914d\uff0c\u4ece\u800c\u635f\u5bb3\u4e13\u5bb6\u7279\u5316\u3002\u5728\u672c\u6587\u4e2d\uff0c\u6211\u4eec\u63d0\u51fa\u4e86**\u9636\u6bb5\u611f\u77e5\u4e13\u5bb6\u6df7\u5408\uff08PA-MoE\uff09**\u3002\u5b83\u9996\u5148\u5177\u6709\u4e00\u4e2a\u8f7b\u91cf\u7ea7\u7684\u201c\u9636\u6bb5\u8def\u7531\u5668\u201d\uff0c\u8be5\u8def\u7531\u5668\u76f4\u63a5\u4eceRL\u76ee\u6807\u4e2d\u5b66\u4e60\u6f5c\u5728\u7684\u9636\u6bb5\u8fb9\u754c\uff0c\u800c\u65e0\u9700\u9884\u5b9a\u4e49\u9636\u6bb5\u7c7b\u522b\u3002\u7136\u540e\uff0c\u8be5\u9636\u6bb5\u8def\u7531\u5668\u5c06\u65f6\u95f4\u4e0a\u4e00\u81f4\u7684\u5206\u914d\u5206\u914d\u7ed9\u540c\u4e00\u4e13\u5bb6\uff0c\u4ece\u800c\u4f7f\u4e13\u5bb6\u80fd\u591f\u4fdd\u7559\u9636\u6bb5\u7279\u5b9a\u7684\u4e13\u4e1a\u77e5\u8bc6\u3002\u5b9e\u9a8c\u7ed3\u679c\u8bc1\u660e\u4e86\u6211\u4eec\u63d0\u51fa\u7684PA-MoE\u7684\u6709\u6548\u6027\u3002"
+    },
+    {
+      "arxiv_id": "2602.17009",
+      "title": "Action-Graph Policies: Learning Action Co-dependencies in Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Nikunj Gupta",
+        "James Zachary Hare",
+        "Jesse Milzman",
+        "Rajgopal Kannan",
+        "Viktor Prasanna"
+      ],
+      "summary": "Coordinating actions is the most fundamental form of cooperation in multi-agent reinforcement learning (MARL). Successful decentralized decision-making often depends not only on good individual actions, but on selecting compatible actions across agents to synchronize behavior, avoid conflicts, and satisfy global constraints. In this paper, we propose Action Graph Policies (AGP), that model dependencies among agents' available action choices. It constructs, what we call, \\textit{coordination contexts}, that enable agents to condition their decisions on global action dependencies. Theoretically, we show that AGPs induce a strictly more expressive joint policy compared to fully independent policies and can realize coordinated joint actions that are provably more optimal than greedy execution even from centralized value-decomposition methods. Empirically, we show that AGP achieves 80-95\\% success on canonical coordination tasks with partial observability and anti-coordination penalties, where other MARL methods reach only 10-25\\%. We further demonstrate that AGP consistently outperforms these baselines in diverse multi-agent environments.",
+      "published": "2026-02-19T02:13:29Z",
+      "updated": "2026-02-19T02:13:29Z",
+      "categories": [
+        "cs.LG"
+      ],
+      "link": "https://arxiv.org/pdf/2602.17009v1",
+      "first_seen": "2026-02-22T23:37:17.471446",
+      "code_url": null,
+      "summary_zh": "\u534f\u8c03\u884c\u52a8\u662f\u591a\u667a\u80fd\u4f53\u5f3a\u5316\u5b66\u4e60\uff08MARL\uff09\u4e2d\u6700\u57fa\u672c\u7684\u5408\u4f5c\u5f62\u5f0f\u3002\u6210\u529f\u7684\u53bb\u4e2d\u5fc3\u5316\u51b3\u7b56\u4e0d\u4ec5\u53d6\u51b3\u4e8e\u826f\u597d\u7684\u4e2a\u4f53\u884c\u52a8\uff0c\u8fd8\u53d6\u51b3\u4e8e\u667a\u80fd\u4f53\u4e4b\u95f4\u9009\u62e9\u517c\u5bb9\u7684\u884c\u52a8\uff0c\u4ee5\u540c\u6b65\u884c\u4e3a\u3001\u907f\u514d\u51b2\u7a81\u5e76\u6ee1\u8db3\u5168\u5c40\u7ea6\u675f\u3002\u672c\u6587\u63d0\u51fa\u884c\u52a8\u56fe\u7b56\u7565\uff08AGP\uff09\uff0c\u5b83\u5bf9\u667a\u80fd\u4f53\u53ef\u7528\u884c\u52a8\u9009\u62e9\u4e4b\u95f4\u7684\u4f9d\u8d56\u5173\u7cfb\u8fdb\u884c\u5efa\u6a21\u3002AGP\u6784\u5efa\u4e86\u6211\u4eec\u79f0\u4e4b\u4e3a\u201c\u534f\u8c03\u4e0a\u4e0b\u6587\u201d\u7684\u673a\u5236\uff0c\u4f7f\u667a\u80fd\u4f53\u80fd\u591f\u6839\u636e\u5168\u5c40\u884c\u52a8\u4f9d\u8d56\u5173\u7cfb\u6765\u8c03\u6574\u5176\u51b3\u7b56\u3002\u7406\u8bba\u4e0a\uff0c\u6211\u4eec\u8bc1\u660eAGP\u6bd4\u5b8c\u5168\u72ec\u7acb\u7684\u7b56\u7565\u80fd\u4ea7\u751f\u8868\u8fbe\u529b\u66f4\u5f3a\u7684\u8054\u5408\u7b56\u7565\uff0c\u5e76\u4e14\u53ef\u4ee5\u5b9e\u73b0\u534f\u8c03\u7684\u8054\u5408\u884c\u52a8\uff0c\u5373\u4f7f\u4e0e\u96c6\u4e2d\u5f0f\u4ef7\u503c\u5206\u89e3\u65b9\u6cd5\u76f8\u6bd4\uff0c\u5176\u6700\u4f18\u6027\u4e5f\u5f97\u5230\u4e86\u8bc1\u660e\u3002\u5728\u7ecf\u9a8c\u4e0a\uff0c\u6211\u4eec\u5c55\u793a\u4e86AGP\u5728\u5177\u6709\u90e8\u5206\u53ef\u89c2\u5bdf\u6027\u548c\u53cd\u534f\u8c03\u60e9\u7f5a\u7684\u5178\u578b\u534f\u8c03\u4efb\u52a1\u4e2d\u53d6\u5f97\u4e8680-95%\u7684\u6210\u529f\u7387\uff0c\u800c\u5176\u4ed6MARL\u65b9\u6cd5\u4ec5\u8fbe\u523010-25%\u3002\u6211\u4eec\u8fdb\u4e00\u6b65\u8bc1\u660e\uff0cAGP\u5728\u5404\u79cd\u591a\u667a\u80fd\u4f53\u73af\u5883\u4e2d\u59cb\u7ec8\u4f18\u4e8e\u8fd9\u4e9b\u57fa\u7ebf\u3002"
+    },
+    {
+      "arxiv_id": "2602.16968",
+      "title": "DDiT: Dynamic Patch Scheduling for Efficient Diffusion Transformers",
+      "authors": [
+        "Dahye Kim",
+        "Deepti Ghadiyaram",
+        "Raghudeep Gadde"
+      ],
+      "summary": "Diffusion Transformers (DiTs) have achieved state-of-the-art performance in image and video generation, but their success comes at the cost of heavy computation. This inefficiency is largely due to the fixed tokenization process, which uses constant-sized patches throughout the entire denoising phase, regardless of the content's complexity. We propose dynamic tokenization, an efficient test-time strategy that varies patch sizes based on content complexity and the denoising timestep. Our key insight is that early timesteps only require coarser patches to model global structure, while later iterations demand finer (smaller-sized) patches to refine local details. During inference, our method dynamically reallocates patch sizes across denoising steps for image and video generation and substantially reduces cost while preserving perceptual generation quality. Extensive experiments demonstrate the effectiveness of our approach: it achieves up to $3.52\\times$ and $3.2\\times$ speedup on FLUX-1.Dev and Wan $2.1$, respectively, without compromising the generation quality and prompt adherence.",
+      "published": "2026-02-19T00:15:20Z",
+      "updated": "2026-02-19T00:15:20Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "link": "https://arxiv.org/pdf/2602.16968v1",
+      "first_seen": "2026-02-22T23:37:17.472137",
+      "code_url": null,
+      "summary_zh": "\u6269\u6563Transformer (DiTs) \u5728\u56fe\u50cf\u548c\u89c6\u9891\u751f\u6210\u4e2d\u53d6\u5f97\u4e86\u6700\u5148\u8fdb\u7684\u6027\u80fd\uff0c\u4f46\u5176\u6210\u529f\u4f34\u968f\u7740\u5de8\u5927\u7684\u8ba1\u7b97\u5f00\u9500\u3002\u8fd9\u79cd\u4f4e\u6548\u6027\u5f88\u5927\u7a0b\u5ea6\u4e0a\u6e90\u4e8e\u56fa\u5b9a\u7684\u5206\u8bcd\u8fc7\u7a0b\uff0c\u5373\u5728\u6574\u4e2a\u53bb\u566a\u9636\u6bb5\u4f7f\u7528\u6052\u5b9a\u5927\u5c0f\u7684\u5757\uff0c\u800c\u4e0d\u8003\u8651\u5185\u5bb9\u7684\u590d\u6742\u6027\u3002\u6211\u4eec\u63d0\u51fa\u4e86\u52a8\u6001\u5206\u8bcd\uff0c\u8fd9\u662f\u4e00\u79cd\u9ad8\u6548\u7684\u6d4b\u8bd5\u65f6\u7b56\u7565\uff0c\u5b83\u6839\u636e\u5185\u5bb9\u590d\u6742\u6027\u548c\u53bb\u566a\u65f6\u95f4\u6b65\u957f\u6765\u6539\u53d8\u5757\u5927\u5c0f\u3002\u6211\u4eec\u7684\u5173\u952e\u89c1\u89e3\u662f\uff0c\u65e9\u671f\u65f6\u95f4\u6b65\u957f\u53ea\u9700\u8981\u66f4\u7c97\u7684\u5757\u6765\u5efa\u6a21\u5168\u5c40\u7ed3\u6784\uff0c\u800c\u540e\u671f\u8fed\u4ee3\u5219\u9700\u8981\u66f4\u7cbe\u7ec6\uff08\u66f4\u5c0f\u5c3a\u5bf8\uff09\u7684\u5757\u6765\u7ec6\u5316\u5c40\u90e8\u7ec6\u8282\u3002\u5728\u63a8\u7406\u8fc7\u7a0b\u4e2d\uff0c\u6211\u4eec\u7684\u65b9\u6cd5\u5728\u53bb\u566a\u6b65\u9aa4\u4e2d\u52a8\u6001\u91cd\u65b0\u5206\u914d\u56fe\u50cf\u548c\u89c6\u9891\u751f\u6210\u7684\u5757\u5927\u5c0f\uff0c\u5728\u4fdd\u6301\u611f\u77e5\u751f\u6210\u8d28\u91cf\u7684\u540c\u65f6\u5927\u5e45\u964d\u4f4e\u4e86\u6210\u672c\u3002\u5927\u91cf\u7684\u5b9e\u9a8c\u8bc1\u660e\u4e86\u6211\u4eec\u65b9\u6cd5\u7684\u6709\u6548\u6027\uff1a\u5728FLUX-1.Dev\u548cWan 2.1\u4e0a\u5206\u522b\u5b9e\u73b0\u4e86\u9ad8\u8fbe3.52\u500d\u548c3.2\u500d\u7684\u52a0\u901f\uff0c\u540c\u65f6\u4e0d\u635f\u5bb3\u751f\u6210\u8d28\u91cf\u548c\u63d0\u793a\u4f9d\u4ece\u6027\u3002"
+    },
+    {
+      "arxiv_id": "2602.16872",
+      "title": "DODO: Discrete OCR Diffusion Models",
+      "authors": [
+        "Sean Man",
+        "Roy Ganz",
+        "Roi Ronen",
+        "Shahar Tsiper",
+        "Shai Mazor",
+        "Niv Nayman"
+      ],
+      "summary": "Optical Character Recognition (OCR) is a fundamental task for digitizing information, serving as a critical bridge between visual data and textual understanding. While modern Vision-Language Models (VLM) have achieved high accuracy in this domain, they predominantly rely on autoregressive decoding, which becomes computationally expensive and slow for long documents as it requires a sequential forward pass for every generated token. We identify a key opportunity to overcome this bottleneck: unlike open-ended generation, OCR is a highly deterministic task where the visual input strictly dictates a unique output sequence, theoretically enabling efficient, parallel decoding via diffusion models. However, we show that existing masked diffusion models fail to harness this potential; those introduce structural instabilities that are benign in flexible tasks, like captioning, but catastrophic for the rigid, exact-match requirements of OCR. To bridge this gap, we introduce DODO, the first VLM to utilize block discrete diffusion and unlock its speedup potential for OCR. By decomposing generation into blocks, DODO mitigates the synchronization errors of global diffusion. Empirically, our method achieves near state-of-the-art accuracy while enabling up to 3x faster inference compared to autoregressive baselines.",
+      "published": "2026-02-18T20:59:22Z",
+      "updated": "2026-02-18T20:59:22Z",
+      "categories": [
+        "cs.CV"
+      ],
+      "link": "https://arxiv.org/pdf/2602.16872v1",
+      "first_seen": "2026-02-22T23:37:17.474010",
+      "code_url": null,
+      "summary_zh": "\u5149\u5b66\u5b57\u7b26\u8bc6\u522b\uff08OCR\uff09\u662f\u4fe1\u606f\u6570\u5b57\u5316\u7684\u57fa\u7840\u4efb\u52a1\uff0c\u8fde\u63a5\u89c6\u89c9\u6570\u636e\u4e0e\u6587\u672c\u7406\u89e3\u3002\u5c3d\u7ba1\u73b0\u4ee3\u89c6\u89c9-\u8bed\u8a00\u6a21\u578b\uff08VLM\uff09\u5728\u6b64\u9886\u57df\u8868\u73b0\u51fa\u8272\uff0c\u4f46\u5176\u4e3b\u8981\u4f9d\u8d56\u81ea\u56de\u5f52\u89e3\u7801\uff0c\u8fd9\u5bfc\u81f4\u5904\u7406\u957f\u6587\u6863\u65f6\u8ba1\u7b97\u6210\u672c\u9ad8\u6602\u4e14\u901f\u5ea6\u6162\uff0c\u56e0\u6bcf\u4e2a\u751f\u6210\u7684token\u90fd\u9700\u8981\u987a\u5e8f\u524d\u5411\u4f20\u9012\u3002\u6211\u4eec\u53d1\u73b0\u4e00\u4e2a\u5173\u952e\u673a\u4f1a\u6765\u514b\u670d\u6b64\u74f6\u9888\uff1a\u4e0e\u5f00\u653e\u5f0f\u751f\u6210\u4e0d\u540c\uff0cOCR\u662f\u9ad8\u5ea6\u786e\u5b9a\u6027\u4efb\u52a1\uff0c\u89c6\u89c9\u8f93\u5165\u4e25\u683c\u51b3\u5b9a\u552f\u4e00\u8f93\u51fa\u5e8f\u5217\uff0c\u7406\u8bba\u4e0a\u53ef\u901a\u8fc7\u6269\u6563\u6a21\u578b\u5b9e\u73b0\u9ad8\u6548\u5e76\u884c\u89e3\u7801\u3002\u7136\u800c\uff0c\u6211\u4eec\u53d1\u73b0\u73b0\u6709\u63a9\u7801\u6269\u6563\u6a21\u578b\u672a\u80fd\u53d1\u6325\u6b64\u6f5c\u529b\uff1b\u5b83\u4eec\u5f15\u5165\u7684\u7ed3\u6784\u4e0d\u7a33\u5b9a\u6027\u5728\u7075\u6d3b\u4efb\u52a1\uff08\u5982\u56fe\u50cf\u63cf\u8ff0\uff09\u4e2d\u65e0\u5bb3\uff0c\u4f46\u5bf9OCR\u4e25\u683c\u7684\u7cbe\u786e\u5339\u914d\u8981\u6c42\u800c\u8a00\u5374\u662f\u707e\u96be\u6027\u7684\u3002\u4e3a\u5f25\u8865\u8fd9\u4e00\u5dee\u8ddd\uff0c\u6211\u4eec\u5f15\u5165DODO\uff0c\u9996\u4e2a\u5229\u7528\u5757\u79bb\u6563\u6269\u6563\u5e76\u91ca\u653e\u5176OCR\u52a0\u901f\u6f5c\u529b\u7684VLM\u3002\u901a\u8fc7\u5c06\u751f\u6210\u5206\u89e3\u4e3a\u5757\uff0cDODO\u51cf\u8f7b\u4e86\u5168\u5c40\u6269\u6563\u7684\u540c\u6b65\u9519\u8bef\u3002\u5b9e\u9a8c\u8bc1\u660e\uff0c\u6211\u4eec\u7684\u65b9\u6cd5\u5728\u5b9e\u73b0\u63a5\u8fd1\u6700\u5148\u8fdb\u51c6\u786e\u7387\u7684\u540c\u65f6\uff0c\u63a8\u7406\u901f\u5ea6\u6bd4\u81ea\u56de\u5f52\u57fa\u7ebf\u5feb3\u500d\u3002"
+    },
+    {
+      "arxiv_id": "2602.16802",
+      "title": "References Improve LLM Alignment in Non-Verifiable Domains",
+      "authors": [
+        "Kejian Shi",
+        "Yixin Liu",
+        "Peifeng Wang",
+        "Alexander R. Fabbri",
+        "Shafiq Joty",
+        "Arman Cohan"
+      ],
+      "summary": "While Reinforcement Learning with Verifiable Rewards (RLVR) has shown strong effectiveness in reasoning tasks, it cannot be directly applied to non-verifiable domains lacking ground-truth verifiers, such as LLM alignment. In this work, we investigate whether reference-guided LLM-evaluators can bridge this gap by serving as soft \"verifiers\". First, we design evaluation protocols that enhance LLM-based evaluators for LLM alignment using reference outputs. Through comprehensive experiments, we show that a reference-guided approach substantially improves the accuracy of less capable LLM-judges using references from frontier models; stronger LLM-judges can also be enhanced by high-quality (i.e., human-written) references. Building on these improved judges, we demonstrate the utility of high-quality references in alignment tuning, where LLMs guided with references are used as judges to self-improve. We show that reference-guided self-improvement yields clear gains over both direct SFT on reference outputs and self-improvement with reference-free judges, achieving performance comparable to training with ArmoRM, a strong finetuned reward model. Specifically, our method achieves 73.1% and 58.7% on AlpacaEval and Arena-Hard with Llama-3-8B-Instruct, and 70.0% and 74.1% with Qwen2.5-7B, corresponding to average absolute gains of +20.2 / +17.1 points over SFT distillation and +5.3 / +3.6 points over reference-free self-improvement on AlpacaEval / Arena-Hard. These results highlight the potential of using reference-guided LLM-evaluators to enable effective LLM post-training in non-verifiable domains.",
+      "published": "2026-02-18T19:03:34Z",
+      "updated": "2026-02-18T19:03:34Z",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "link": "https://arxiv.org/pdf/2602.16802v1",
+      "first_seen": "2026-02-22T23:37:17.475480",
+      "code_url": null,
+      "summary_zh": "\u5c3d\u7ba1\u53ef\u9a8c\u8bc1\u5956\u52b1\u5f3a\u5316\u5b66\u4e60\uff08RLVR\uff09\u5728\u63a8\u7406\u4efb\u52a1\u4e2d\u8868\u73b0\u51fa\u8272\uff0c\u4f46\u5b83\u65e0\u6cd5\u76f4\u63a5\u5e94\u7528\u4e8e\u7f3a\u4e4f\u771f\u5b9e\u9a8c\u8bc1\u5668\u7684\u975e\u53ef\u9a8c\u8bc1\u9886\u57df\uff0c\u4f8b\u5982LLM\u5bf9\u9f50\u3002\u672c\u6587\u7814\u7a76\u4e86\u53c2\u8003\u5f15\u5bfc\u7684LLM\u8bc4\u4f30\u5668\u662f\u5426\u80fd\u901a\u8fc7\u5145\u5f53\u8f6f\u201c\u9a8c\u8bc1\u5668\u201d\u6765\u5f25\u8865\u8fd9\u4e00\u7a7a\u767d\u3002\u9996\u5148\uff0c\u6211\u4eec\u8bbe\u8ba1\u4e86\u8bc4\u4f30\u534f\u8bae\uff0c\u5229\u7528\u53c2\u8003\u8f93\u51fa\u6765\u589e\u5f3a\u57fa\u4e8eLLM\u7684\u8bc4\u4f30\u5668\u8fdb\u884cLLM\u5bf9\u9f50\u3002\u7efc\u5408\u5b9e\u9a8c\u8868\u660e\uff0c\u53c2\u8003\u5f15\u5bfc\u65b9\u6cd5\u663e\u8457\u63d0\u9ad8\u4e86\u80fd\u529b\u8f83\u5f31\u7684LLM\u8bc4\u4f30\u5668\u4f7f\u7528\u524d\u6cbf\u6a21\u578b\u53c2\u8003\u7684\u51c6\u786e\u6027\uff1b\u9ad8\u8d28\u91cf\uff08\u5373\u4eba\u5de5\u7f16\u5199\uff09\u7684\u53c2\u8003\u4e5f\u80fd\u589e\u5f3a\u66f4\u5f3a\u7684LLM\u8bc4\u4f30\u5668\u3002\u5728\u6b64\u57fa\u7840\u4e0a\uff0c\u6211\u4eec\u5c55\u793a\u4e86\u9ad8\u8d28\u91cf\u53c2\u8003\u5728\u5bf9\u9f50\u5fae\u8c03\u4e2d\u7684\u6548\u7528\uff0c\u5176\u4e2dLLM\u5728\u53c2\u8003\u5f15\u5bfc\u4e0b\u4f5c\u4e3a\u8bc4\u4f30\u5668\u8fdb\u884c\u81ea\u6211\u63d0\u5347\u3002\u6211\u4eec\u53d1\u73b0\uff0c\u53c2\u8003\u5f15\u5bfc\u7684\u81ea\u6211\u63d0\u5347\u6bd4\u76f4\u63a5\u5728\u53c2\u8003\u8f93\u51fa\u4e0a\u8fdb\u884cSFT\u548c\u65e0\u53c2\u8003\u8bc4\u4f30\u5668\u7684\u81ea\u6211\u63d0\u5347\u90fd\u53d6\u5f97\u4e86\u663e\u8457\u8fdb\u6b65\uff0c\u6027\u80fd\u53ef\u4e0e\u4f7f\u7528\u5f3a\u5927\u7684\u5fae\u8c03\u5956\u52b1\u6a21\u578bArmoRM\u8fdb\u884c\u8bad\u7ec3\u76f8\u5ab2\u7f8e\u3002\u5177\u4f53\u800c\u8a00\uff0c\u6211\u4eec\u7684\u65b9\u6cd5\u5728\u4f7f\u7528Llama-3-8B-Instruct\u65f6\uff0c\u5728AlpacaEval\u548cArena-Hard\u4e0a\u5206\u522b\u8fbe\u523073.1%\u548c58.7%\uff1b\u4f7f\u7528Qwen2.5-7B\u65f6\uff0c\u5206\u522b\u8fbe\u523070.0%\u548c74.1%\u3002\u8fd9\u6bd4SFT\u84b8\u998f\u5e73\u5747\u7edd\u5bf9\u63d0\u5347\u4e86+20.2 / +17.1\u70b9\uff0c\u6bd4\u65e0\u53c2\u8003\u81ea\u6211\u63d0\u5347\u5728AlpacaEval / Arena-Hard\u4e0a\u5e73\u5747\u7edd\u5bf9\u63d0\u5347\u4e86+5.3 / +3.6\u70b9\u3002\u8fd9\u4e9b\u7ed3\u679c\u7a81\u51fa\u4e86\u4f7f\u7528\u53c2\u8003\u5f15\u5bfc\u7684LLM\u8bc4\u4f30\u5668\u5728\u975e\u53ef\u9a8c\u8bc1\u9886\u57df\u5b9e\u73b0\u6709\u6548LLM\u540e\u8bad\u7ec3\u7684\u6f5c\u529b\u3002"
+    },
+    {
+      "arxiv_id": "2602.16796",
+      "title": "Efficient Tail-Aware Generative Optimization via Flow Model Fine-Tuning",
+      "authors": [
+        "Zifan Wang",
+        "Riccardo De Santi",
+        "Xiaoyu Mo",
+        "Michael M. Zavlanos",
+        "Andreas Krause",
+        "Karl H. Johansson"
+      ],
+      "summary": "Fine-tuning pre-trained diffusion and flow models to optimize downstream utilities is central to real-world deployment. Existing entropy-regularized methods primarily maximize expected reward, providing no mechanism to shape tail behavior. However, tail control is often essential: the lower tail determines reliability by limiting low-reward failures, while the upper tail enables discovery by prioritizing rare, high-reward outcomes. In this work, we present Tail-aware Flow Fine-Tuning (TFFT), a principled and efficient distributional fine-tuning algorithm based on the Conditional Value-at-Risk (CVaR). We address two distinct tail-shaping goals: right-CVaR for seeking novel samples in the high-reward tail and left-CVaR for controlling worst-case samples in the low-reward tail. Unlike prior approaches that rely on non-linear optimization, we leverage the variational dual formulation of CVaR to decompose it into a decoupled two-stage procedure: a lightweight one-dimensional threshold optimization step, and a single entropy-regularized fine-tuning process via a specific pseudo-reward. This decomposition achieves CVaR fine-tuning efficiently with computational cost comparable to standard expected fine-tuning methods. We demonstrate the effectiveness of TFFT across illustrative experiments, high-dimensional text-to-image generation, and molecular design.",
+      "published": "2026-02-18T19:00:59Z",
+      "updated": "2026-02-18T19:00:59Z",
+      "categories": [
+        "cs.LG",
+        "math.OC"
+      ],
+      "link": "https://arxiv.org/pdf/2602.16796v1",
+      "first_seen": "2026-02-22T23:37:17.475601",
+      "code_url": null,
+      "summary_zh": "\u5c06\u9884\u8bad\u7ec3\u6269\u6563\u6a21\u578b\u548c\u6d41\u6a21\u578b\u5fae\u8c03\u4ee5\u4f18\u5316\u4e0b\u6e38\u6548\u7528\u662f\u5b9e\u9645\u90e8\u7f72\u7684\u5173\u952e\u3002\u73b0\u6709\u71b5\u6b63\u5219\u5316\u65b9\u6cd5\u4e3b\u8981\u6700\u5927\u5316\u9884\u671f\u5956\u52b1\uff0c\u65e0\u6cd5\u5851\u9020\u5c3e\u90e8\u884c\u4e3a\u3002\u7136\u800c\uff0c\u5c3e\u90e8\u63a7\u5236\u901a\u5e38\u81f3\u5173\u91cd\u8981\uff1a\u4e0b\u5c3e\u901a\u8fc7\u9650\u5236\u4f4e\u5956\u52b1\u5931\u8d25\u6765\u51b3\u5b9a\u53ef\u9760\u6027\uff0c\u800c\u4e0a\u5c3e\u901a\u8fc7\u4f18\u5148\u8003\u8651\u7f55\u89c1\u9ad8\u5956\u52b1\u7ed3\u679c\u6765\u5b9e\u73b0\u53d1\u73b0\u3002\n\n\u672c\u7814\u7a76\u63d0\u51fa\u4e86\u4e00\u79cd\u57fa\u4e8e\u6761\u4ef6\u98ce\u9669\u4ef7\u503c\uff08CVaR\uff09\u7684\u539f\u5219\u6027\u9ad8\u6548\u5206\u5e03\u5fae\u8c03\u7b97\u6cd5\u2014\u2014\u5c3e\u90e8\u611f\u77e5\u6d41\u5fae\u8c03\uff08TFFT\uff09\u3002\u6211\u4eec\u89e3\u51b3\u4e86\u4e24\u4e2a\u4e0d\u540c\u7684\u5c3e\u90e8\u5851\u9020\u76ee\u6807\uff1a\u53f3CVaR\u7528\u4e8e\u5728\u9ad8\u5956\u52b1\u5c3e\u90e8\u5bfb\u627e\u65b0\u9896\u6837\u672c\uff0c\u5de6CVaR\u7528\u4e8e\u63a7\u5236\u4f4e\u5956\u52b1\u5c3e\u90e8\u7684\u6700\u5dee\u6837\u672c\u3002\n\n\u4e0e\u4f9d\u8d56\u975e\u7ebf\u6027\u4f18\u5316\u7684\u73b0\u6709\u65b9\u6cd5\u4e0d\u540c\uff0c\u6211\u4eec\u5229\u7528CVaR\u7684\u53d8\u5206\u5bf9\u5076\u516c\u5f0f\u5c06\u5176\u5206\u89e3\u4e3a\u89e3\u8026\u7684\u4e24\u9636\u6bb5\u8fc7\u7a0b\uff1a\u4e00\u4e2a\u8f7b\u91cf\u7ea7\u7684\u4e00\u7ef4\u9608\u503c\u4f18\u5316\u6b65\u9aa4\uff0c\u4ee5\u53ca\u4e00\u4e2a\u901a\u8fc7\u7279\u5b9a\u4f2a\u5956\u52b1\u8fdb\u884c\u7684\u5355\u4e00\u71b5\u6b63\u5219\u5316\u5fae\u8c03\u8fc7\u7a0b\u3002\u8fd9\u79cd\u5206\u89e3\u4f7f\u5f97CVaR\u5fae\u8c03\u80fd\u591f\u9ad8\u6548\u8fdb\u884c\uff0c\u8ba1\u7b97\u6210\u672c\u4e0e\u6807\u51c6\u9884\u671f\u5fae\u8c03\u65b9\u6cd5\u76f8\u5f53\u3002\u6211\u4eec\u901a\u8fc7\u8bf4\u660e\u6027\u5b9e\u9a8c\u3001\u9ad8\u7ef4\u6587\u672c\u5230\u56fe\u50cf\u751f\u6210\u548c\u5206\u5b50\u8bbe\u8ba1\u8bc1\u660e\u4e86TFFT\u7684\u6709\u6548\u6027\u3002"
+    }
+  ]
+}

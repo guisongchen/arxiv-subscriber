@@ -52,13 +52,25 @@ Get your OpenRouter token: https://openrouter.ai/keys
 
 #### Multi-Device Setup
 
-To use this tool on multiple devices without committing API keys to git:
+The `papers.json` file tracks which papers you've already seen to prevent duplicates in Notion. To use this tool on multiple devices:
 
-1. **On each device**: Copy `.env.example` to `.env` and fill in your secrets
-2. **Store keys securely**: Use a password manager (1Password, Bitwarden, etc.) to sync API keys between devices
-3. **Never commit `.env`**: It's already gitignored
+**Commit and push papers.json after each run:**
 
-This keeps your keys secure while allowing you to work across devices.
+```bash
+# After running the script
+uv run python arxiv_subscriber.py
+git add papers.json
+git commit -m "Update papers.json"
+git push
+
+# On other devices - pull before running
+git pull
+uv run python arxiv_subscriber.py
+```
+
+The file is small (typically under 100KB) and git handles it well. The archive folder (`archive/`) remains gitignored - only the active `papers.json` needs to be synced.
+
+**Note**: `.env` files should still be configured separately on each device (they contain device-specific paths and API keys).
 
 ### 3. Setup Notion Database
 

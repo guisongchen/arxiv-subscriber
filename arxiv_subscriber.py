@@ -655,6 +655,10 @@ def main():
     subscriber = ArxivSubscriber(notion_client=notion_client)
     logger.info(f"ArxivSubscriber initialized with {len(subscriber.papers)} existing papers")
 
+    # Warn about potential multi-device sync issues
+    if len(subscriber.seen_ids) == 0:
+        logger.warning("First run detected - papers.json is empty. If you've run this before on another device, run 'git pull' to sync papers.json and avoid duplicates in Notion.")
+
     if TRANSLATION_AVAILABLE:
         logger.info("Translation enabled")
     else:

@@ -100,6 +100,7 @@ uv sync
 - Archive logic: papers older than 30 days moved to `archive/papers_YYYY-MM.json`
 - Translation: lazy-loaded only when sending to Notion (not during fetch)
 - Debug logging: use `DEBUG=1` to see detailed execution trace and filtered paper reasons
+- Multi-device: commit/push `papers.json` to git before switching devices
 
 ## API Limits
 
