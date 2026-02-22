@@ -113,7 +113,10 @@ Create a database with these properties:
 ### Run once to fetch new papers
 
 ```bash
-# Using uv
+# Using the wrapper script (recommended - auto-syncs papers)
+./run.sh
+
+# Or manually with uv
 uv run python arxiv_subscriber.py
 
 # Or using python directly
@@ -124,7 +127,7 @@ python arxiv_subscriber.py
 
 Add to your crontab:
 ```bash
-0 9 * * * cd /path/to/arxiv_subscriber && uv run python arxiv_subscriber.py
+0 9 * * * cd /path/to/arxiv_subscriber && ./run.sh
 ```
 
 ## Data Storage

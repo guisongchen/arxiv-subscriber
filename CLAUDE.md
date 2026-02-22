@@ -12,7 +12,8 @@ Repository: https://github.com/guisongchen/arxiv-subscriber
 - **Notion integration** - syncs papers to Notion database automatically
 - **Code repository detection** - auto-detects GitHub/GitLab/HuggingFace URLs in summaries
 - **Chinese translation** - translates paper summaries using OpenRouter LLM API
-- **Automatic archiving** - moves papers older than 30 days to `archive/` folder
+- **Automatic archiving** - moves papers older than 3 months to `papers/archive/`
+- **Git auto-sync** - `run.sh` wrapper script for multi-device sync with auto-commit/push
 - **Duplicate prevention** - tracks seen paper IDs to avoid duplicates
 - **Debug logging** - structured logging with DEBUG environment variable for troubleshooting
 
@@ -21,8 +22,10 @@ Repository: https://github.com/guisongchen/arxiv-subscriber
 | File | Description |
 |------|-------------|
 | `arxiv_subscriber.py` | Main script - fetches, processes, and syncs papers |
+| `run.sh` | Wrapper script with auto git pull/commit/push for multi-device sync |
 | `papers/YYYY-MM.json` | Papers organized by month (tracked in git) |
 | `papers/archive/YYYY-MM.json` | Archived papers older than 3 months (gitignored) |
+| `.githooks/` | Git hooks for reminders (post-commit, post-merge) |
 | `pyproject.toml` | Python dependencies (managed by uv) |
 | `.env` | Environment variables (gitignored) |
 
@@ -72,7 +75,10 @@ Required properties:
 
 ### Run
 ```bash
-# Using uv (recommended)
+# Using wrapper script (recommended - auto-syncs with git)
+./run.sh
+
+# Using uv (manual)
 uv run python3 arxiv_subscriber.py
 
 # Direct
@@ -89,7 +95,7 @@ uv sync
 
 ### Schedule (cron)
 ```bash
-0 9 * * * cd /home/ccc/vibe_projects/arxiv_subscriber && uv run python3 arxiv_subscriber.py
+0 9 * * * cd /home/ccc/vibe_projects/arxiv_subscriber && ./run.sh
 ```
 
 ## Architecture Notes
@@ -101,7 +107,8 @@ uv sync
 - Archive logic: month files older than 3 months moved to `papers/archive/`
 - Translation: lazy-loaded only when sending to Notion (not during fetch)
 - Debug logging: use `DEBUG=1` to see detailed execution trace and filtered paper reasons
-- Multi-device: commit/push `papers/` directory to git before switching devices
+- Multi-device: use `./run.sh` for auto-sync, or manually commit/push `papers/` directory
+- Git hooks: enable with `git config core.hooksPath .githooks` for push reminders
 
 ## API Limits
 
