@@ -603,38 +603,12 @@ class ArxivSubscriber:
         logger.info(f"Found {len(new_papers)} new papers matching criteria")
         return new_papers
 
-    def get_recent_papers(self, days: int = 7) -> List[Paper]:
-        """Get papers published in the last N days."""
-        cutoff = datetime.now() - timedelta(days=days)
-        recent = []
-
-        for paper in self.papers:
-            try:
-                published = datetime.fromisoformat(paper.published.replace('Z', '+00:00'))
-                if published > cutoff:
-                    recent.append(paper)
-            except Exception as e:
-                logger.warning(f"Failed to parse published date for paper {paper.arxiv_id}: {e}")
-
-        return recent
-
     def list_categories(self):
         """List all categories we've seen papers from."""
         cats = set()
         for paper in self.papers:
             cats.update(paper.categories)
         return sorted(cats)
-
-    def search_papers(self, keyword: str) -> List[Paper]:
-        """Search papers by keyword in title or summary."""
-        keyword = keyword.lower()
-        results = []
-
-        for paper in self.papers:
-            if keyword in paper.title.lower() or keyword in paper.summary.lower():
-                results.append(paper)
-
-        return results
 
     def matches_topics(self, paper: Paper) -> bool:
         """Check if paper matches topic keywords. Returns True if no keywords configured."""
