@@ -14,6 +14,7 @@ from datetime import datetime, timedelta
 from dataclasses import dataclass, asdict
 from typing import List, Set, Optional
 import time
+import logging
 
 # Load environment variables from .env file if python-dotenv is available
 try:
@@ -21,6 +22,17 @@ try:
     load_dotenv()
 except ImportError:
     pass
+
+# Logging setup
+DEBUG_MODE = os.getenv("DEBUG", "").lower() in ("1", "true", "yes")
+LOG_LEVEL = logging.DEBUG if DEBUG_MODE else logging.INFO
+
+logging.basicConfig(
+    level=LOG_LEVEL,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 
 # OpenAI import for translation (optional)
 try:
@@ -44,8 +56,17 @@ MAX_RESULTS = int(os.getenv("MAX_RESULTS", "300"))
 
 def translate_with_llm(text: str) -> Optional[str]:
     """Translate text to Chinese using OpenRouter LLM API."""
-    if not TRANSLATION_AVAILABLE or not text or not OPENAI_AVAILABLE:
+    if not TRANSLATION_AVAILABLE:
+        logger.debug("Translation skipped: TRANSLATION_AVAILABLE=False")
         return None
+    if not text:
+        logger.debug("Translation skipped: empty text")
+        return None
+    if not OPENAI_AVAILABLE:
+        logger.debug("Translation skipped: openai module not available")
+        return None
+
+    logger.debug(f"Starting translation for text of {len(text)} chars")
 
     # Set up OpenAI with configured base URL
     openai.api_key = TRANSLATE_API_TOKEN
@@ -62,6 +83,7 @@ Text to translate:
 Chinese translation:"""
 
     try:
+        logger.debug(f"Calling translation API with model: {TRANSLATE_MODEL}")
         response = openai.ChatCompletion.create(
             model=TRANSLATE_MODEL,
             messages=[{"role": "user", "content": prompt}],
@@ -74,14 +96,19 @@ Chinese translation:"""
         )
         if response.choices and len(response.choices) > 0:
             translated = response.choices[0].message.content.strip()
+            logger.debug(f"Translation successful, result length: {len(translated)} chars")
             return translated
+        else:
+            logger.warning("Translation API returned empty response")
     except Exception as e:
-        print(f"  ⚠️  Translation failed: {e}")
+        logger.error(f"Translation failed: {e}")
+        if DEBUG_MODE:
+            logger.exception("Translation error details:")
 
     return None
 
 # arXiv API endpoint
-ARXIV_API_URL = "http://export.arxiv.org/api/query"
+ARXIV_API_URL = "https://export.arxiv.org/api/query"
 
 # Notion API
 NOTION_API_KEY = os.getenv("NOTION_API_KEY", "")
@@ -198,9 +225,13 @@ class Paper:
             # Check both title and summary for code URLs
             combined_text = f"{self.title} {self.summary}"
             self.code_url = extract_code_url(combined_text)
-        # Translate summary to Chinese if not already done
+
+    def get_summary_zh(self) -> Optional[str]:
+        """Get Chinese translation (lazy - only translates when needed)."""
         if self.summary_zh is None and TRANSLATION_AVAILABLE:
+            logger.debug(f"Translating summary for {self.arxiv_id}")
             self.summary_zh = translate_to_chinese(self.summary)
+        return self.summary_zh
 
 
 class NotionClient:
@@ -214,7 +245,10 @@ class NotionClient:
     def add_paper(self, paper: Paper) -> bool:
         """Add a paper to the Notion database."""
         if not self.api_key or not self.database_id:
+            logger.debug("Notion credentials missing, skipping add_paper")
             return False
+
+        logger.debug(f"Adding paper to Notion: {paper.arxiv_id} - {paper.title[:50]}...")
 
         url = f"{self.base_url}/pages"
         headers = {
@@ -245,10 +279,11 @@ class NotionClient:
             }
         }
 
-        # Add Chinese summary if available
-        if paper.summary_zh:
+        # Add Chinese summary if available (lazy translation)
+        summary_zh = paper.get_summary_zh()
+        if summary_zh:
             data["properties"]["Summary (中文)"] = {
-                "rich_text": [{"text": {"content": paper.summary_zh[:2000]}}]
+                "rich_text": [{"text": {"content": summary_zh[:2000]}}]
             }
 
         try:
@@ -261,9 +296,12 @@ class NotionClient:
 
             with urllib.request.urlopen(req, timeout=30) as response:
                 if response.status == 200:
+                    logger.info(f"Successfully added paper to Notion: {paper.arxiv_id}")
                     return True
         except Exception as e:
-            print(f"  ⚠️  Failed to add to Notion: {e}")
+            logger.error(f"Failed to add paper {paper.arxiv_id} to Notion: {e}")
+            if DEBUG_MODE:
+                logger.exception("Notion API error details:")
 
         return False
 
@@ -280,6 +318,7 @@ class ArxivSubscriber:
 
     def _load_data(self):
         """Load previously seen papers from disk."""
+        logger.debug(f"Loading data from: {self.data_file}")
         if os.path.exists(self.data_file):
             with open(self.data_file, 'r') as f:
                 data = json.load(f)
@@ -287,7 +326,9 @@ class ArxivSubscriber:
                     paper = Paper(**p)
                     self.papers.append(paper)
                     self.seen_ids.add(paper.arxiv_id)
-            print(f"Loaded {len(self.papers)} previously seen papers")
+            logger.info(f"Loaded {len(self.papers)} previously seen papers")
+        else:
+            logger.info("No existing data file found, starting fresh")
 
     def _save_data(self):
         """Save papers to disk."""
@@ -297,6 +338,7 @@ class ArxivSubscriber:
         }
         with open(self.data_file, 'w') as f:
             json.dump(data, f, indent=2)
+        logger.debug(f"Saved {len(self.papers)} papers to {self.data_file}")
 
     def _archive_old_papers(self, days: int = 30):
         """Archive papers older than N days to separate files in archive/ folder.
@@ -305,6 +347,7 @@ class ArxivSubscriber:
         Returns number of papers archived.
         """
         cutoff = datetime.now() - timedelta(days=days)
+        logger.debug(f"Archiving papers older than {days} days (cutoff: {cutoff.isoformat()})")
         to_archive = []
         to_keep = []
 
@@ -315,12 +358,18 @@ class ArxivSubscriber:
                     to_archive.append(paper)
                 else:
                     to_keep.append(paper)
-            except:
+            except Exception as e:
                 # If date parsing fails, keep the paper
+                logger.warning(f"Failed to parse date for paper {paper.arxiv_id}: {e}")
+                if DEBUG_MODE:
+                    logger.exception("Date parsing error:")
                 to_keep.append(paper)
 
         if not to_archive:
+            logger.debug("No papers to archive")
             return 0
+
+        logger.info(f"Archiving {len(to_archive)} papers to archive/ folder")
 
         # Create archive folder if it doesn't exist
         archive_dir = os.path.join(os.path.dirname(self.data_file) or '.', 'archive')
@@ -351,8 +400,8 @@ class ArxivSubscriber:
                     try:
                         data = json.load(f)
                         existing_papers = data.get('papers', [])
-                    except:
-                        pass
+                    except Exception as e:
+                        logger.warning(f"Failed to load existing archive {archive_file}: {e}")
 
             # Merge and save
             all_papers = existing_papers + [asdict(p) for p in papers]
@@ -382,6 +431,7 @@ class ArxivSubscriber:
 
         # Build query: OR all categories
         cat_query = " OR ".join([f"cat:{cat}" for cat in categories])
+        logger.debug(f"Fetching from categories: {categories}, max_results={max_results}")
 
         params = {
             'search_query': cat_query,
@@ -400,6 +450,8 @@ class ArxivSubscriber:
 
             with urllib.request.urlopen(req, timeout=30) as response:
                 data = response.read()
+
+            logger.debug(f"Received response of {len(data)} bytes")
 
             # Parse Atom feed
             root = ET.fromstring(data)
@@ -457,23 +509,31 @@ class ArxivSubscriber:
 
                 papers.append(paper)
 
+            logger.info(f"Fetched {len(papers)} papers from arXiv")
+
             # Rate limiting - be nice to arXiv
             time.sleep(3)
 
         except Exception as e:
-            print(f"Error fetching papers: {e}")
+            logger.error(f"Error fetching papers: {e}")
+            if DEBUG_MODE:
+                logger.exception("Fetch error details:")
 
         return papers
 
     def check_for_new_papers(self) -> List[Paper]:
         """Check for new papers and return any that haven't been seen."""
-        print(f"Fetching papers from {len(CS_CATEGORIES)} CS categories...")
+        logger.info(f"Checking for new papers from {len(CS_CATEGORIES)} categories")
+        logger.debug(f"Categories: {CS_CATEGORIES}")
         if TOPIC_KEYWORDS:
-            print(f"Filtering for topics: {', '.join(TOPIC_KEYWORDS)}")
+            logger.info(f"Topic filter active: {', '.join(TOPIC_KEYWORDS)}")
         if EXCLUDE_KEYWORDS:
-            print(f"Excluding topics: {', '.join(EXCLUDE_KEYWORDS)}")
+            logger.info(f"Exclusion filter active: {', '.join(EXCLUDE_KEYWORDS)}")
 
+        logger.info(f"Fetching up to {MAX_RESULTS} papers from arXiv (this may take a moment)...")
         fetched_papers = self._fetch_papers(CS_CATEGORIES, max_results=MAX_RESULTS)
+        logger.debug(f"Fetched {len(fetched_papers)} papers, {len(self.seen_ids)} already seen")
+
         new_papers = []
         filtered_count = 0
 
@@ -483,25 +543,26 @@ class ArxivSubscriber:
                 if not self.matches_topics(paper):
                     filtered_count += 1
                     self.seen_ids.add(paper.arxiv_id)  # Mark as seen to skip next time
+                    logger.debug(f"Filtered out paper {paper.arxiv_id}: '{paper.title[:60]}...' - no topic match")
                     continue
 
                 new_papers.append(paper)
                 self.papers.append(paper)
                 self.seen_ids.add(paper.arxiv_id)
+                logger.info(f"New paper found: {paper.arxiv_id} - {paper.title[:60]}...")
 
                 # Send to Notion if configured
                 if self.notion:
                     success = self.notion.add_paper(paper)
-                    if success:
-                        print(f"  ✓ Sent to Notion: {paper.title[:50]}...")
                     time.sleep(0.5)  # Rate limit for Notion API
 
         # Save updated data
         self._save_data()
 
         if filtered_count > 0:
-            print(f"  (Filtered out {filtered_count} papers not matching topics)")
+            logger.info(f"Filtered out {filtered_count} papers not matching topics")
 
+        logger.info(f"Found {len(new_papers)} new papers matching criteria")
         return new_papers
 
     def get_recent_papers(self, days: int = 7) -> List[Paper]:
@@ -514,8 +575,8 @@ class ArxivSubscriber:
                 published = datetime.fromisoformat(paper.published.replace('Z', '+00:00'))
                 if published > cutoff:
                     recent.append(paper)
-            except:
-                pass
+            except Exception as e:
+                logger.warning(f"Failed to parse published date for paper {paper.arxiv_id}: {e}")
 
         return recent
 
@@ -547,13 +608,16 @@ class ArxivSubscriber:
         # Check exclude keywords first
         for kw in EXCLUDE_KEYWORDS:
             if kw in text:
+                logger.debug(f"Paper {paper.arxiv_id} excluded by keyword: '{kw}'")
                 return False
 
         # Check include keywords - must match at least one
         for kw in TOPIC_KEYWORDS:
             if kw in text:
+                logger.debug(f"Paper {paper.arxiv_id} matched topic keyword: '{kw}'")
                 return True
 
+        logger.debug(f"Paper {paper.arxiv_id} did not match any topic keywords")
         return False
 
 
@@ -570,52 +634,51 @@ def print_paper(paper: Paper, show_summary: bool = False):
         print(f"Code: {paper.code_url}")
     if show_summary:
         print(f"\nSummary:\n{paper.summary[:500]}...")
-    if show_summary and paper.summary_zh:
-        print(f"\nSummary (中文):\n{paper.summary_zh[:500]}...")
+        summary_zh = paper.get_summary_zh()
+        if summary_zh:
+            print(f"\nSummary (中文):\n{summary_zh[:500]}...")
 
 
 def main():
     """Main entry point."""
+    logger.info("Starting arXiv CS Subscriber")
+    logger.debug(f"DEBUG mode enabled")
+
     # Initialize Notion client if credentials are available
     notion_client = None
     if NOTION_API_KEY and NOTION_DATABASE_ID:
         notion_client = NotionClient(NOTION_API_KEY, NOTION_DATABASE_ID)
-        print("Notion integration enabled")
+        logger.info("Notion integration enabled")
+    else:
+        logger.info("Notion integration disabled (missing credentials)")
 
     subscriber = ArxivSubscriber(notion_client=notion_client)
+    logger.info(f"ArxivSubscriber initialized with {len(subscriber.papers)} existing papers")
 
     if TRANSLATION_AVAILABLE:
-        print("Translation enabled (DeepL)")
-
-    if TOPIC_KEYWORDS:
-        print(f"Topic filter active: {', '.join(TOPIC_KEYWORDS)}")
-    if EXCLUDE_KEYWORDS:
-        print(f"Exclusion filter active: {', '.join(EXCLUDE_KEYWORDS)}")
-
-    print("=" * 70)
-    print("arXiv CS Subscriber")
-    print("=" * 70)
+        logger.info("Translation enabled")
+    else:
+        logger.info("Translation disabled")
 
     # Archive papers older than 30 days
     archived = subscriber._archive_old_papers(days=30)
     if archived > 0:
-        print(f"📦 Archived {archived} old papers to archive/ folder")
+        logger.info(f"Archived {archived} old papers to archive/ folder")
 
     # Check for new papers
     new_papers = subscriber.check_for_new_papers()
 
     if new_papers:
-        print(f"\n📬 Found {len(new_papers)} new papers!")
+        logger.info(f"Found {len(new_papers)} new papers!")
         for paper in new_papers[:5]:  # Show first 5
             print_paper(paper)
 
         if len(new_papers) > 5:
             print(f"\n... and {len(new_papers) - 5} more")
     else:
-        print("\n📭 No new papers found.")
+        logger.info("No new papers found")
 
-    print(f"\nTotal papers tracked: {len(subscriber.papers)}")
-    print(f"Categories tracked: {len(subscriber.list_categories())}")
+    logger.info(f"Run complete. Total tracked: {len(subscriber.papers)}, Categories: {len(subscriber.list_categories())}")
 
 
 if __name__ == "__main__":
