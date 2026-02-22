@@ -194,14 +194,6 @@ def extract_code_url(text: str) -> Optional[str]:
     return None
 
 
-def translate_to_chinese(text: str, max_retries: int = 2) -> Optional[str]:
-    """Translate text to Chinese using OpenRouter LLM API.
-
-    Returns translated text or None if translation fails.
-    """
-    return translate_with_llm(text)
-
-
 @dataclass
 class Paper:
     """Represents an arXiv paper."""
@@ -230,7 +222,7 @@ class Paper:
         """Get Chinese translation (lazy - only translates when needed)."""
         if self.summary_zh is None and TRANSLATION_AVAILABLE:
             logger.debug(f"Translating summary for {self.arxiv_id}")
-            self.summary_zh = translate_to_chinese(self.summary)
+            self.summary_zh = translate_with_llm(self.summary)
         return self.summary_zh
 
 
