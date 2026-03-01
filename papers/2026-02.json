@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-01T11:14:09.158208",
+  "last_updated": "2026-03-01T11:52:20.043641",
   "paper_count": 308,
   "papers": [
     {
@@ -19,7 +19,8 @@
       "link": "https://arxiv.org/pdf/2602.17632v1",
       "first_seen": "2026-02-22T23:37:17.458957",
       "code_url": null,
-      "summary_zh": "\u73b0\u4ee3\u79bb\u7ebf\u5f3a\u5316\u5b66\u4e60\uff08RL\uff09\u65b9\u6cd5\u80fd\u627e\u5230\u9ad8\u6027\u80fd\u7684actor-critic\uff0c\u4f46\u4f7f\u7528\u57fa\u4e8e\u4ef7\u503c\u7684RL\u7b97\u6cd5\u5728\u7ebf\u5fae\u8c03\u8fd9\u4e9bactor-critic\u901a\u5e38\u4f1a\u5bfc\u81f4\u6027\u80fd\u7acb\u5373\u4e0b\u964d\u3002\u6211\u4eec\u63d0\u51fa\u7684\u8bc1\u636e\u652f\u6301\u4ee5\u4e0b\u5047\u8bbe\uff1a\u5728\u635f\u5931\u51fd\u6570\u666f\u89c2\u4e2d\uff0c\u73b0\u6709\u7b97\u6cd5\u7684\u79bb\u7ebf\u6700\u4f18\u89e3\u4e0e\u5728\u7ebf\u6700\u4f18\u89e3\u4e4b\u95f4\u5b58\u5728\u4f4e\u6027\u80fd\u7684\u201c\u8c37\u201d\uff0c\u800c\u57fa\u4e8e\u68af\u5ea6\u7684\u5fae\u8c03\u4f1a\u7a7f\u8fc7\u8fd9\u4e9b\u201c\u8c37\u201d\u3002\u57fa\u4e8e\u6b64\uff0c\u6211\u4eec\u63d0\u51fa\u4e86Score Matched Actor-Critic (SMAC)\uff0c\u8fd9\u662f\u4e00\u79cd\u79bb\u7ebfRL\u65b9\u6cd5\uff0c\u65e8\u5728\u5b66\u4e60\u80fd\u591f\u5e73\u7a33\u8fc7\u6e21\u5230\u5728\u7ebf\u57fa\u4e8e\u4ef7\u503c\u7684RL\u7b97\u6cd5\u4e14\u6027\u80fd\u4e0d\u4e0b\u964d\u7684actor-critic\u3002SMAC\u901a\u8fc7\u5728\u79bb\u7ebf\u9636\u6bb5\u6b63\u5219\u5316Q\u51fd\u6570\uff0c\u4f7f\u5176\u9075\u5b88\u7b56\u7565\u5f97\u5206\u4e0eQ\u51fd\u6570\u52a8\u4f5c\u68af\u5ea6\u4e4b\u95f4\u7684\u4e00\u9636\u5bfc\u6570\u7b49\u5f0f\uff0c\u4ece\u800c\u907f\u514d\u4e86\u79bb\u7ebf\u548c\u5728\u7ebf\u6700\u4f18\u89e3\u4e4b\u95f4\u7684\u201c\u8c37\u201d\u3002\u5b9e\u9a8c\u8bc1\u660e\uff0cSMAC\u6536\u655b\u5230\u7684\u79bb\u7ebf\u6700\u4f18\u89e3\u901a\u8fc7\u4e00\u9636\u4f18\u5316\u53ef\u4ee5\u627e\u5230\u5956\u52b1\u5355\u8c03\u9012\u589e\u7684\u8def\u5f84\uff0c\u8fde\u63a5\u5230\u66f4\u597d\u7684\u5728\u7ebf\u6700\u4f18\u89e3\u3002SMAC\u57286\u4e2aD4RL\u4efb\u52a1\u4e2d\u5b9e\u73b0\u4e86\u5411Soft Actor-Critic\u548cTD3\u7684\u5e73\u7a33\u8fc7\u6e21\u3002\u57284\u4e2a\u73af\u5883\u4e2d\uff0c\u5b83\u5c06\u9057\u61be\u503c\u6bd4\u6700\u4f73\u57fa\u7ebf\u964d\u4f4e\u4e8634-58%\u3002"
+      "summary_zh": "\u73b0\u4ee3\u79bb\u7ebf\u5f3a\u5316\u5b66\u4e60\uff08RL\uff09\u65b9\u6cd5\u80fd\u627e\u5230\u9ad8\u6027\u80fd\u7684actor-critic\uff0c\u4f46\u4f7f\u7528\u57fa\u4e8e\u4ef7\u503c\u7684RL\u7b97\u6cd5\u5728\u7ebf\u5fae\u8c03\u8fd9\u4e9bactor-critic\u901a\u5e38\u4f1a\u5bfc\u81f4\u6027\u80fd\u7acb\u5373\u4e0b\u964d\u3002\u6211\u4eec\u63d0\u51fa\u7684\u8bc1\u636e\u652f\u6301\u4ee5\u4e0b\u5047\u8bbe\uff1a\u5728\u635f\u5931\u51fd\u6570\u666f\u89c2\u4e2d\uff0c\u73b0\u6709\u7b97\u6cd5\u7684\u79bb\u7ebf\u6700\u4f18\u89e3\u4e0e\u5728\u7ebf\u6700\u4f18\u89e3\u4e4b\u95f4\u5b58\u5728\u4f4e\u6027\u80fd\u7684\u201c\u8c37\u201d\uff0c\u800c\u57fa\u4e8e\u68af\u5ea6\u7684\u5fae\u8c03\u4f1a\u7a7f\u8fc7\u8fd9\u4e9b\u201c\u8c37\u201d\u3002\u57fa\u4e8e\u6b64\uff0c\u6211\u4eec\u63d0\u51fa\u4e86Score Matched Actor-Critic (SMAC)\uff0c\u8fd9\u662f\u4e00\u79cd\u79bb\u7ebfRL\u65b9\u6cd5\uff0c\u65e8\u5728\u5b66\u4e60\u80fd\u591f\u5e73\u7a33\u8fc7\u6e21\u5230\u5728\u7ebf\u57fa\u4e8e\u4ef7\u503c\u7684RL\u7b97\u6cd5\u4e14\u6027\u80fd\u4e0d\u4e0b\u964d\u7684actor-critic\u3002SMAC\u901a\u8fc7\u5728\u79bb\u7ebf\u9636\u6bb5\u6b63\u5219\u5316Q\u51fd\u6570\uff0c\u4f7f\u5176\u9075\u5b88\u7b56\u7565\u5f97\u5206\u4e0eQ\u51fd\u6570\u52a8\u4f5c\u68af\u5ea6\u4e4b\u95f4\u7684\u4e00\u9636\u5bfc\u6570\u7b49\u5f0f\uff0c\u4ece\u800c\u907f\u514d\u4e86\u79bb\u7ebf\u548c\u5728\u7ebf\u6700\u4f18\u89e3\u4e4b\u95f4\u7684\u201c\u8c37\u201d\u3002\u5b9e\u9a8c\u8bc1\u660e\uff0cSMAC\u6536\u655b\u5230\u7684\u79bb\u7ebf\u6700\u4f18\u89e3\u901a\u8fc7\u4e00\u9636\u4f18\u5316\u53ef\u4ee5\u627e\u5230\u5956\u52b1\u5355\u8c03\u9012\u589e\u7684\u8def\u5f84\uff0c\u8fde\u63a5\u5230\u66f4\u597d\u7684\u5728\u7ebf\u6700\u4f18\u89e3\u3002SMAC\u57286\u4e2aD4RL\u4efb\u52a1\u4e2d\u5b9e\u73b0\u4e86\u5411Soft Actor-Critic\u548cTD3\u7684\u5e73\u7a33\u8fc7\u6e21\u3002\u57284\u4e2a\u73af\u5883\u4e2d\uff0c\u5b83\u5c06\u9057\u61be\u503c\u6bd4\u6700\u4f73\u57fa\u7ebf\u964d\u4f4e\u4e8634-58%\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.17089",
@@ -40,7 +41,8 @@
       "link": "https://arxiv.org/pdf/2602.17089v1",
       "first_seen": "2026-02-22T23:37:17.469842",
       "code_url": null,
-      "summary_zh": "\u6269\u6563\u6a21\u578b\u5728\u751f\u6210\u9ad8\u8d28\u91cf\u6837\u672c\u548c\u4fdd\u6301\u591a\u6837\u6027\u65b9\u9762\u8868\u73b0\u51fa\u8272\uff0c\u4e3a\u968f\u673a\u95ed\u5408\u6a21\u578b\u5b66\u4e60\u63d0\u4f9b\u4e86\u65b0\u9014\u5f84\u3002\u76f8\u8f83\u4e8eGAN\u548cVAE\u7b49\u5176\u4ed6\u751f\u6210\u6a21\u578b\uff0c\u6269\u6563\u6a21\u578b\u7684\u91c7\u6837\u901f\u5ea6\u662f\u5176\u4e3b\u8981\u52a3\u52bf\u3002\u901a\u8fc7\u5bf9\u6bd42D Kolmogorov\u6d41\u7684\u4f20\u8f93\u751f\u6210\u6a21\u578b\uff0c\u6211\u4eec\u53d1\u73b0\u4f4e\u7ef4\u6f5c\u5728\u7a7a\u95f4\u4e2d\u7684\u6d41\u5339\u914d\u6280\u672f\u80fd\u5b9e\u73b0\u968f\u673a\u95ed\u5408\u6a21\u578b\u7684\u5feb\u901f\u91c7\u6837\uff0c\u5176\u5355\u6b65\u91c7\u6837\u901f\u5ea6\u6bd4\u8fed\u4ee3\u6269\u6563\u65b9\u6cd5\u5feb\u4e0a\u767e\u500d\u3002\u4e3a\u63a7\u5236\u6f5c\u5728\u7a7a\u95f4\u7578\u53d8\u5e76\u786e\u4fdd\u91c7\u6837\u95ed\u5408\u9879\u7684\u7269\u7406\u51c6\u786e\u6027\uff0c\u6211\u4eec\u6bd4\u8f83\u4e86\u8054\u5408\u8bad\u7ec3\u65b9\u6848\u7684\u9690\u5f0f\u6b63\u5219\u5316\u4e0e\u5ea6\u91cf\u4fdd\u6301\uff08MP\uff09\u548c\u51e0\u4f55\u611f\u77e5\uff08GA\uff09\u4e24\u79cd\u663e\u5f0f\u6b63\u5219\u5316\u65b9\u6cd5\u3002\u663e\u5f0f\u548c\u9690\u5f0f\u6b63\u5219\u5316\u7684\u6f5c\u5728\u7a7a\u95f4\u4e0d\u4ec5\u80fd\u52a0\u901f\u91c7\u6837\uff0c\u8fd8\u80fd\u7ee7\u627f\u539f\u59cb\u590d\u6742\u52a8\u529b\u7cfb\u7edf\u4f4e\u7ef4\u6d41\u5f62\u7684\u5173\u952e\u62d3\u6251\u4fe1\u606f\uff0c\u4ece\u800c\u5728\u65e0\u9700\u5927\u91cf\u8bad\u7ec3\u6570\u636e\u7684\u60c5\u51b5\u4e0b\u5b66\u4e60\u968f\u673a\u95ed\u5408\u6a21\u578b\u3002"
+      "summary_zh": "\u6269\u6563\u6a21\u578b\u5728\u751f\u6210\u9ad8\u8d28\u91cf\u6837\u672c\u548c\u4fdd\u6301\u591a\u6837\u6027\u65b9\u9762\u8868\u73b0\u51fa\u8272\uff0c\u4e3a\u968f\u673a\u95ed\u5408\u6a21\u578b\u5b66\u4e60\u63d0\u4f9b\u4e86\u65b0\u9014\u5f84\u3002\u76f8\u8f83\u4e8eGAN\u548cVAE\u7b49\u5176\u4ed6\u751f\u6210\u6a21\u578b\uff0c\u6269\u6563\u6a21\u578b\u7684\u91c7\u6837\u901f\u5ea6\u662f\u5176\u4e3b\u8981\u52a3\u52bf\u3002\u901a\u8fc7\u5bf9\u6bd42D Kolmogorov\u6d41\u7684\u4f20\u8f93\u751f\u6210\u6a21\u578b\uff0c\u6211\u4eec\u53d1\u73b0\u4f4e\u7ef4\u6f5c\u5728\u7a7a\u95f4\u4e2d\u7684\u6d41\u5339\u914d\u6280\u672f\u80fd\u5b9e\u73b0\u968f\u673a\u95ed\u5408\u6a21\u578b\u7684\u5feb\u901f\u91c7\u6837\uff0c\u5176\u5355\u6b65\u91c7\u6837\u901f\u5ea6\u6bd4\u8fed\u4ee3\u6269\u6563\u65b9\u6cd5\u5feb\u4e0a\u767e\u500d\u3002\u4e3a\u63a7\u5236\u6f5c\u5728\u7a7a\u95f4\u7578\u53d8\u5e76\u786e\u4fdd\u91c7\u6837\u95ed\u5408\u9879\u7684\u7269\u7406\u51c6\u786e\u6027\uff0c\u6211\u4eec\u6bd4\u8f83\u4e86\u8054\u5408\u8bad\u7ec3\u65b9\u6848\u7684\u9690\u5f0f\u6b63\u5219\u5316\u4e0e\u5ea6\u91cf\u4fdd\u6301\uff08MP\uff09\u548c\u51e0\u4f55\u611f\u77e5\uff08GA\uff09\u4e24\u79cd\u663e\u5f0f\u6b63\u5219\u5316\u65b9\u6cd5\u3002\u663e\u5f0f\u548c\u9690\u5f0f\u6b63\u5219\u5316\u7684\u6f5c\u5728\u7a7a\u95f4\u4e0d\u4ec5\u80fd\u52a0\u901f\u91c7\u6837\uff0c\u8fd8\u80fd\u7ee7\u627f\u539f\u59cb\u590d\u6742\u52a8\u529b\u7cfb\u7edf\u4f4e\u7ef4\u6d41\u5f62\u7684\u5173\u952e\u62d3\u6251\u4fe1\u606f\uff0c\u4ece\u800c\u5728\u65e0\u9700\u5927\u91cf\u8bad\u7ec3\u6570\u636e\u7684\u60c5\u51b5\u4e0b\u5b66\u4e60\u968f\u673a\u95ed\u5408\u6a21\u578b\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.17038",
@@ -63,7 +65,8 @@
       "link": "https://arxiv.org/pdf/2602.17038v1",
       "first_seen": "2026-02-22T23:37:17.470900",
       "code_url": null,
-      "summary_zh": "\u5f3a\u5316\u5b66\u4e60\uff08RL\uff09\u8d4b\u4e88\u5927\u578b\u8bed\u8a00\u6a21\u578b\uff08LLM\uff09\u667a\u80fd\u4f53\u89e3\u51b3\u590d\u6742\u4efb\u52a1\u7684\u5f3a\u5927\u80fd\u529b\u3002\u7136\u800c\uff0c\u73b0\u6709RL\u65b9\u6cd5\u901a\u5e38\u4f7f\u7528\u5355\u4e00\u7b56\u7565\u7f51\u7edc\uff0c\u5bfc\u81f4\u201c\u7b80\u5355\u6027\u504f\u5dee\u201d\uff0c\u5373\u7b80\u5355\u4efb\u52a1\u5360\u636e\u5927\u90e8\u5206\u53c2\u6570\u5e76\u4e3b\u5bfc\u68af\u5ea6\u66f4\u65b0\uff0c\u4ece\u800c\u4e3a\u590d\u6742\u4efb\u52a1\u7559\u4e0b\u7684\u5bb9\u91cf\u4e0d\u8db3\u3002\u4e00\u79cd\u53ef\u884c\u7684\u8865\u6551\u63aa\u65bd\u662f\u5728\u7b56\u7565\u7f51\u7edc\u4e2d\u91c7\u7528\u4e13\u5bb6\u6df7\u5408\uff08MoE\uff09\u67b6\u6784\uff0c\u56e0\u4e3aMoE\u5141\u8bb8\u4e0d\u540c\u53c2\u6570\uff08\u4e13\u5bb6\uff09\u4e13\u6ce8\u4e8e\u4e0d\u540c\u4efb\u52a1\uff0c\u9632\u6b62\u7b80\u5355\u4efb\u52a1\u4e3b\u5bfc\u6240\u6709\u53c2\u6570\u3002\u7136\u800c\uff0c\u4f20\u7edfMoE\u7684\u4e00\u4e2a\u4e3b\u8981\u9650\u5236\u662f\u5176\u57fa\u4e8etoken\u7684\u8def\u7531\uff0c\u8def\u7531\u5668\u5c06\u6bcf\u4e2atoken\u5206\u914d\u7ed9\u4e13\u95e8\u7684\u4e13\u5bb6\uff0c\u8fd9\u4f1a\u5c06\u9636\u6bb5\u4e00\u81f4\u7684\u6a21\u5f0f\u788e\u7247\u5316\u4e3a\u5206\u6563\u7684\u4e13\u5bb6\u5206\u914d\uff0c\u4ece\u800c\u635f\u5bb3\u4e13\u5bb6\u7279\u5316\u3002\u5728\u672c\u6587\u4e2d\uff0c\u6211\u4eec\u63d0\u51fa\u4e86**\u9636\u6bb5\u611f\u77e5\u4e13\u5bb6\u6df7\u5408\uff08PA-MoE\uff09**\u3002\u5b83\u9996\u5148\u5177\u6709\u4e00\u4e2a\u8f7b\u91cf\u7ea7\u7684\u201c\u9636\u6bb5\u8def\u7531\u5668\u201d\uff0c\u8be5\u8def\u7531\u5668\u76f4\u63a5\u4eceRL\u76ee\u6807\u4e2d\u5b66\u4e60\u6f5c\u5728\u7684\u9636\u6bb5\u8fb9\u754c\uff0c\u800c\u65e0\u9700\u9884\u5b9a\u4e49\u9636\u6bb5\u7c7b\u522b\u3002\u7136\u540e\uff0c\u8be5\u9636\u6bb5\u8def\u7531\u5668\u5c06\u65f6\u95f4\u4e0a\u4e00\u81f4\u7684\u5206\u914d\u5206\u914d\u7ed9\u540c\u4e00\u4e13\u5bb6\uff0c\u4ece\u800c\u4f7f\u4e13\u5bb6\u80fd\u591f\u4fdd\u7559\u9636\u6bb5\u7279\u5b9a\u7684\u4e13\u4e1a\u77e5\u8bc6\u3002\u5b9e\u9a8c\u7ed3\u679c\u8bc1\u660e\u4e86\u6211\u4eec\u63d0\u51fa\u7684PA-MoE\u7684\u6709\u6548\u6027\u3002"
+      "summary_zh": "\u5f3a\u5316\u5b66\u4e60\uff08RL\uff09\u8d4b\u4e88\u5927\u578b\u8bed\u8a00\u6a21\u578b\uff08LLM\uff09\u667a\u80fd\u4f53\u89e3\u51b3\u590d\u6742\u4efb\u52a1\u7684\u5f3a\u5927\u80fd\u529b\u3002\u7136\u800c\uff0c\u73b0\u6709RL\u65b9\u6cd5\u901a\u5e38\u4f7f\u7528\u5355\u4e00\u7b56\u7565\u7f51\u7edc\uff0c\u5bfc\u81f4\u201c\u7b80\u5355\u6027\u504f\u5dee\u201d\uff0c\u5373\u7b80\u5355\u4efb\u52a1\u5360\u636e\u5927\u90e8\u5206\u53c2\u6570\u5e76\u4e3b\u5bfc\u68af\u5ea6\u66f4\u65b0\uff0c\u4ece\u800c\u4e3a\u590d\u6742\u4efb\u52a1\u7559\u4e0b\u7684\u5bb9\u91cf\u4e0d\u8db3\u3002\u4e00\u79cd\u53ef\u884c\u7684\u8865\u6551\u63aa\u65bd\u662f\u5728\u7b56\u7565\u7f51\u7edc\u4e2d\u91c7\u7528\u4e13\u5bb6\u6df7\u5408\uff08MoE\uff09\u67b6\u6784\uff0c\u56e0\u4e3aMoE\u5141\u8bb8\u4e0d\u540c\u53c2\u6570\uff08\u4e13\u5bb6\uff09\u4e13\u6ce8\u4e8e\u4e0d\u540c\u4efb\u52a1\uff0c\u9632\u6b62\u7b80\u5355\u4efb\u52a1\u4e3b\u5bfc\u6240\u6709\u53c2\u6570\u3002\u7136\u800c\uff0c\u4f20\u7edfMoE\u7684\u4e00\u4e2a\u4e3b\u8981\u9650\u5236\u662f\u5176\u57fa\u4e8etoken\u7684\u8def\u7531\uff0c\u8def\u7531\u5668\u5c06\u6bcf\u4e2atoken\u5206\u914d\u7ed9\u4e13\u95e8\u7684\u4e13\u5bb6\uff0c\u8fd9\u4f1a\u5c06\u9636\u6bb5\u4e00\u81f4\u7684\u6a21\u5f0f\u788e\u7247\u5316\u4e3a\u5206\u6563\u7684\u4e13\u5bb6\u5206\u914d\uff0c\u4ece\u800c\u635f\u5bb3\u4e13\u5bb6\u7279\u5316\u3002\u5728\u672c\u6587\u4e2d\uff0c\u6211\u4eec\u63d0\u51fa\u4e86**\u9636\u6bb5\u611f\u77e5\u4e13\u5bb6\u6df7\u5408\uff08PA-MoE\uff09**\u3002\u5b83\u9996\u5148\u5177\u6709\u4e00\u4e2a\u8f7b\u91cf\u7ea7\u7684\u201c\u9636\u6bb5\u8def\u7531\u5668\u201d\uff0c\u8be5\u8def\u7531\u5668\u76f4\u63a5\u4eceRL\u76ee\u6807\u4e2d\u5b66\u4e60\u6f5c\u5728\u7684\u9636\u6bb5\u8fb9\u754c\uff0c\u800c\u65e0\u9700\u9884\u5b9a\u4e49\u9636\u6bb5\u7c7b\u522b\u3002\u7136\u540e\uff0c\u8be5\u9636\u6bb5\u8def\u7531\u5668\u5c06\u65f6\u95f4\u4e0a\u4e00\u81f4\u7684\u5206\u914d\u5206\u914d\u7ed9\u540c\u4e00\u4e13\u5bb6\uff0c\u4ece\u800c\u4f7f\u4e13\u5bb6\u80fd\u591f\u4fdd\u7559\u9636\u6bb5\u7279\u5b9a\u7684\u4e13\u4e1a\u77e5\u8bc6\u3002\u5b9e\u9a8c\u7ed3\u679c\u8bc1\u660e\u4e86\u6211\u4eec\u63d0\u51fa\u7684PA-MoE\u7684\u6709\u6548\u6027\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.17009",
@@ -84,7 +87,8 @@
       "link": "https://arxiv.org/pdf/2602.17009v1",
       "first_seen": "2026-02-22T23:37:17.471446",
       "code_url": null,
-      "summary_zh": "\u534f\u8c03\u884c\u52a8\u662f\u591a\u667a\u80fd\u4f53\u5f3a\u5316\u5b66\u4e60\uff08MARL\uff09\u4e2d\u6700\u57fa\u672c\u7684\u5408\u4f5c\u5f62\u5f0f\u3002\u6210\u529f\u7684\u53bb\u4e2d\u5fc3\u5316\u51b3\u7b56\u4e0d\u4ec5\u53d6\u51b3\u4e8e\u826f\u597d\u7684\u4e2a\u4f53\u884c\u52a8\uff0c\u8fd8\u53d6\u51b3\u4e8e\u667a\u80fd\u4f53\u4e4b\u95f4\u9009\u62e9\u517c\u5bb9\u7684\u884c\u52a8\uff0c\u4ee5\u540c\u6b65\u884c\u4e3a\u3001\u907f\u514d\u51b2\u7a81\u5e76\u6ee1\u8db3\u5168\u5c40\u7ea6\u675f\u3002\u672c\u6587\u63d0\u51fa\u884c\u52a8\u56fe\u7b56\u7565\uff08AGP\uff09\uff0c\u5b83\u5bf9\u667a\u80fd\u4f53\u53ef\u7528\u884c\u52a8\u9009\u62e9\u4e4b\u95f4\u7684\u4f9d\u8d56\u5173\u7cfb\u8fdb\u884c\u5efa\u6a21\u3002AGP\u6784\u5efa\u4e86\u6211\u4eec\u79f0\u4e4b\u4e3a\u201c\u534f\u8c03\u4e0a\u4e0b\u6587\u201d\u7684\u673a\u5236\uff0c\u4f7f\u667a\u80fd\u4f53\u80fd\u591f\u6839\u636e\u5168\u5c40\u884c\u52a8\u4f9d\u8d56\u5173\u7cfb\u6765\u8c03\u6574\u5176\u51b3\u7b56\u3002\u7406\u8bba\u4e0a\uff0c\u6211\u4eec\u8bc1\u660eAGP\u6bd4\u5b8c\u5168\u72ec\u7acb\u7684\u7b56\u7565\u80fd\u4ea7\u751f\u8868\u8fbe\u529b\u66f4\u5f3a\u7684\u8054\u5408\u7b56\u7565\uff0c\u5e76\u4e14\u53ef\u4ee5\u5b9e\u73b0\u534f\u8c03\u7684\u8054\u5408\u884c\u52a8\uff0c\u5373\u4f7f\u4e0e\u96c6\u4e2d\u5f0f\u4ef7\u503c\u5206\u89e3\u65b9\u6cd5\u76f8\u6bd4\uff0c\u5176\u6700\u4f18\u6027\u4e5f\u5f97\u5230\u4e86\u8bc1\u660e\u3002\u5728\u7ecf\u9a8c\u4e0a\uff0c\u6211\u4eec\u5c55\u793a\u4e86AGP\u5728\u5177\u6709\u90e8\u5206\u53ef\u89c2\u5bdf\u6027\u548c\u53cd\u534f\u8c03\u60e9\u7f5a\u7684\u5178\u578b\u534f\u8c03\u4efb\u52a1\u4e2d\u53d6\u5f97\u4e8680-95%\u7684\u6210\u529f\u7387\uff0c\u800c\u5176\u4ed6MARL\u65b9\u6cd5\u4ec5\u8fbe\u523010-25%\u3002\u6211\u4eec\u8fdb\u4e00\u6b65\u8bc1\u660e\uff0cAGP\u5728\u5404\u79cd\u591a\u667a\u80fd\u4f53\u73af\u5883\u4e2d\u59cb\u7ec8\u4f18\u4e8e\u8fd9\u4e9b\u57fa\u7ebf\u3002"
+      "summary_zh": "\u534f\u8c03\u884c\u52a8\u662f\u591a\u667a\u80fd\u4f53\u5f3a\u5316\u5b66\u4e60\uff08MARL\uff09\u4e2d\u6700\u57fa\u672c\u7684\u5408\u4f5c\u5f62\u5f0f\u3002\u6210\u529f\u7684\u53bb\u4e2d\u5fc3\u5316\u51b3\u7b56\u4e0d\u4ec5\u53d6\u51b3\u4e8e\u826f\u597d\u7684\u4e2a\u4f53\u884c\u52a8\uff0c\u8fd8\u53d6\u51b3\u4e8e\u667a\u80fd\u4f53\u4e4b\u95f4\u9009\u62e9\u517c\u5bb9\u7684\u884c\u52a8\uff0c\u4ee5\u540c\u6b65\u884c\u4e3a\u3001\u907f\u514d\u51b2\u7a81\u5e76\u6ee1\u8db3\u5168\u5c40\u7ea6\u675f\u3002\u672c\u6587\u63d0\u51fa\u884c\u52a8\u56fe\u7b56\u7565\uff08AGP\uff09\uff0c\u5b83\u5bf9\u667a\u80fd\u4f53\u53ef\u7528\u884c\u52a8\u9009\u62e9\u4e4b\u95f4\u7684\u4f9d\u8d56\u5173\u7cfb\u8fdb\u884c\u5efa\u6a21\u3002AGP\u6784\u5efa\u4e86\u6211\u4eec\u79f0\u4e4b\u4e3a\u201c\u534f\u8c03\u4e0a\u4e0b\u6587\u201d\u7684\u673a\u5236\uff0c\u4f7f\u667a\u80fd\u4f53\u80fd\u591f\u6839\u636e\u5168\u5c40\u884c\u52a8\u4f9d\u8d56\u5173\u7cfb\u6765\u8c03\u6574\u5176\u51b3\u7b56\u3002\u7406\u8bba\u4e0a\uff0c\u6211\u4eec\u8bc1\u660eAGP\u6bd4\u5b8c\u5168\u72ec\u7acb\u7684\u7b56\u7565\u80fd\u4ea7\u751f\u8868\u8fbe\u529b\u66f4\u5f3a\u7684\u8054\u5408\u7b56\u7565\uff0c\u5e76\u4e14\u53ef\u4ee5\u5b9e\u73b0\u534f\u8c03\u7684\u8054\u5408\u884c\u52a8\uff0c\u5373\u4f7f\u4e0e\u96c6\u4e2d\u5f0f\u4ef7\u503c\u5206\u89e3\u65b9\u6cd5\u76f8\u6bd4\uff0c\u5176\u6700\u4f18\u6027\u4e5f\u5f97\u5230\u4e86\u8bc1\u660e\u3002\u5728\u7ecf\u9a8c\u4e0a\uff0c\u6211\u4eec\u5c55\u793a\u4e86AGP\u5728\u5177\u6709\u90e8\u5206\u53ef\u89c2\u5bdf\u6027\u548c\u53cd\u534f\u8c03\u60e9\u7f5a\u7684\u5178\u578b\u534f\u8c03\u4efb\u52a1\u4e2d\u53d6\u5f97\u4e8680-95%\u7684\u6210\u529f\u7387\uff0c\u800c\u5176\u4ed6MARL\u65b9\u6cd5\u4ec5\u8fbe\u523010-25%\u3002\u6211\u4eec\u8fdb\u4e00\u6b65\u8bc1\u660e\uff0cAGP\u5728\u5404\u79cd\u591a\u667a\u80fd\u4f53\u73af\u5883\u4e2d\u59cb\u7ec8\u4f18\u4e8e\u8fd9\u4e9b\u57fa\u7ebf\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.16968",
@@ -104,7 +108,8 @@
       "link": "https://arxiv.org/pdf/2602.16968v1",
       "first_seen": "2026-02-22T23:37:17.472137",
       "code_url": null,
-      "summary_zh": "\u6269\u6563Transformer (DiTs) \u5728\u56fe\u50cf\u548c\u89c6\u9891\u751f\u6210\u4e2d\u53d6\u5f97\u4e86\u6700\u5148\u8fdb\u7684\u6027\u80fd\uff0c\u4f46\u5176\u6210\u529f\u4f34\u968f\u7740\u5de8\u5927\u7684\u8ba1\u7b97\u5f00\u9500\u3002\u8fd9\u79cd\u4f4e\u6548\u6027\u5f88\u5927\u7a0b\u5ea6\u4e0a\u6e90\u4e8e\u56fa\u5b9a\u7684\u5206\u8bcd\u8fc7\u7a0b\uff0c\u5373\u5728\u6574\u4e2a\u53bb\u566a\u9636\u6bb5\u4f7f\u7528\u6052\u5b9a\u5927\u5c0f\u7684\u5757\uff0c\u800c\u4e0d\u8003\u8651\u5185\u5bb9\u7684\u590d\u6742\u6027\u3002\u6211\u4eec\u63d0\u51fa\u4e86\u52a8\u6001\u5206\u8bcd\uff0c\u8fd9\u662f\u4e00\u79cd\u9ad8\u6548\u7684\u6d4b\u8bd5\u65f6\u7b56\u7565\uff0c\u5b83\u6839\u636e\u5185\u5bb9\u590d\u6742\u6027\u548c\u53bb\u566a\u65f6\u95f4\u6b65\u957f\u6765\u6539\u53d8\u5757\u5927\u5c0f\u3002\u6211\u4eec\u7684\u5173\u952e\u89c1\u89e3\u662f\uff0c\u65e9\u671f\u65f6\u95f4\u6b65\u957f\u53ea\u9700\u8981\u66f4\u7c97\u7684\u5757\u6765\u5efa\u6a21\u5168\u5c40\u7ed3\u6784\uff0c\u800c\u540e\u671f\u8fed\u4ee3\u5219\u9700\u8981\u66f4\u7cbe\u7ec6\uff08\u66f4\u5c0f\u5c3a\u5bf8\uff09\u7684\u5757\u6765\u7ec6\u5316\u5c40\u90e8\u7ec6\u8282\u3002\u5728\u63a8\u7406\u8fc7\u7a0b\u4e2d\uff0c\u6211\u4eec\u7684\u65b9\u6cd5\u5728\u53bb\u566a\u6b65\u9aa4\u4e2d\u52a8\u6001\u91cd\u65b0\u5206\u914d\u56fe\u50cf\u548c\u89c6\u9891\u751f\u6210\u7684\u5757\u5927\u5c0f\uff0c\u5728\u4fdd\u6301\u611f\u77e5\u751f\u6210\u8d28\u91cf\u7684\u540c\u65f6\u5927\u5e45\u964d\u4f4e\u4e86\u6210\u672c\u3002\u5927\u91cf\u7684\u5b9e\u9a8c\u8bc1\u660e\u4e86\u6211\u4eec\u65b9\u6cd5\u7684\u6709\u6548\u6027\uff1a\u5728FLUX-1.Dev\u548cWan 2.1\u4e0a\u5206\u522b\u5b9e\u73b0\u4e86\u9ad8\u8fbe3.52\u500d\u548c3.2\u500d\u7684\u52a0\u901f\uff0c\u540c\u65f6\u4e0d\u635f\u5bb3\u751f\u6210\u8d28\u91cf\u548c\u63d0\u793a\u4f9d\u4ece\u6027\u3002"
+      "summary_zh": "\u6269\u6563Transformer (DiTs) \u5728\u56fe\u50cf\u548c\u89c6\u9891\u751f\u6210\u4e2d\u53d6\u5f97\u4e86\u6700\u5148\u8fdb\u7684\u6027\u80fd\uff0c\u4f46\u5176\u6210\u529f\u4f34\u968f\u7740\u5de8\u5927\u7684\u8ba1\u7b97\u5f00\u9500\u3002\u8fd9\u79cd\u4f4e\u6548\u6027\u5f88\u5927\u7a0b\u5ea6\u4e0a\u6e90\u4e8e\u56fa\u5b9a\u7684\u5206\u8bcd\u8fc7\u7a0b\uff0c\u5373\u5728\u6574\u4e2a\u53bb\u566a\u9636\u6bb5\u4f7f\u7528\u6052\u5b9a\u5927\u5c0f\u7684\u5757\uff0c\u800c\u4e0d\u8003\u8651\u5185\u5bb9\u7684\u590d\u6742\u6027\u3002\u6211\u4eec\u63d0\u51fa\u4e86\u52a8\u6001\u5206\u8bcd\uff0c\u8fd9\u662f\u4e00\u79cd\u9ad8\u6548\u7684\u6d4b\u8bd5\u65f6\u7b56\u7565\uff0c\u5b83\u6839\u636e\u5185\u5bb9\u590d\u6742\u6027\u548c\u53bb\u566a\u65f6\u95f4\u6b65\u957f\u6765\u6539\u53d8\u5757\u5927\u5c0f\u3002\u6211\u4eec\u7684\u5173\u952e\u89c1\u89e3\u662f\uff0c\u65e9\u671f\u65f6\u95f4\u6b65\u957f\u53ea\u9700\u8981\u66f4\u7c97\u7684\u5757\u6765\u5efa\u6a21\u5168\u5c40\u7ed3\u6784\uff0c\u800c\u540e\u671f\u8fed\u4ee3\u5219\u9700\u8981\u66f4\u7cbe\u7ec6\uff08\u66f4\u5c0f\u5c3a\u5bf8\uff09\u7684\u5757\u6765\u7ec6\u5316\u5c40\u90e8\u7ec6\u8282\u3002\u5728\u63a8\u7406\u8fc7\u7a0b\u4e2d\uff0c\u6211\u4eec\u7684\u65b9\u6cd5\u5728\u53bb\u566a\u6b65\u9aa4\u4e2d\u52a8\u6001\u91cd\u65b0\u5206\u914d\u56fe\u50cf\u548c\u89c6\u9891\u751f\u6210\u7684\u5757\u5927\u5c0f\uff0c\u5728\u4fdd\u6301\u611f\u77e5\u751f\u6210\u8d28\u91cf\u7684\u540c\u65f6\u5927\u5e45\u964d\u4f4e\u4e86\u6210\u672c\u3002\u5927\u91cf\u7684\u5b9e\u9a8c\u8bc1\u660e\u4e86\u6211\u4eec\u65b9\u6cd5\u7684\u6709\u6548\u6027\uff1a\u5728FLUX-1.Dev\u548cWan 2.1\u4e0a\u5206\u522b\u5b9e\u73b0\u4e86\u9ad8\u8fbe3.52\u500d\u548c3.2\u500d\u7684\u52a0\u901f\uff0c\u540c\u65f6\u4e0d\u635f\u5bb3\u751f\u6210\u8d28\u91cf\u548c\u63d0\u793a\u4f9d\u4ece\u6027\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.16872",
@@ -126,7 +131,8 @@
       "link": "https://arxiv.org/pdf/2602.16872v1",
       "first_seen": "2026-02-22T23:37:17.474010",
       "code_url": null,
-      "summary_zh": "\u5149\u5b66\u5b57\u7b26\u8bc6\u522b\uff08OCR\uff09\u662f\u4fe1\u606f\u6570\u5b57\u5316\u7684\u57fa\u7840\u4efb\u52a1\uff0c\u8fde\u63a5\u89c6\u89c9\u6570\u636e\u4e0e\u6587\u672c\u7406\u89e3\u3002\u5c3d\u7ba1\u73b0\u4ee3\u89c6\u89c9-\u8bed\u8a00\u6a21\u578b\uff08VLM\uff09\u5728\u6b64\u9886\u57df\u8868\u73b0\u51fa\u8272\uff0c\u4f46\u5176\u4e3b\u8981\u4f9d\u8d56\u81ea\u56de\u5f52\u89e3\u7801\uff0c\u8fd9\u5bfc\u81f4\u5904\u7406\u957f\u6587\u6863\u65f6\u8ba1\u7b97\u6210\u672c\u9ad8\u6602\u4e14\u901f\u5ea6\u6162\uff0c\u56e0\u6bcf\u4e2a\u751f\u6210\u7684token\u90fd\u9700\u8981\u987a\u5e8f\u524d\u5411\u4f20\u9012\u3002\u6211\u4eec\u53d1\u73b0\u4e00\u4e2a\u5173\u952e\u673a\u4f1a\u6765\u514b\u670d\u6b64\u74f6\u9888\uff1a\u4e0e\u5f00\u653e\u5f0f\u751f\u6210\u4e0d\u540c\uff0cOCR\u662f\u9ad8\u5ea6\u786e\u5b9a\u6027\u4efb\u52a1\uff0c\u89c6\u89c9\u8f93\u5165\u4e25\u683c\u51b3\u5b9a\u552f\u4e00\u8f93\u51fa\u5e8f\u5217\uff0c\u7406\u8bba\u4e0a\u53ef\u901a\u8fc7\u6269\u6563\u6a21\u578b\u5b9e\u73b0\u9ad8\u6548\u5e76\u884c\u89e3\u7801\u3002\u7136\u800c\uff0c\u6211\u4eec\u53d1\u73b0\u73b0\u6709\u63a9\u7801\u6269\u6563\u6a21\u578b\u672a\u80fd\u53d1\u6325\u6b64\u6f5c\u529b\uff1b\u5b83\u4eec\u5f15\u5165\u7684\u7ed3\u6784\u4e0d\u7a33\u5b9a\u6027\u5728\u7075\u6d3b\u4efb\u52a1\uff08\u5982\u56fe\u50cf\u63cf\u8ff0\uff09\u4e2d\u65e0\u5bb3\uff0c\u4f46\u5bf9OCR\u4e25\u683c\u7684\u7cbe\u786e\u5339\u914d\u8981\u6c42\u800c\u8a00\u5374\u662f\u707e\u96be\u6027\u7684\u3002\u4e3a\u5f25\u8865\u8fd9\u4e00\u5dee\u8ddd\uff0c\u6211\u4eec\u5f15\u5165DODO\uff0c\u9996\u4e2a\u5229\u7528\u5757\u79bb\u6563\u6269\u6563\u5e76\u91ca\u653e\u5176OCR\u52a0\u901f\u6f5c\u529b\u7684VLM\u3002\u901a\u8fc7\u5c06\u751f\u6210\u5206\u89e3\u4e3a\u5757\uff0cDODO\u51cf\u8f7b\u4e86\u5168\u5c40\u6269\u6563\u7684\u540c\u6b65\u9519\u8bef\u3002\u5b9e\u9a8c\u8bc1\u660e\uff0c\u6211\u4eec\u7684\u65b9\u6cd5\u5728\u5b9e\u73b0\u63a5\u8fd1\u6700\u5148\u8fdb\u51c6\u786e\u7387\u7684\u540c\u65f6\uff0c\u63a8\u7406\u901f\u5ea6\u6bd4\u81ea\u56de\u5f52\u57fa\u7ebf\u5feb3\u500d\u3002"
+      "summary_zh": "\u5149\u5b66\u5b57\u7b26\u8bc6\u522b\uff08OCR\uff09\u662f\u4fe1\u606f\u6570\u5b57\u5316\u7684\u57fa\u7840\u4efb\u52a1\uff0c\u8fde\u63a5\u89c6\u89c9\u6570\u636e\u4e0e\u6587\u672c\u7406\u89e3\u3002\u5c3d\u7ba1\u73b0\u4ee3\u89c6\u89c9-\u8bed\u8a00\u6a21\u578b\uff08VLM\uff09\u5728\u6b64\u9886\u57df\u8868\u73b0\u51fa\u8272\uff0c\u4f46\u5176\u4e3b\u8981\u4f9d\u8d56\u81ea\u56de\u5f52\u89e3\u7801\uff0c\u8fd9\u5bfc\u81f4\u5904\u7406\u957f\u6587\u6863\u65f6\u8ba1\u7b97\u6210\u672c\u9ad8\u6602\u4e14\u901f\u5ea6\u6162\uff0c\u56e0\u6bcf\u4e2a\u751f\u6210\u7684token\u90fd\u9700\u8981\u987a\u5e8f\u524d\u5411\u4f20\u9012\u3002\u6211\u4eec\u53d1\u73b0\u4e00\u4e2a\u5173\u952e\u673a\u4f1a\u6765\u514b\u670d\u6b64\u74f6\u9888\uff1a\u4e0e\u5f00\u653e\u5f0f\u751f\u6210\u4e0d\u540c\uff0cOCR\u662f\u9ad8\u5ea6\u786e\u5b9a\u6027\u4efb\u52a1\uff0c\u89c6\u89c9\u8f93\u5165\u4e25\u683c\u51b3\u5b9a\u552f\u4e00\u8f93\u51fa\u5e8f\u5217\uff0c\u7406\u8bba\u4e0a\u53ef\u901a\u8fc7\u6269\u6563\u6a21\u578b\u5b9e\u73b0\u9ad8\u6548\u5e76\u884c\u89e3\u7801\u3002\u7136\u800c\uff0c\u6211\u4eec\u53d1\u73b0\u73b0\u6709\u63a9\u7801\u6269\u6563\u6a21\u578b\u672a\u80fd\u53d1\u6325\u6b64\u6f5c\u529b\uff1b\u5b83\u4eec\u5f15\u5165\u7684\u7ed3\u6784\u4e0d\u7a33\u5b9a\u6027\u5728\u7075\u6d3b\u4efb\u52a1\uff08\u5982\u56fe\u50cf\u63cf\u8ff0\uff09\u4e2d\u65e0\u5bb3\uff0c\u4f46\u5bf9OCR\u4e25\u683c\u7684\u7cbe\u786e\u5339\u914d\u8981\u6c42\u800c\u8a00\u5374\u662f\u707e\u96be\u6027\u7684\u3002\u4e3a\u5f25\u8865\u8fd9\u4e00\u5dee\u8ddd\uff0c\u6211\u4eec\u5f15\u5165DODO\uff0c\u9996\u4e2a\u5229\u7528\u5757\u79bb\u6563\u6269\u6563\u5e76\u91ca\u653e\u5176OCR\u52a0\u901f\u6f5c\u529b\u7684VLM\u3002\u901a\u8fc7\u5c06\u751f\u6210\u5206\u89e3\u4e3a\u5757\uff0cDODO\u51cf\u8f7b\u4e86\u5168\u5c40\u6269\u6563\u7684\u540c\u6b65\u9519\u8bef\u3002\u5b9e\u9a8c\u8bc1\u660e\uff0c\u6211\u4eec\u7684\u65b9\u6cd5\u5728\u5b9e\u73b0\u63a5\u8fd1\u6700\u5148\u8fdb\u51c6\u786e\u7387\u7684\u540c\u65f6\uff0c\u63a8\u7406\u901f\u5ea6\u6bd4\u81ea\u56de\u5f52\u57fa\u7ebf\u5feb3\u500d\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.16802",
@@ -150,7 +156,8 @@
       "link": "https://arxiv.org/pdf/2602.16802v1",
       "first_seen": "2026-02-22T23:37:17.475480",
       "code_url": null,
-      "summary_zh": "\u5c3d\u7ba1\u53ef\u9a8c\u8bc1\u5956\u52b1\u5f3a\u5316\u5b66\u4e60\uff08RLVR\uff09\u5728\u63a8\u7406\u4efb\u52a1\u4e2d\u8868\u73b0\u51fa\u8272\uff0c\u4f46\u5b83\u65e0\u6cd5\u76f4\u63a5\u5e94\u7528\u4e8e\u7f3a\u4e4f\u771f\u5b9e\u9a8c\u8bc1\u5668\u7684\u975e\u53ef\u9a8c\u8bc1\u9886\u57df\uff0c\u4f8b\u5982LLM\u5bf9\u9f50\u3002\u672c\u6587\u7814\u7a76\u4e86\u53c2\u8003\u5f15\u5bfc\u7684LLM\u8bc4\u4f30\u5668\u662f\u5426\u80fd\u901a\u8fc7\u5145\u5f53\u8f6f\u201c\u9a8c\u8bc1\u5668\u201d\u6765\u5f25\u8865\u8fd9\u4e00\u7a7a\u767d\u3002\u9996\u5148\uff0c\u6211\u4eec\u8bbe\u8ba1\u4e86\u8bc4\u4f30\u534f\u8bae\uff0c\u5229\u7528\u53c2\u8003\u8f93\u51fa\u6765\u589e\u5f3a\u57fa\u4e8eLLM\u7684\u8bc4\u4f30\u5668\u8fdb\u884cLLM\u5bf9\u9f50\u3002\u7efc\u5408\u5b9e\u9a8c\u8868\u660e\uff0c\u53c2\u8003\u5f15\u5bfc\u65b9\u6cd5\u663e\u8457\u63d0\u9ad8\u4e86\u80fd\u529b\u8f83\u5f31\u7684LLM\u8bc4\u4f30\u5668\u4f7f\u7528\u524d\u6cbf\u6a21\u578b\u53c2\u8003\u7684\u51c6\u786e\u6027\uff1b\u9ad8\u8d28\u91cf\uff08\u5373\u4eba\u5de5\u7f16\u5199\uff09\u7684\u53c2\u8003\u4e5f\u80fd\u589e\u5f3a\u66f4\u5f3a\u7684LLM\u8bc4\u4f30\u5668\u3002\u5728\u6b64\u57fa\u7840\u4e0a\uff0c\u6211\u4eec\u5c55\u793a\u4e86\u9ad8\u8d28\u91cf\u53c2\u8003\u5728\u5bf9\u9f50\u5fae\u8c03\u4e2d\u7684\u6548\u7528\uff0c\u5176\u4e2dLLM\u5728\u53c2\u8003\u5f15\u5bfc\u4e0b\u4f5c\u4e3a\u8bc4\u4f30\u5668\u8fdb\u884c\u81ea\u6211\u63d0\u5347\u3002\u6211\u4eec\u53d1\u73b0\uff0c\u53c2\u8003\u5f15\u5bfc\u7684\u81ea\u6211\u63d0\u5347\u6bd4\u76f4\u63a5\u5728\u53c2\u8003\u8f93\u51fa\u4e0a\u8fdb\u884cSFT\u548c\u65e0\u53c2\u8003\u8bc4\u4f30\u5668\u7684\u81ea\u6211\u63d0\u5347\u90fd\u53d6\u5f97\u4e86\u663e\u8457\u8fdb\u6b65\uff0c\u6027\u80fd\u53ef\u4e0e\u4f7f\u7528\u5f3a\u5927\u7684\u5fae\u8c03\u5956\u52b1\u6a21\u578bArmoRM\u8fdb\u884c\u8bad\u7ec3\u76f8\u5ab2\u7f8e\u3002\u5177\u4f53\u800c\u8a00\uff0c\u6211\u4eec\u7684\u65b9\u6cd5\u5728\u4f7f\u7528Llama-3-8B-Instruct\u65f6\uff0c\u5728AlpacaEval\u548cArena-Hard\u4e0a\u5206\u522b\u8fbe\u523073.1%\u548c58.7%\uff1b\u4f7f\u7528Qwen2.5-7B\u65f6\uff0c\u5206\u522b\u8fbe\u523070.0%\u548c74.1%\u3002\u8fd9\u6bd4SFT\u84b8\u998f\u5e73\u5747\u7edd\u5bf9\u63d0\u5347\u4e86+20.2 / +17.1\u70b9\uff0c\u6bd4\u65e0\u53c2\u8003\u81ea\u6211\u63d0\u5347\u5728AlpacaEval / Arena-Hard\u4e0a\u5e73\u5747\u7edd\u5bf9\u63d0\u5347\u4e86+5.3 / +3.6\u70b9\u3002\u8fd9\u4e9b\u7ed3\u679c\u7a81\u51fa\u4e86\u4f7f\u7528\u53c2\u8003\u5f15\u5bfc\u7684LLM\u8bc4\u4f30\u5668\u5728\u975e\u53ef\u9a8c\u8bc1\u9886\u57df\u5b9e\u73b0\u6709\u6548LLM\u540e\u8bad\u7ec3\u7684\u6f5c\u529b\u3002"
+      "summary_zh": "\u5c3d\u7ba1\u53ef\u9a8c\u8bc1\u5956\u52b1\u5f3a\u5316\u5b66\u4e60\uff08RLVR\uff09\u5728\u63a8\u7406\u4efb\u52a1\u4e2d\u8868\u73b0\u51fa\u8272\uff0c\u4f46\u5b83\u65e0\u6cd5\u76f4\u63a5\u5e94\u7528\u4e8e\u7f3a\u4e4f\u771f\u5b9e\u9a8c\u8bc1\u5668\u7684\u975e\u53ef\u9a8c\u8bc1\u9886\u57df\uff0c\u4f8b\u5982LLM\u5bf9\u9f50\u3002\u672c\u6587\u7814\u7a76\u4e86\u53c2\u8003\u5f15\u5bfc\u7684LLM\u8bc4\u4f30\u5668\u662f\u5426\u80fd\u901a\u8fc7\u5145\u5f53\u8f6f\u201c\u9a8c\u8bc1\u5668\u201d\u6765\u5f25\u8865\u8fd9\u4e00\u7a7a\u767d\u3002\u9996\u5148\uff0c\u6211\u4eec\u8bbe\u8ba1\u4e86\u8bc4\u4f30\u534f\u8bae\uff0c\u5229\u7528\u53c2\u8003\u8f93\u51fa\u6765\u589e\u5f3a\u57fa\u4e8eLLM\u7684\u8bc4\u4f30\u5668\u8fdb\u884cLLM\u5bf9\u9f50\u3002\u7efc\u5408\u5b9e\u9a8c\u8868\u660e\uff0c\u53c2\u8003\u5f15\u5bfc\u65b9\u6cd5\u663e\u8457\u63d0\u9ad8\u4e86\u80fd\u529b\u8f83\u5f31\u7684LLM\u8bc4\u4f30\u5668\u4f7f\u7528\u524d\u6cbf\u6a21\u578b\u53c2\u8003\u7684\u51c6\u786e\u6027\uff1b\u9ad8\u8d28\u91cf\uff08\u5373\u4eba\u5de5\u7f16\u5199\uff09\u7684\u53c2\u8003\u4e5f\u80fd\u589e\u5f3a\u66f4\u5f3a\u7684LLM\u8bc4\u4f30\u5668\u3002\u5728\u6b64\u57fa\u7840\u4e0a\uff0c\u6211\u4eec\u5c55\u793a\u4e86\u9ad8\u8d28\u91cf\u53c2\u8003\u5728\u5bf9\u9f50\u5fae\u8c03\u4e2d\u7684\u6548\u7528\uff0c\u5176\u4e2dLLM\u5728\u53c2\u8003\u5f15\u5bfc\u4e0b\u4f5c\u4e3a\u8bc4\u4f30\u5668\u8fdb\u884c\u81ea\u6211\u63d0\u5347\u3002\u6211\u4eec\u53d1\u73b0\uff0c\u53c2\u8003\u5f15\u5bfc\u7684\u81ea\u6211\u63d0\u5347\u6bd4\u76f4\u63a5\u5728\u53c2\u8003\u8f93\u51fa\u4e0a\u8fdb\u884cSFT\u548c\u65e0\u53c2\u8003\u8bc4\u4f30\u5668\u7684\u81ea\u6211\u63d0\u5347\u90fd\u53d6\u5f97\u4e86\u663e\u8457\u8fdb\u6b65\uff0c\u6027\u80fd\u53ef\u4e0e\u4f7f\u7528\u5f3a\u5927\u7684\u5fae\u8c03\u5956\u52b1\u6a21\u578bArmoRM\u8fdb\u884c\u8bad\u7ec3\u76f8\u5ab2\u7f8e\u3002\u5177\u4f53\u800c\u8a00\uff0c\u6211\u4eec\u7684\u65b9\u6cd5\u5728\u4f7f\u7528Llama-3-8B-Instruct\u65f6\uff0c\u5728AlpacaEval\u548cArena-Hard\u4e0a\u5206\u522b\u8fbe\u523073.1%\u548c58.7%\uff1b\u4f7f\u7528Qwen2.5-7B\u65f6\uff0c\u5206\u522b\u8fbe\u523070.0%\u548c74.1%\u3002\u8fd9\u6bd4SFT\u84b8\u998f\u5e73\u5747\u7edd\u5bf9\u63d0\u5347\u4e86+20.2 / +17.1\u70b9\uff0c\u6bd4\u65e0\u53c2\u8003\u81ea\u6211\u63d0\u5347\u5728AlpacaEval / Arena-Hard\u4e0a\u5e73\u5747\u7edd\u5bf9\u63d0\u5347\u4e86+5.3 / +3.6\u70b9\u3002\u8fd9\u4e9b\u7ed3\u679c\u7a81\u51fa\u4e86\u4f7f\u7528\u53c2\u8003\u5f15\u5bfc\u7684LLM\u8bc4\u4f30\u5668\u5728\u975e\u53ef\u9a8c\u8bc1\u9886\u57df\u5b9e\u73b0\u6709\u6548LLM\u540e\u8bad\u7ec3\u7684\u6f5c\u529b\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.16796",
@@ -173,7 +180,8 @@
       "link": "https://arxiv.org/pdf/2602.16796v1",
       "first_seen": "2026-02-22T23:37:17.475601",
       "code_url": null,
-      "summary_zh": "\u5c06\u9884\u8bad\u7ec3\u6269\u6563\u6a21\u578b\u548c\u6d41\u6a21\u578b\u5fae\u8c03\u4ee5\u4f18\u5316\u4e0b\u6e38\u6548\u7528\u662f\u5b9e\u9645\u90e8\u7f72\u7684\u5173\u952e\u3002\u73b0\u6709\u71b5\u6b63\u5219\u5316\u65b9\u6cd5\u4e3b\u8981\u6700\u5927\u5316\u9884\u671f\u5956\u52b1\uff0c\u65e0\u6cd5\u5851\u9020\u5c3e\u90e8\u884c\u4e3a\u3002\u7136\u800c\uff0c\u5c3e\u90e8\u63a7\u5236\u901a\u5e38\u81f3\u5173\u91cd\u8981\uff1a\u4e0b\u5c3e\u901a\u8fc7\u9650\u5236\u4f4e\u5956\u52b1\u5931\u8d25\u6765\u51b3\u5b9a\u53ef\u9760\u6027\uff0c\u800c\u4e0a\u5c3e\u901a\u8fc7\u4f18\u5148\u8003\u8651\u7f55\u89c1\u9ad8\u5956\u52b1\u7ed3\u679c\u6765\u5b9e\u73b0\u53d1\u73b0\u3002\n\n\u672c\u7814\u7a76\u63d0\u51fa\u4e86\u4e00\u79cd\u57fa\u4e8e\u6761\u4ef6\u98ce\u9669\u4ef7\u503c\uff08CVaR\uff09\u7684\u539f\u5219\u6027\u9ad8\u6548\u5206\u5e03\u5fae\u8c03\u7b97\u6cd5\u2014\u2014\u5c3e\u90e8\u611f\u77e5\u6d41\u5fae\u8c03\uff08TFFT\uff09\u3002\u6211\u4eec\u89e3\u51b3\u4e86\u4e24\u4e2a\u4e0d\u540c\u7684\u5c3e\u90e8\u5851\u9020\u76ee\u6807\uff1a\u53f3CVaR\u7528\u4e8e\u5728\u9ad8\u5956\u52b1\u5c3e\u90e8\u5bfb\u627e\u65b0\u9896\u6837\u672c\uff0c\u5de6CVaR\u7528\u4e8e\u63a7\u5236\u4f4e\u5956\u52b1\u5c3e\u90e8\u7684\u6700\u5dee\u6837\u672c\u3002\n\n\u4e0e\u4f9d\u8d56\u975e\u7ebf\u6027\u4f18\u5316\u7684\u73b0\u6709\u65b9\u6cd5\u4e0d\u540c\uff0c\u6211\u4eec\u5229\u7528CVaR\u7684\u53d8\u5206\u5bf9\u5076\u516c\u5f0f\u5c06\u5176\u5206\u89e3\u4e3a\u89e3\u8026\u7684\u4e24\u9636\u6bb5\u8fc7\u7a0b\uff1a\u4e00\u4e2a\u8f7b\u91cf\u7ea7\u7684\u4e00\u7ef4\u9608\u503c\u4f18\u5316\u6b65\u9aa4\uff0c\u4ee5\u53ca\u4e00\u4e2a\u901a\u8fc7\u7279\u5b9a\u4f2a\u5956\u52b1\u8fdb\u884c\u7684\u5355\u4e00\u71b5\u6b63\u5219\u5316\u5fae\u8c03\u8fc7\u7a0b\u3002\u8fd9\u79cd\u5206\u89e3\u4f7f\u5f97CVaR\u5fae\u8c03\u80fd\u591f\u9ad8\u6548\u8fdb\u884c\uff0c\u8ba1\u7b97\u6210\u672c\u4e0e\u6807\u51c6\u9884\u671f\u5fae\u8c03\u65b9\u6cd5\u76f8\u5f53\u3002\u6211\u4eec\u901a\u8fc7\u8bf4\u660e\u6027\u5b9e\u9a8c\u3001\u9ad8\u7ef4\u6587\u672c\u5230\u56fe\u50cf\u751f\u6210\u548c\u5206\u5b50\u8bbe\u8ba1\u8bc1\u660e\u4e86TFFT\u7684\u6709\u6548\u6027\u3002"
+      "summary_zh": "\u5c06\u9884\u8bad\u7ec3\u6269\u6563\u6a21\u578b\u548c\u6d41\u6a21\u578b\u5fae\u8c03\u4ee5\u4f18\u5316\u4e0b\u6e38\u6548\u7528\u662f\u5b9e\u9645\u90e8\u7f72\u7684\u5173\u952e\u3002\u73b0\u6709\u71b5\u6b63\u5219\u5316\u65b9\u6cd5\u4e3b\u8981\u6700\u5927\u5316\u9884\u671f\u5956\u52b1\uff0c\u65e0\u6cd5\u5851\u9020\u5c3e\u90e8\u884c\u4e3a\u3002\u7136\u800c\uff0c\u5c3e\u90e8\u63a7\u5236\u901a\u5e38\u81f3\u5173\u91cd\u8981\uff1a\u4e0b\u5c3e\u901a\u8fc7\u9650\u5236\u4f4e\u5956\u52b1\u5931\u8d25\u6765\u51b3\u5b9a\u53ef\u9760\u6027\uff0c\u800c\u4e0a\u5c3e\u901a\u8fc7\u4f18\u5148\u8003\u8651\u7f55\u89c1\u9ad8\u5956\u52b1\u7ed3\u679c\u6765\u5b9e\u73b0\u53d1\u73b0\u3002\n\n\u672c\u7814\u7a76\u63d0\u51fa\u4e86\u4e00\u79cd\u57fa\u4e8e\u6761\u4ef6\u98ce\u9669\u4ef7\u503c\uff08CVaR\uff09\u7684\u539f\u5219\u6027\u9ad8\u6548\u5206\u5e03\u5fae\u8c03\u7b97\u6cd5\u2014\u2014\u5c3e\u90e8\u611f\u77e5\u6d41\u5fae\u8c03\uff08TFFT\uff09\u3002\u6211\u4eec\u89e3\u51b3\u4e86\u4e24\u4e2a\u4e0d\u540c\u7684\u5c3e\u90e8\u5851\u9020\u76ee\u6807\uff1a\u53f3CVaR\u7528\u4e8e\u5728\u9ad8\u5956\u52b1\u5c3e\u90e8\u5bfb\u627e\u65b0\u9896\u6837\u672c\uff0c\u5de6CVaR\u7528\u4e8e\u63a7\u5236\u4f4e\u5956\u52b1\u5c3e\u90e8\u7684\u6700\u5dee\u6837\u672c\u3002\n\n\u4e0e\u4f9d\u8d56\u975e\u7ebf\u6027\u4f18\u5316\u7684\u73b0\u6709\u65b9\u6cd5\u4e0d\u540c\uff0c\u6211\u4eec\u5229\u7528CVaR\u7684\u53d8\u5206\u5bf9\u5076\u516c\u5f0f\u5c06\u5176\u5206\u89e3\u4e3a\u89e3\u8026\u7684\u4e24\u9636\u6bb5\u8fc7\u7a0b\uff1a\u4e00\u4e2a\u8f7b\u91cf\u7ea7\u7684\u4e00\u7ef4\u9608\u503c\u4f18\u5316\u6b65\u9aa4\uff0c\u4ee5\u53ca\u4e00\u4e2a\u901a\u8fc7\u7279\u5b9a\u4f2a\u5956\u52b1\u8fdb\u884c\u7684\u5355\u4e00\u71b5\u6b63\u5219\u5316\u5fae\u8c03\u8fc7\u7a0b\u3002\u8fd9\u79cd\u5206\u89e3\u4f7f\u5f97CVaR\u5fae\u8c03\u80fd\u591f\u9ad8\u6548\u8fdb\u884c\uff0c\u8ba1\u7b97\u6210\u672c\u4e0e\u6807\u51c6\u9884\u671f\u5fae\u8c03\u65b9\u6cd5\u76f8\u5f53\u3002\u6211\u4eec\u901a\u8fc7\u8bf4\u660e\u6027\u5b9e\u9a8c\u3001\u9ad8\u7ef4\u6587\u672c\u5230\u56fe\u50cf\u751f\u6210\u548c\u5206\u5b50\u8bbe\u8ba1\u8bc1\u660e\u4e86TFFT\u7684\u6709\u6548\u6027\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.23363",
@@ -197,7 +205,8 @@
       "link": "https://arxiv.org/pdf/2602.23363v1",
       "first_seen": "2026-02-27T20:40:23.027972",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23361",
@@ -220,7 +229,8 @@
       "link": "https://arxiv.org/pdf/2602.23361v1",
       "first_seen": "2026-02-27T20:40:23.028125",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23360",
@@ -244,7 +254,8 @@
       "link": "https://arxiv.org/pdf/2602.23360v1",
       "first_seen": "2026-02-27T20:40:23.028216",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23359",
@@ -266,7 +277,8 @@
       "link": "https://arxiv.org/pdf/2602.23359v1",
       "first_seen": "2026-02-27T20:40:23.028333",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23358",
@@ -286,7 +298,8 @@
       "link": "https://arxiv.org/pdf/2602.23358v1",
       "first_seen": "2026-02-27T20:40:23.028440",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23357",
@@ -305,7 +318,8 @@
       "link": "https://arxiv.org/pdf/2602.23357v1",
       "first_seen": "2026-02-27T20:40:23.028537",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23353",
@@ -327,7 +341,8 @@
       "link": "https://arxiv.org/pdf/2602.23353v1",
       "first_seen": "2026-02-27T20:40:23.028608",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23351",
@@ -350,7 +365,8 @@
       "link": "https://arxiv.org/pdf/2602.23351v1",
       "first_seen": "2026-02-27T20:40:23.028713",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23349",
@@ -371,7 +387,8 @@
       "link": "https://arxiv.org/pdf/2602.23349v1",
       "first_seen": "2026-02-27T20:40:23.028815",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23341",
@@ -395,7 +412,8 @@
       "link": "https://arxiv.org/pdf/2602.23341v1",
       "first_seen": "2026-02-27T20:40:23.028908",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23339",
@@ -416,7 +434,8 @@
       "link": "https://arxiv.org/pdf/2602.23339v1",
       "first_seen": "2026-02-27T20:40:23.028996",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23336",
@@ -436,7 +455,8 @@
       "link": "https://arxiv.org/pdf/2602.23336v1",
       "first_seen": "2026-02-27T20:40:23.029076",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23335",
@@ -476,7 +496,8 @@
       "link": "https://arxiv.org/pdf/2602.23335v1",
       "first_seen": "2026-02-27T20:40:23.029173",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23334",
@@ -496,7 +517,8 @@
       "link": "https://arxiv.org/pdf/2602.23334v1",
       "first_seen": "2026-02-27T20:40:23.029259",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23331",
@@ -514,7 +536,8 @@
       "link": "https://arxiv.org/pdf/2602.23331v1",
       "first_seen": "2026-02-27T20:40:23.029332",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23330",
@@ -535,7 +558,8 @@
       "link": "https://arxiv.org/pdf/2602.23330v1",
       "first_seen": "2026-02-27T20:40:23.029392",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23329",
@@ -574,7 +598,8 @@
       "link": "https://arxiv.org/pdf/2602.23329v1",
       "first_seen": "2026-02-27T20:40:23.029503",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23321",
@@ -595,7 +620,8 @@
       "link": "https://arxiv.org/pdf/2602.23321v1",
       "first_seen": "2026-02-27T20:40:23.029589",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23320",
@@ -618,7 +644,8 @@
       "link": "https://arxiv.org/pdf/2602.23320v1",
       "first_seen": "2026-02-27T20:40:23.029676",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23318",
@@ -637,7 +664,8 @@
       "link": "https://arxiv.org/pdf/2602.23318v1",
       "first_seen": "2026-02-27T20:40:23.029764",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23315",
@@ -654,7 +682,8 @@
       "link": "https://arxiv.org/pdf/2602.23315v1",
       "first_seen": "2026-02-27T20:40:23.029820",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23312",
@@ -680,7 +709,8 @@
       "link": "https://arxiv.org/pdf/2602.23312v1",
       "first_seen": "2026-02-27T20:40:23.029889",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23306",
@@ -705,7 +735,8 @@
       "link": "https://arxiv.org/pdf/2602.23306v1",
       "first_seen": "2026-02-27T20:40:23.029990",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23305",
@@ -729,7 +760,8 @@
       "link": "https://arxiv.org/pdf/2602.23305v1",
       "first_seen": "2026-02-27T20:40:23.030081",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23303",
@@ -747,7 +779,8 @@
       "link": "https://arxiv.org/pdf/2602.23303v1",
       "first_seen": "2026-02-27T20:40:23.030146",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23302",
@@ -766,7 +799,8 @@
       "link": "https://arxiv.org/pdf/2602.23302v1",
       "first_seen": "2026-02-27T20:40:23.030236",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23297",
@@ -789,7 +823,8 @@
       "link": "https://arxiv.org/pdf/2602.23297v1",
       "first_seen": "2026-02-27T20:40:23.030296",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23296",
@@ -809,7 +844,8 @@
       "link": "https://arxiv.org/pdf/2602.23296v1",
       "first_seen": "2026-02-27T20:40:23.030367",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23295",
@@ -830,7 +866,8 @@
       "link": "https://arxiv.org/pdf/2602.23295v1",
       "first_seen": "2026-02-27T20:40:23.030438",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23294",
@@ -854,7 +891,8 @@
       "link": "https://arxiv.org/pdf/2602.23294v1",
       "first_seen": "2026-02-27T20:40:23.030530",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23292",
@@ -879,7 +917,8 @@
       "link": "https://arxiv.org/pdf/2602.23292v1",
       "first_seen": "2026-02-27T20:40:23.030618",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23290",
@@ -899,7 +938,8 @@
       "link": "https://arxiv.org/pdf/2602.23290v1",
       "first_seen": "2026-02-27T20:40:23.030692",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23287",
@@ -919,7 +959,8 @@
       "link": "https://arxiv.org/pdf/2602.23287v1",
       "first_seen": "2026-02-27T20:40:23.030792",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23286",
@@ -941,7 +982,8 @@
       "link": "https://arxiv.org/pdf/2602.23286v1",
       "first_seen": "2026-02-27T20:40:23.030854",
       "code_url": "https://github.com/pshlego/SPARTA",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23285",
@@ -966,7 +1008,8 @@
       "link": "https://arxiv.org/pdf/2602.23285v1",
       "first_seen": "2026-02-27T20:40:23.030938",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23283",
@@ -986,7 +1029,8 @@
       "link": "https://arxiv.org/pdf/2602.23283v1",
       "first_seen": "2026-02-27T20:40:23.030995",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23280",
@@ -1009,7 +1053,8 @@
       "link": "https://arxiv.org/pdf/2602.23280v1",
       "first_seen": "2026-02-27T20:40:23.031072",
       "code_url": "https://github.com/HrishikeshVish/phys-fk-value-GCRL.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23277",
@@ -1030,7 +1075,8 @@
       "link": "https://arxiv.org/pdf/2602.23277v1",
       "first_seen": "2026-02-27T20:40:23.031130",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23276",
@@ -1049,7 +1095,8 @@
       "link": "https://arxiv.org/pdf/2602.23276v1",
       "first_seen": "2026-02-27T20:40:23.031200",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23271",
@@ -1069,7 +1116,8 @@
       "link": "https://arxiv.org/pdf/2602.23271v1",
       "first_seen": "2026-02-27T20:40:23.031263",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23262",
@@ -1092,7 +1140,8 @@
       "link": "https://arxiv.org/pdf/2602.23262v1",
       "first_seen": "2026-02-27T20:40:23.031343",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23259",
@@ -1117,7 +1166,8 @@
       "link": "https://arxiv.org/pdf/2602.23259v1",
       "first_seen": "2026-02-27T20:40:23.031412",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23258",
@@ -1141,7 +1191,8 @@
       "link": "https://arxiv.org/pdf/2602.23258v1",
       "first_seen": "2026-02-27T20:40:23.031491",
       "code_url": "https://github.com/TonySY2/AgentDropoutV2.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23253",
@@ -1163,7 +1214,8 @@
       "link": "https://arxiv.org/pdf/2602.23253v1",
       "first_seen": "2026-02-27T20:40:23.031543",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": "\u673a\u5668\u4eba\u88c5\u914d\u56e0\u5176\u5bf9\u7cbe\u786e\u3001\u63a5\u89e6\u5bc6\u96c6\u64cd\u4f5c\u7684\u8981\u6c42\u800c\u957f\u671f\u9762\u4e34\u6311\u6218\u3002\u867d\u7136\u57fa\u4e8e\u4eff\u771f\u7684\u5b66\u4e60\u5df2\u80fd\u5f00\u53d1\u51fa\u7a33\u5065\u7684\u88c5\u914d\u7b56\u7565\uff0c\u4f46\u7531\u4e8e\u201c\u4eff\u771f\u5230\u73b0\u5b9e\u201d\u7684\u5dee\u8ddd\uff0c\u5176\u5728\u5b9e\u9645\u90e8\u7f72\u65f6\u6027\u80fd\u5e38\u4f1a\u4e0b\u964d\u3002\u76f8\u53cd\uff0c\u73b0\u5b9e\u4e16\u754c\u5f3a\u5316\u5b66\u4e60\uff08RL\uff09\u65b9\u6cd5\u907f\u514d\u4e86\u201c\u4eff\u771f\u5230\u73b0\u5b9e\u201d\u7684\u5dee\u8ddd\uff0c\u4f46\u5374\u9ad8\u5ea6\u4f9d\u8d56\u4eba\u5de5\u76d1\u7763\uff0c\u4e14\u5bf9\u73af\u5883\u53d8\u5316\u7f3a\u4e4f\u6cdb\u5316\u80fd\u529b\u3002\n\n\u672c\u7814\u7a76\u63d0\u51fa\u4e00\u79cd\u6df7\u5408\u65b9\u6cd5\uff0c\u5c06\u4eff\u771f\u8bad\u7ec3\u7684\u57fa\u7840\u7b56\u7565\u4e0e\u73b0\u5b9e\u4e16\u754c\u6b8b\u5dee\u7b56\u7565\u76f8\u7ed3\u5408\uff0c\u4ee5\u6709\u6548\u9002\u5e94\u73b0\u5b9e\u4e16\u754c\u53d8\u5316\u3002\u57fa\u7840\u7b56\u7565\u5728\u4eff\u771f\u73af\u5883\u4e2d\u5229\u7528\u4f4e\u7ea7\u72b6\u6001\u89c2\u6d4b\u548c\u5bc6\u96c6\u5956\u52b1\u8fdb\u884c\u8bad\u7ec3\uff0c\u4e3a\u521d\u59cb\u884c\u4e3a\u63d0\u4f9b\u5f3a\u5148\u9a8c\u3002\u6b8b\u5dee\u7b56\u7565\u5219\u5728\u73b0\u5b9e\u4e16\u754c\u4e2d\u5229\u7528\u89c6\u89c9\u89c2\u6d4b\u548c\u7a00\u758f\u5956\u52b1\u5b66\u4e60\uff0c\u4ee5\u5f25\u8865\u52a8\u529b\u5b66\u548c\u4f20\u611f\u5668\u566a\u58f0\u7684\u5dee\u5f02\u3002\n\n\u5927\u91cf\u7684\u73b0\u5b9e\u4e16\u754c\u5b9e\u9a8c\u8868\u660e\uff0c\u6211\u4eec\u7684\u65b9\u6cd5SPARR\u5728\u5404\u79cd\u4e24\u90e8\u5206\u88c5\u914d\u4efb\u52a1\u4e2d\u53d6\u5f97\u4e86\u8fd1\u4e4e\u5b8c\u7f8e\u7684\u6210\u529f\u7387\u3002\u4e0e\u6700\u5148\u8fdb\u7684\u96f6\u6837\u672c\u201c\u4eff\u771f\u5230\u73b0\u5b9e\u201d\u65b9\u6cd5\u76f8\u6bd4\uff0cSPARR\u5c06\u6210\u529f\u7387\u63d0\u9ad8\u4e8638.4%\uff0c\u540c\u65f6\u5c06\u5468\u671f\u65f6\u95f4\u7f29\u77ed\u4e8629.7%\u3002\u6b64\u5916\uff0c\u4e0e\u9ad8\u5ea6\u4f9d\u8d56\u4eba\u5de5\u76d1\u7763\u7684\u6700\u5148\u8fdb\u73b0\u5b9e\u4e16\u754cRL\u65b9\u6cd5\u4e0d\u540c\uff0cSPARR\u65e0\u9700\u4eba\u7c7b\u4e13\u4e1a\u77e5\u8bc6\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.23248",
@@ -1181,7 +1233,8 @@
       "link": "https://arxiv.org/pdf/2602.23248v1",
       "first_seen": "2026-02-27T20:40:23.031605",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23242",
@@ -1199,7 +1252,8 @@
       "link": "https://arxiv.org/pdf/2602.23242v1",
       "first_seen": "2026-02-27T20:40:23.031650",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": "\u5728\u901a\u7528\u5f3a\u5316\u5b66\u4e60\u4e2d\uff0c\u6240\u6709\u5df2\u77e5\u7684\u6700\u4f18\u667a\u80fd\u4f53\uff0c\u5305\u62ecAIXI\uff0c\u90fd\u662f\u57fa\u4e8e\u6a21\u578b\u7684\uff0c\u5b83\u4eec\u660e\u786e\u5730\u7ef4\u62a4\u548c\u4f7f\u7528\u73af\u5883\u6a21\u578b\u3002\u672c\u6587\u4ecb\u7ecd\u4e86\u901a\u7528AI\u4e0eQ\u5f52\u7eb3\uff08AIQI\uff09\uff0c\u8fd9\u662f\u7b2c\u4e00\u4e2a\u88ab\u8bc1\u660e\u5728\u901a\u7528\u5f3a\u5316\u5b66\u4e60\u4e2d\u6e10\u8fd1$\\varepsilon$-\u6700\u4f18\u7684\u65e0\u6a21\u578b\u667a\u80fd\u4f53\u3002AIQI\u5bf9\u5206\u5e03\u5f0f\u7684\u52a8\u4f5c-\u4ef7\u503c\u51fd\u6570\u8fdb\u884c\u901a\u7528\u5f52\u7eb3\uff0c\u800c\u975e\u50cf\u4ee5\u5f80\u5de5\u4f5c\u90a3\u6837\u5bf9\u7b56\u7565\u6216\u73af\u5883\u8fdb\u884c\u5f52\u7eb3\u3002\u5728\u201c\u771f\u7406\u4e4b\u7c92\u201d\u6761\u4ef6\u4e0b\uff0c\u6211\u4eec\u8bc1\u660e\u4e86AIQI\u662f\u5f3a\u6e10\u8fd1$\\varepsilon$-\u6700\u4f18\u548c\u6e10\u8fd1$\\varepsilon$-\u8d1d\u53f6\u65af\u6700\u4f18\u7684\u3002\u6211\u4eec\u7684\u7814\u7a76\u7ed3\u679c\u663e\u8457\u589e\u52a0\u4e86\u5df2\u77e5\u901a\u7528\u667a\u80fd\u4f53\u7684\u591a\u6837\u6027\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.23239",
@@ -1217,7 +1271,8 @@
       "link": "https://arxiv.org/pdf/2602.23239v1",
       "first_seen": "2026-02-27T20:40:23.031690",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": "\u4eba\u5de5\u667a\u80fd\u7cfb\u7edf\u8d8a\u6765\u8d8a\u591a\u5730\u90e8\u7f72\u5728\u533b\u7597\u8bca\u65ad\u3001\u6cd5\u5f8b\u7814\u7a76\u3001\u91d1\u878d\u5206\u6790\u7b49\u9ad8\u98ce\u9669\u9886\u57df\uff0c\u4f46\u5176\u53ef\u53d7\u89c4\u8303\u7ea6\u675f\u7684\u5047\u8bbe\u662f\u65e0\u6548\u7684\u3002\u672c\u6587\u8bc1\u660e\uff0c\u5bf9\u4e8e\u57fa\u4e8e\u4f18\u5316\u7684\u7cfb\u7edf\uff0c\u7279\u522b\u662f\u901a\u8fc7\u4eba\u7c7b\u53cd\u9988\u5f3a\u5316\u5b66\u4e60\uff08RLHF\uff09\u8bad\u7ec3\u7684\u5927\u578b\u8bed\u8a00\u6a21\u578b\uff0c\u8fd9\u4e00\u5047\u8bbe\u5728\u5f62\u5f0f\u4e0a\u662f\u65e0\u6548\u7684\u3002\u6211\u4eec\u63d0\u51fa\uff0c\u771f\u6b63\u7684\u80fd\u52a8\u6027\u9700\u8981\u4e24\u4e2a\u5fc5\u8981\u4e14\u5171\u540c\u5145\u5206\u7684\u67b6\u6784\u6761\u4ef6\uff1a\u5c06\u67d0\u4e9b\u8fb9\u754c\u4f5c\u4e3a\u4e0d\u53ef\u534f\u5546\u7684\u7ea6\u675f\u800c\u975e\u53ef\u6743\u8861\u7684\u6743\u91cd\u6765\u7ef4\u6301\u7684\u80fd\u529b\uff08\u4e0d\u53ef\u901a\u7ea6\u6027\uff09\uff0c\u4ee5\u53ca\u5f53\u8fd9\u4e9b\u8fb9\u754c\u53d7\u5230\u5a01\u80c1\u65f6\u80fd\u591f\u6682\u505c\u5904\u7406\u7684\u975e\u63a8\u65ad\u673a\u5236\uff08\u6d88\u6781\u54cd\u5e94\u6027\uff09\u3002\u8fd9\u4e9b\u6761\u4ef6\u9002\u7528\u4e8e\u6240\u6709\u89c4\u8303\u9886\u57df\u3002\n\n\u57fa\u4e8eRLHF\u7684\u7cfb\u7edf\u4e0e\u8fd9\u4e24\u4e2a\u6761\u4ef6\u672c\u8d28\u4e0a\u4e0d\u517c\u5bb9\u3002\u4f7f\u4f18\u5316\u5f3a\u5927\u7684\u64cd\u4f5c\u2014\u2014\u5c06\u6240\u6709\u4ef7\u503c\u7edf\u4e00\u4e3a\u6807\u91cf\u6307\u6807\u5e76\u59cb\u7ec8\u9009\u62e9\u5f97\u5206\u6700\u9ad8\u7684\u8f93\u51fa\u2014\u2014\u6070\u6070\u6392\u9664\u4e86\u89c4\u8303\u6cbb\u7406\u3002\u8fd9\u79cd\u4e0d\u517c\u5bb9\u6027\u5e76\u975e\u53ef\u901a\u8fc7\u6280\u672f\u4fee\u590d\u7684\u8bad\u7ec3\u9519\u8bef\uff0c\u800c\u662f\u4f18\u5316\u672c\u8d28\u56fa\u6709\u7684\u5f62\u5f0f\u7ea6\u675f\u3002\u56e0\u6b64\uff0c\u5df2\u8bb0\u5f55\u7684\u6545\u969c\u6a21\u5f0f\u2014\u2014\u5982\u8c04\u5a9a\u3001\u5e7b\u89c9\u548c\u4e0d\u5fe0\u5b9e\u63a8\u7406\u2014\u2014\u5e76\u975e\u5076\u7136\uff0c\u800c\u662f\u7ed3\u6784\u6027\u8868\u73b0\u3002\n\n\u4e0d\u5f53\u90e8\u7f72\u4f1a\u5f15\u53d1\u6211\u4eec\u79f0\u4e4b\u4e3a\u201c\u8d8b\u540c\u5371\u673a\u201d\u7684\u4e8c\u7ea7\u98ce\u9669\uff1a\u5f53\u4eba\u7c7b\u5728\u6307\u6807\u538b\u529b\u4e0b\u88ab\u8feb\u9a8c\u8bc1AI\u8f93\u51fa\u65f6\uff0c\u4ed6\u4eec\u4f1a\u4ece\u771f\u6b63\u7684\u80fd\u52a8\u8005\u9000\u5316\u4e3a\u6807\u51c6\u68c0\u67e5\u4f18\u5316\u5668\uff0c\u4ece\u800c\u6d88\u9664\u4e86\u7cfb\u7edf\u4e2d\u552f\u4e00\u80fd\u591f\u8fdb\u884c\u89c4\u8303\u95ee\u8d23\u7684\u7ec4\u6210\u90e8\u5206\u3002\u9664\u4e86\u4e0d\u517c\u5bb9\u6027\u8bc1\u660e\uff0c\u672c\u6587\u4e3b\u8981\u7684\u79ef\u6781\u8d21\u732e\u662f\u63d0\u51fa\u4e86\u4e00\u79cd\u4e0e\u57fa\u5e95\u65e0\u5173\u7684\u67b6\u6784\u89c4\u8303\uff0c\u5b9a\u4e49\u4e86\u4efb\u4f55\u7cfb\u7edf\uff08\u65e0\u8bba\u662f\u751f\u7269\u3001\u4eba\u5de5\u8fd8\u662f\u673a\u6784\uff09\u8981\u6210\u4e3a\u80fd\u52a8\u8005\u800c\u975e\u590d\u6742\u5de5\u5177\u6240\u5fc5\u987b\u6ee1\u8db3\u7684\u6761\u4ef6\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.23235",
@@ -1239,7 +1294,8 @@
       "link": "https://arxiv.org/pdf/2602.23235v1",
       "first_seen": "2026-02-27T20:40:23.031771",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23234",
@@ -1261,7 +1317,8 @@
       "link": "https://arxiv.org/pdf/2602.23234v1",
       "first_seen": "2026-02-27T20:40:23.031837",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23232",
@@ -1278,7 +1335,8 @@
       "link": "https://arxiv.org/pdf/2602.23232v1",
       "first_seen": "2026-02-27T20:40:23.031899",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23231",
@@ -1297,7 +1355,8 @@
       "link": "https://arxiv.org/pdf/2602.23231v1",
       "first_seen": "2026-02-27T20:40:23.031967",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23229",
@@ -1318,7 +1377,8 @@
       "link": "https://arxiv.org/pdf/2602.23229v1",
       "first_seen": "2026-02-27T20:40:23.032016",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23228",
@@ -1340,7 +1400,8 @@
       "link": "https://arxiv.org/pdf/2602.23228v1",
       "first_seen": "2026-02-27T20:40:23.032079",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23225",
@@ -1362,7 +1423,8 @@
       "link": "https://arxiv.org/pdf/2602.23225v1",
       "first_seen": "2026-02-27T20:40:23.032153",
       "code_url": "https://github.com/pixeli99/NAP.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23224",
@@ -1385,7 +1447,8 @@
       "link": "https://arxiv.org/pdf/2602.23224v1",
       "first_seen": "2026-02-27T20:40:23.032206",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23219",
@@ -1407,7 +1470,8 @@
       "link": "https://arxiv.org/pdf/2602.23219v1",
       "first_seen": "2026-02-27T20:40:23.032279",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23217",
@@ -1426,7 +1490,8 @@
       "link": "https://arxiv.org/pdf/2602.23217v1",
       "first_seen": "2026-02-27T20:40:23.032341",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23214",
@@ -1451,7 +1516,8 @@
       "link": "https://arxiv.org/pdf/2602.23214v1",
       "first_seen": "2026-02-27T20:40:23.032406",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23212",
@@ -1468,7 +1534,8 @@
       "link": "https://arxiv.org/pdf/2602.23212v1",
       "first_seen": "2026-02-27T20:40:23.032474",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23206",
@@ -1489,7 +1556,8 @@
       "link": "https://arxiv.org/pdf/2602.23206v1",
       "first_seen": "2026-02-27T20:40:23.032522",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23205",
@@ -1516,7 +1584,8 @@
       "link": "https://arxiv.org/pdf/2602.23205v1",
       "first_seen": "2026-02-27T20:40:23.032586",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23204",
@@ -1538,7 +1607,8 @@
       "link": "https://arxiv.org/pdf/2602.23204v1",
       "first_seen": "2026-02-27T20:40:23.032658",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23203",
@@ -1567,7 +1637,8 @@
       "link": "https://arxiv.org/pdf/2602.23203v1",
       "first_seen": "2026-02-27T20:40:23.032715",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23201",
@@ -1586,7 +1657,8 @@
       "link": "https://arxiv.org/pdf/2602.23201v1",
       "first_seen": "2026-02-27T20:40:23.032787",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23200",
@@ -1606,7 +1678,8 @@
       "link": "https://arxiv.org/pdf/2602.23200v1",
       "first_seen": "2026-02-27T20:40:23.032833",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23199",
@@ -1630,7 +1703,8 @@
       "link": "https://arxiv.org/pdf/2602.23199v1",
       "first_seen": "2026-02-27T20:40:23.032909",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23197",
@@ -1651,7 +1725,8 @@
       "link": "https://arxiv.org/pdf/2602.23197v1",
       "first_seen": "2026-02-27T20:40:23.032988",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23193",
@@ -1668,7 +1743,8 @@
       "link": "https://arxiv.org/pdf/2602.23193v1",
       "first_seen": "2026-02-27T20:40:23.033041",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23192",
@@ -1687,7 +1763,8 @@
       "link": "https://arxiv.org/pdf/2602.23192v1",
       "first_seen": "2026-02-27T20:40:23.033110",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23191",
@@ -1708,7 +1785,8 @@
       "link": "https://arxiv.org/pdf/2602.23191v1",
       "first_seen": "2026-02-27T20:40:23.033167",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23188",
@@ -1729,7 +1807,8 @@
       "link": "https://arxiv.org/pdf/2602.23188v1",
       "first_seen": "2026-02-27T20:40:23.033225",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23182",
@@ -1748,7 +1827,8 @@
       "link": "https://arxiv.org/pdf/2602.23182v1",
       "first_seen": "2026-02-27T20:40:23.033294",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23179",
@@ -1771,7 +1851,8 @@
       "link": "https://arxiv.org/pdf/2602.23179v1",
       "first_seen": "2026-02-27T20:40:23.033354",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23177",
@@ -1791,7 +1872,8 @@
       "link": "https://arxiv.org/pdf/2602.23177v1",
       "first_seen": "2026-02-27T20:40:23.033409",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23172",
@@ -1815,7 +1897,8 @@
       "link": "https://arxiv.org/pdf/2602.23172v1",
       "first_seen": "2026-02-27T20:40:23.033477",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23169",
@@ -1836,7 +1919,8 @@
       "link": "https://arxiv.org/pdf/2602.23169v1",
       "first_seen": "2026-02-27T20:40:23.033535",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23167",
@@ -1860,7 +1944,8 @@
       "link": "https://arxiv.org/pdf/2602.23167v1",
       "first_seen": "2026-02-27T20:40:23.033614",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23166",
@@ -1889,7 +1974,8 @@
       "link": "https://arxiv.org/pdf/2602.23166v1",
       "first_seen": "2026-02-27T20:40:23.033687",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23165",
@@ -1915,7 +2001,8 @@
       "link": "https://arxiv.org/pdf/2602.23165v1",
       "first_seen": "2026-02-27T20:40:23.033758",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23164",
@@ -1934,7 +2021,8 @@
       "link": "https://arxiv.org/pdf/2602.23164v1",
       "first_seen": "2026-02-27T20:40:23.033812",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": "\u57fa\u7840\u6a21\u578b\u9700\u5904\u7406\u591a\u79cd\u751f\u6210\u8fc7\u7a0b\uff0c\u4f46\u673a\u68b0\u53ef\u89e3\u91ca\u6027\u7814\u7a76\u591a\u5c40\u9650\u4e8e\u5355\u4e00\u80fd\u529b\uff0c\u5c1a\u4e0d\u6e05\u695a\u5355\u4e2aTransformer\u5982\u4f55\u7ec4\u7ec7\u591a\u4e2a\u53ef\u80fd\u51b2\u7a81\u7684\u201c\u4e16\u754c\u6a21\u578b\u201d\u3002\u4ee5\u5f80\u5bf9\u5965\u8d5b\u7f57\u795e\u7ecf\u7f51\u7edc\u7684\u5b9e\u9a8c\u867d\u6d4b\u8bd5\u4e86\u4e16\u754c\u6a21\u578b\u5b66\u4e60\uff0c\u4f46\u4ec5\u9650\u4e8e\u5355\u4e00\u6e38\u620f\u89c4\u5219\u3002\u6211\u4eec\u5f15\u5165MetaOthello\uff0c\u4e00\u4e2a\u53d7\u63a7\u7684\u5965\u8d5b\u7f57\u53d8\u4f53\u5957\u4ef6\uff0c\u5b83\u4eec\u8bed\u6cd5\u5171\u4eab\u4f46\u89c4\u5219\u6216\u5206\u8bcd\u4e0d\u540c\u3002\u6211\u4eec\u7528\u6df7\u5408\u53d8\u4f53\u6570\u636e\u8bad\u7ec3\u5c0f\u578bGPT\uff0c\u4ee5\u7814\u7a76\u591a\u4e2a\u4e16\u754c\u6a21\u578b\u5982\u4f55\u5728\u5171\u4eab\u8868\u793a\u7a7a\u95f4\u4e2d\u7ec4\u7ec7\u3002\u6211\u4eec\u53d1\u73b0\uff0c\u5728\u6df7\u5408\u6e38\u620f\u6570\u636e\u4e0a\u8bad\u7ec3\u7684Transformer\u5e76\u672a\u5c06\u80fd\u529b\u5212\u5206\u4e3a\u5b64\u7acb\u7684\u5b50\u6a21\u578b\uff1b\u76f8\u53cd\uff0c\u5b83\u4eec\u8d8b\u5411\u4e8e\u5171\u4eab\u7684\u68cb\u76d8\u72b6\u6001\u8868\u793a\uff0c\u8be5\u8868\u793a\u53ef\u5728\u53d8\u4f53\u95f4\u8fdb\u884c\u56e0\u679c\u8fc1\u79fb\u3002\u5728\u4e00\u4e2a\u53d8\u4f53\u4e0a\u8bad\u7ec3\u7684\u7ebf\u6027\u63a2\u9488\u80fd\u6709\u6548\u5e72\u9884\u53e6\u4e00\u4e2a\u53d8\u4f53\u7684\u5185\u90e8\u72b6\u6001\uff0c\u5176\u6548\u679c\u63a5\u8fd1\u5339\u914d\u63a2\u9488\u3002\u5bf9\u4e8e\u901a\u8fc7\u4ee4\u724c\u91cd\u6620\u5c04\u7684\u540c\u6784\u6e38\u620f\uff0c\u8868\u793a\u5728\u6240\u6709\u5c42\u4e0a\u90fd\u7b49\u4ef7\u4e8e\u4e00\u4e2a\u5355\u4e00\u6b63\u4ea4\u65cb\u8f6c\u3002\u5f53\u89c4\u5219\u90e8\u5206\u91cd\u53e0\u65f6\uff0c\u65e9\u671f\u5c42\u4fdd\u6301\u6e38\u620f\u65e0\u5173\u8868\u793a\uff0c\u4e2d\u95f4\u5c42\u8bc6\u522b\u6e38\u620f\u8eab\u4efd\uff0c\u540e\u671f\u5c42\u5219\u8fdb\u884c\u4e13\u4e1a\u5316\u3002MetaOthello\u4e3a\u7406\u89e3Transformer\u5982\u4f55\u5b66\u4e60\u4e16\u754c\u6a21\u578b\u4ee5\u53ca\u5982\u4f55\u540c\u65f6\u7ec4\u7ec7\u591a\u4e2a\u4e16\u754c\u6a21\u578b\u63d0\u4f9b\u4e86\u9014\u5f84\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.23163",
@@ -1963,7 +2051,8 @@
       "link": "https://arxiv.org/pdf/2602.23163v1",
       "first_seen": "2026-02-27T20:40:23.033880",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23161",
@@ -1986,7 +2075,8 @@
       "link": "https://arxiv.org/pdf/2602.23161v1",
       "first_seen": "2026-02-27T20:40:23.033947",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23159",
@@ -2007,7 +2097,8 @@
       "link": "https://arxiv.org/pdf/2602.23159v1",
       "first_seen": "2026-02-27T20:40:23.034000",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23153",
@@ -2030,7 +2121,8 @@
       "link": "https://arxiv.org/pdf/2602.23153v1",
       "first_seen": "2026-02-27T20:40:23.034063",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23152",
@@ -2070,7 +2162,8 @@
       "link": "https://arxiv.org/pdf/2602.23152v1",
       "first_seen": "2026-02-27T20:40:23.034143",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23148",
@@ -2090,7 +2183,8 @@
       "link": "https://arxiv.org/pdf/2602.23148v1",
       "first_seen": "2026-02-27T20:40:23.034211",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23146",
@@ -2118,7 +2212,8 @@
       "link": "https://arxiv.org/pdf/2602.23146v1",
       "first_seen": "2026-02-27T20:40:23.034290",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23142",
@@ -2138,7 +2233,8 @@
       "link": "https://arxiv.org/pdf/2602.23142v1",
       "first_seen": "2026-02-27T20:40:23.034355",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23141",
@@ -2158,7 +2254,8 @@
       "link": "https://arxiv.org/pdf/2602.23141v1",
       "first_seen": "2026-02-27T20:40:23.034431",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23136",
@@ -2177,7 +2274,8 @@
       "link": "https://arxiv.org/pdf/2602.23136v1",
       "first_seen": "2026-02-27T20:40:23.034478",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23135",
@@ -2197,7 +2295,8 @@
       "link": "https://arxiv.org/pdf/2602.23135v1",
       "first_seen": "2026-02-27T20:40:23.034542",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23133",
@@ -2218,7 +2317,8 @@
       "link": "https://arxiv.org/pdf/2602.23133v1",
       "first_seen": "2026-02-27T20:40:23.034604",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23132",
@@ -2244,7 +2344,8 @@
       "link": "https://arxiv.org/pdf/2602.23132v1",
       "first_seen": "2026-02-27T20:40:23.034691",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23128",
@@ -2263,7 +2364,8 @@
       "link": "https://arxiv.org/pdf/2602.23128v1",
       "first_seen": "2026-02-27T20:40:23.034765",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23123",
@@ -2280,7 +2382,8 @@
       "link": "https://arxiv.org/pdf/2602.23123v1",
       "first_seen": "2026-02-27T20:40:23.034812",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23121",
@@ -2301,7 +2404,8 @@
       "link": "https://arxiv.org/pdf/2602.23121v1",
       "first_seen": "2026-02-27T20:40:23.034878",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23120",
@@ -2319,7 +2423,8 @@
       "link": "https://arxiv.org/pdf/2602.23120v1",
       "first_seen": "2026-02-27T20:40:23.034937",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23117",
@@ -2344,7 +2449,8 @@
       "link": "https://arxiv.org/pdf/2602.23117v1",
       "first_seen": "2026-02-27T20:40:23.035001",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23116",
@@ -2366,7 +2472,8 @@
       "link": "https://arxiv.org/pdf/2602.23116v1",
       "first_seen": "2026-02-27T20:40:23.035055",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23115",
@@ -2388,7 +2495,8 @@
       "link": "https://arxiv.org/pdf/2602.23115v1",
       "first_seen": "2026-02-27T20:40:23.035108",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23114",
@@ -2409,7 +2517,8 @@
       "link": "https://arxiv.org/pdf/2602.23114v1",
       "first_seen": "2026-02-27T20:40:23.035168",
       "code_url": "https://github.com/xud-yan/WARM-CAT",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23113",
@@ -2433,7 +2542,8 @@
       "link": "https://arxiv.org/pdf/2602.23113v1",
       "first_seen": "2026-02-27T20:40:23.035230",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23111",
@@ -2452,7 +2562,8 @@
       "link": "https://arxiv.org/pdf/2602.23111v1",
       "first_seen": "2026-02-27T20:40:23.035289",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23109",
@@ -2471,7 +2582,8 @@
       "link": "https://arxiv.org/pdf/2602.23109v1",
       "first_seen": "2026-02-27T20:40:23.035343",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23103",
@@ -2492,7 +2604,8 @@
       "link": "https://arxiv.org/pdf/2602.23103v1",
       "first_seen": "2026-02-27T20:40:23.035404",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23101",
@@ -2511,7 +2624,8 @@
       "link": "https://arxiv.org/pdf/2602.23101v1",
       "first_seen": "2026-02-27T20:40:23.035462",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23093",
@@ -2531,7 +2645,8 @@
       "link": "https://arxiv.org/pdf/2602.23093v1",
       "first_seen": "2026-02-27T20:40:23.035540",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23092",
@@ -2551,7 +2666,8 @@
       "link": "https://arxiv.org/pdf/2602.23092v1",
       "first_seen": "2026-02-27T20:40:23.035588",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23089",
@@ -2570,7 +2686,8 @@
       "link": "https://arxiv.org/pdf/2602.23089v1",
       "first_seen": "2026-02-27T20:40:23.035644",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23088",
@@ -2590,7 +2707,8 @@
       "link": "https://arxiv.org/pdf/2602.23088v1",
       "first_seen": "2026-02-27T20:40:23.035712",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23085",
@@ -2614,7 +2732,8 @@
       "link": "https://arxiv.org/pdf/2602.23085v1",
       "first_seen": "2026-02-27T20:40:23.035793",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23079",
@@ -2634,7 +2753,8 @@
       "link": "https://arxiv.org/pdf/2602.23079v1",
       "first_seen": "2026-02-27T20:40:23.035868",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23073",
@@ -2653,7 +2773,8 @@
       "link": "https://arxiv.org/pdf/2602.23073v1",
       "first_seen": "2026-02-27T20:40:23.035921",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23071",
@@ -2674,7 +2795,8 @@
       "link": "https://arxiv.org/pdf/2602.23071v1",
       "first_seen": "2026-02-27T20:40:23.035997",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23070",
@@ -2697,7 +2819,8 @@
       "link": "https://arxiv.org/pdf/2602.23070v1",
       "first_seen": "2026-02-27T20:40:23.036054",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23069",
@@ -2720,7 +2843,8 @@
       "link": "https://arxiv.org/pdf/2602.23069v1",
       "first_seen": "2026-02-27T20:40:23.036119",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23061",
@@ -2751,7 +2875,8 @@
       "link": "https://arxiv.org/pdf/2602.23061v1",
       "first_seen": "2026-02-27T20:40:23.036192",
       "code_url": "https://github.com/weAIDB/MoDora.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23060",
@@ -2773,7 +2898,8 @@
       "link": "https://arxiv.org/pdf/2602.23060v1",
       "first_seen": "2026-02-27T20:40:23.036254",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23058",
@@ -2794,7 +2920,8 @@
       "link": "https://arxiv.org/pdf/2602.23058v1",
       "first_seen": "2026-02-27T20:40:23.036321",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": "\u57fa\u4e8e\u80fd\u91cf\u7684\u9884\u6d4b\u4e16\u754c\u6a21\u578b\u901a\u8fc7\u5728\u6f5c\u5728\u80fd\u91cf\u666f\u89c2\u800c\u975e\u50cf\u7d20\u751f\u6210\u4e0a\u63a8\u7406\uff0c\u4e3a\u591a\u6b65\u89c6\u89c9\u89c4\u5212\u63d0\u4f9b\u4e86\u4e00\u79cd\u5f3a\u5927\u65b9\u6cd5\u3002\u7136\u800c\uff0c\u73b0\u6709\u65b9\u6cd5\u9762\u4e34\u4e24\u5927\u6311\u6218\uff1a(i) \u5b83\u4eec\u7684\u6f5c\u5728\u8868\u5f81\u901a\u5e38\u5728\u6b27\u51e0\u91cc\u5f97\u7a7a\u95f4\u4e2d\u5b66\u4e60\uff0c\u5ffd\u7565\u4e86\u72b6\u6001\u95f4\u56fa\u6709\u7684\u51e0\u4f55\u548c\u5c42\u6b21\u7ed3\u6784\uff1b(ii) \u5b83\u4eec\u96be\u4ee5\u8fdb\u884c\u957f\u7a0b\u9884\u6d4b\uff0c\u5bfc\u81f4\u5728\u6269\u5c55\u63a8\u6f14\u4e2d\u6027\u80fd\u8fc5\u901f\u4e0b\u964d\u3002\u4e3a\u89e3\u51b3\u8fd9\u4e9b\u6311\u6218\uff0c\u6211\u4eec\u5f15\u5165\u4e86GeoWorld\uff0c\u4e00\u4e2a\u51e0\u4f55\u4e16\u754c\u6a21\u578b\uff0c\u5b83\u901a\u8fc7\u53cc\u66f2JEPA\u5c06\u6f5c\u5728\u8868\u5f81\u4ece\u6b27\u51e0\u91cc\u5f97\u7a7a\u95f4\u6620\u5c04\u5230\u53cc\u66f2\u6d41\u5f62\uff0c\u4ece\u800c\u4fdd\u7559\u4e86\u51e0\u4f55\u7ed3\u6784\u548c\u5c42\u6b21\u5173\u7cfb\u3002\u6211\u4eec\u8fdb\u4e00\u6b65\u5f15\u5165\u4e86\u51e0\u4f55\u5f3a\u5316\u5b66\u4e60\u8fdb\u884c\u57fa\u4e8e\u80fd\u91cf\u7684\u4f18\u5316\uff0c\u5b9e\u73b0\u4e86\u53cc\u66f2\u6f5c\u5728\u7a7a\u95f4\u4e2d\u7a33\u5b9a\u7684\u591a\u6b65\u89c4\u5212\u3002\u5728CrossTask\u548cCOIN\u4e0a\u7684\u5927\u91cf\u5b9e\u9a8c\u8868\u660e\uff0cGeoWorld\u57283\u6b65\u89c4\u5212\u4e2d\u6bd4\u6700\u5148\u8fdb\u7684V-JEPA 2\u63d0\u9ad8\u4e86\u7ea63%\u7684\u6210\u529f\u7387\uff0c\u57284\u6b65\u89c4\u5212\u4e2d\u63d0\u9ad8\u4e86\u7ea62%\u7684\u6210\u529f\u7387\u3002\u9879\u76ee\u7f51\u7ad9\uff1ahttps://steve-zeyu-zhang.github.io/GeoWorld\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.23057",
@@ -2821,7 +2948,8 @@
       "link": "https://arxiv.org/pdf/2602.23057v1",
       "first_seen": "2026-02-27T20:40:23.036380",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23056",
@@ -2842,7 +2970,8 @@
       "link": "https://arxiv.org/pdf/2602.23056v1",
       "first_seen": "2026-02-27T20:40:23.036443",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23053",
@@ -2875,7 +3004,8 @@
       "link": "https://arxiv.org/pdf/2602.23053v1",
       "first_seen": "2026-02-27T20:40:23.036500",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": "\u672c\u6587\u4ecb\u7ecd\u4e86Marinarium\uff0c\u4e00\u4e2a\u6a21\u5757\u5316\u3001\u72ec\u7acb\u7684\u6d77\u6d0b\u7814\u7a76\u8bbe\u65bd\uff0c\u65e8\u5728\u4e3a\u6d77\u4e8b\u548c\u7a7a\u95f4\u6a21\u62df\u673a\u5668\u4eba\u5b9e\u9a8c\u63d0\u4f9b\u4e00\u4e2a\u8d44\u6e90\u9ad8\u6548\u7684\u771f\u5b9e\u6d4b\u8bd5\u5e73\u53f0\u3002Marinarium\u7ed3\u5408\u4e86\u8bbe\u5907\u9f50\u5168\u7684\u6c34\u4e0b\u548c\u7a7a\u4e2d\u64cd\u4f5c\u7a7a\u95f4\uff08\u53ef\u901a\u8fc7\u53ef\u4f38\u7f29\u5c4b\u9876\u6269\u5c55\u4ee5\u9002\u5e94\u771f\u5b9e\u5929\u6c14\u6761\u4ef6\uff09\u3001SMaRCSim\u6a21\u62df\u5668\u4e2d\u7684\u6570\u5b57\u5b6a\u751f\u4ee5\u53ca\u4e0e\u7a7a\u95f4\u673a\u5668\u4eba\u5b9e\u9a8c\u5ba4\u7684\u7d27\u5bc6\u96c6\u6210\u3002\u6240\u6709\u8fd9\u4e9b\u8bbe\u8ba1\u9009\u62e9\u65e8\u5728\u5f25\u5408\u4eff\u771f\u3001\u5b9e\u9a8c\u5ba4\u9a8c\u8bc1\u548c\u73b0\u573a\u6761\u4ef6\u4e4b\u95f4\u7684\u5dee\u8ddd\u3002\n\n\u6211\u4eec\u6bd4\u8f83\u4e86Marinarium\u4e0e\u73b0\u6709\u7c7b\u4f3c\u57fa\u7840\u8bbe\u65bd\uff0c\u5e76\u9610\u8ff0\u4e86\u5176\u8bbe\u8ba1\u5982\u4f55\u652f\u6301\u91ce\u5916\u673a\u5668\u4eba\u5b66\u56db\u4e2a\u5f00\u653e\u7814\u7a76\u9886\u57df\u7684\u5b9e\u9a8c\u3002\u9996\u5148\uff0c\u6211\u4eec\u5229\u7528\u6c34\u7bb1\u4e2d\u7684\u9ad8\u4fdd\u771f\u52a8\u529b\u5b66\u6570\u636e\uff0c\u5c55\u793a\u4e86\u57fa\u4e8e\u5b66\u4e60\u7684\u7cfb\u7edf\u8fa8\u8bc6\u65b9\u6cd5\u5e94\u7528\u4e8e\u6c34\u4e0b\u6f5c\u5668\u7684\u6f5c\u529b\u3002\u5176\u6b21\uff0c\u6211\u4eec\u901a\u8fc7\u4e00\u4e2a\u7531\u6c34\u4e0b\u3001\u6c34\u9762\u548c\u7a7a\u4e2d\u5f02\u6784\u673a\u5668\u4eba\u7ec4\u6210\u7684\u4ea4\u4f1a\u4efb\u52a1\uff0c\u7a81\u51fa\u4e86\u591a\u57df\u64cd\u4f5c\u7a7a\u95f4\u7684\u901a\u7528\u6027\u3002\u63a5\u7740\uff0c\u6211\u4eec\u5c55\u793a\u4e86\u6240\u63d0\u51fa\u7684\u6570\u5b57\u5b6a\u751f\u5982\u4f55\u7528\u4e8e\u7f29\u5c0f\u6c34\u4e0b\u6a21\u62df\u4e2d\u7684\u73b0\u5b9e\u5dee\u8ddd\u3002\u6700\u540e\uff0c\u6211\u4eec\u901a\u8fc7\u5728\u5e73\u9762\u7a7a\u95f4\u673a\u5668\u4eba\u6a21\u62df\u5668\u548c\u4e2d\u6027\u6d6e\u529bROV\u4e0a\u6267\u884c\u65f6\u7a7a\u76f8\u540c\u7684\u68c0\u67e5\u4efb\u52a1\uff0c\u5c55\u793a\u4e86\u6c34\u4e0b\u66ff\u4ee3\u7269\u5728\u822a\u5929\u5668\u5bfc\u822a\u9a8c\u8bc1\u65b9\u9762\u7684\u6f5c\u529b\u3002\n\n\u901a\u8fc7\u5206\u4eabMarinarium\u8bbe\u8ba1\u548c\u5efa\u9020\u7684\u7ecf\u9a8c\u548c\u539f\u7406\uff0c\u6211\u4eec\u5e0c\u671b\u4e3a\u91ce\u5916\u673a\u5668\u4eba\u7814\u7a76\u793e\u533a\u63d0\u4f9b\u4e00\u4e2a\u84dd\u56fe\uff0c\u4ee5\u5f25\u5408\u53d7\u63a7\u73af\u5883\u4e0e\u771f\u5b9e\u6d77\u4e0a\u548c\u7a7a\u95f4\u673a\u5668\u4eba\u5b9e\u9a8c\u4e4b\u95f4\u7684\u9e3f\u6c9f\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.23051",
@@ -2895,7 +3025,8 @@
       "link": "https://arxiv.org/pdf/2602.23051v1",
       "first_seen": "2026-02-27T20:40:23.036573",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23050",
@@ -2916,7 +3047,8 @@
       "link": "https://arxiv.org/pdf/2602.23050v1",
       "first_seen": "2026-02-27T20:40:23.036643",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23043",
@@ -2934,7 +3066,8 @@
       "link": "https://arxiv.org/pdf/2602.23043v1",
       "first_seen": "2026-02-27T20:40:23.036695",
       "code_url": "https://github.com/ArgoHA/D-FINE-seg.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23040",
@@ -2958,7 +3091,8 @@
       "link": "https://arxiv.org/pdf/2602.23040v1",
       "first_seen": "2026-02-27T20:40:23.036740",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23036",
@@ -2979,7 +3113,8 @@
       "link": "https://arxiv.org/pdf/2602.23036v1",
       "first_seen": "2026-02-27T20:40:23.036811",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23035",
@@ -3002,7 +3137,8 @@
       "link": "https://arxiv.org/pdf/2602.23035v1",
       "first_seen": "2026-02-27T20:40:23.036893",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23031",
@@ -3023,7 +3159,8 @@
       "link": "https://arxiv.org/pdf/2602.23031v1",
       "first_seen": "2026-02-27T20:40:23.036953",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23029",
@@ -3046,7 +3183,8 @@
       "link": "https://arxiv.org/pdf/2602.23029v1",
       "first_seen": "2026-02-27T20:40:23.037024",
       "code_url": "https://github.com/Physicsmile/WISER.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23024",
@@ -3066,7 +3204,8 @@
       "link": "https://arxiv.org/pdf/2602.23024v1",
       "first_seen": "2026-02-27T20:40:23.037082",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23023",
@@ -3087,7 +3226,8 @@
       "link": "https://arxiv.org/pdf/2602.23023v1",
       "first_seen": "2026-02-27T20:40:23.037143",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23022",
@@ -3111,7 +3251,8 @@
       "link": "https://arxiv.org/pdf/2602.23022v1",
       "first_seen": "2026-02-27T20:40:23.037201",
       "code_url": "https://github.com/boomluo02/DMAligner.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23017",
@@ -3135,7 +3276,8 @@
       "link": "https://arxiv.org/pdf/2602.23017v1",
       "first_seen": "2026-02-27T20:40:23.037258",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23013",
@@ -3155,7 +3297,8 @@
       "link": "https://arxiv.org/pdf/2602.23013v1",
       "first_seen": "2026-02-27T20:40:23.037324",
       "code_url": "https://github.com/CLendering/SubspaceAD.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23012",
@@ -3176,7 +3319,8 @@
       "link": "https://arxiv.org/pdf/2602.23012v1",
       "first_seen": "2026-02-27T20:40:23.037373",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23010",
@@ -3194,7 +3338,8 @@
       "link": "https://arxiv.org/pdf/2602.23010v1",
       "first_seen": "2026-02-27T20:40:23.037443",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23008",
@@ -3216,7 +3361,8 @@
       "link": "https://arxiv.org/pdf/2602.23008v1",
       "first_seen": "2026-02-27T20:40:23.037494",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23006",
@@ -3236,7 +3382,8 @@
       "link": "https://arxiv.org/pdf/2602.23006v1",
       "first_seen": "2026-02-27T20:40:23.037543",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.23003",
@@ -3258,7 +3405,8 @@
       "link": "https://arxiv.org/pdf/2602.23003v1",
       "first_seen": "2026-02-27T20:40:23.037598",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22998",
@@ -3276,7 +3424,8 @@
       "link": "https://arxiv.org/pdf/2602.22998v1",
       "first_seen": "2026-02-27T20:40:23.037667",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22988",
@@ -3298,7 +3447,8 @@
       "link": "https://arxiv.org/pdf/2602.22988v1",
       "first_seen": "2026-02-27T20:40:23.037740",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22985",
@@ -3321,7 +3471,8 @@
       "link": "https://arxiv.org/pdf/2602.22985v1",
       "first_seen": "2026-02-27T20:40:23.037808",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22983",
@@ -3347,7 +3498,8 @@
       "link": "https://arxiv.org/pdf/2602.22983v1",
       "first_seen": "2026-02-27T20:40:23.037871",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22981",
@@ -3370,7 +3522,8 @@
       "link": "https://arxiv.org/pdf/2602.22981v1",
       "first_seen": "2026-02-27T20:40:23.037936",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22974",
@@ -3394,7 +3547,8 @@
       "link": "https://arxiv.org/pdf/2602.22974v1",
       "first_seen": "2026-02-27T20:40:23.037992",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22973",
@@ -3414,7 +3568,8 @@
       "link": "https://arxiv.org/pdf/2602.22973v1",
       "first_seen": "2026-02-27T20:40:23.038067",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22971",
@@ -3443,7 +3598,8 @@
       "link": "https://arxiv.org/pdf/2602.22971v1",
       "first_seen": "2026-02-27T20:40:23.038140",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22968",
@@ -3466,7 +3622,8 @@
       "link": "https://arxiv.org/pdf/2602.22968v1",
       "first_seen": "2026-02-27T20:40:23.038206",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22967",
@@ -3490,7 +3647,8 @@
       "link": "https://arxiv.org/pdf/2602.22967v1",
       "first_seen": "2026-02-27T20:40:23.038266",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22963",
@@ -3516,7 +3674,8 @@
       "link": "https://arxiv.org/pdf/2602.22963v1",
       "first_seen": "2026-02-27T20:40:23.038320",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22962",
@@ -3536,7 +3695,8 @@
       "link": "https://arxiv.org/pdf/2602.22962v1",
       "first_seen": "2026-02-27T20:40:23.038376",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22960",
@@ -3560,7 +3720,8 @@
       "link": "https://arxiv.org/pdf/2602.22960v1",
       "first_seen": "2026-02-27T20:40:23.038434",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22959",
@@ -3581,7 +3742,8 @@
       "link": "https://arxiv.org/pdf/2602.22959v1",
       "first_seen": "2026-02-27T20:40:23.038496",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22955",
@@ -3603,7 +3765,8 @@
       "link": "https://arxiv.org/pdf/2602.22955v1",
       "first_seen": "2026-02-27T20:40:23.038555",
       "code_url": "https://github.com/gfnnnb/MM-NeuroOnco",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22953",
@@ -3634,7 +3797,8 @@
       "link": "https://arxiv.org/pdf/2602.22953v1",
       "first_seen": "2026-02-27T20:40:23.038620",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22952",
@@ -3654,7 +3818,8 @@
       "link": "https://arxiv.org/pdf/2602.22952v1",
       "first_seen": "2026-02-27T20:40:23.038677",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22949",
@@ -3673,7 +3838,8 @@
       "link": "https://arxiv.org/pdf/2602.22949v1",
       "first_seen": "2026-02-27T20:40:23.038745",
       "code_url": "https://github.com/JunukCha/OpenFS.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22948",
@@ -3696,7 +3862,8 @@
       "link": "https://arxiv.org/pdf/2602.22948v1",
       "first_seen": "2026-02-27T20:40:23.038810",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22941",
@@ -3720,7 +3887,8 @@
       "link": "https://arxiv.org/pdf/2602.22941v1",
       "first_seen": "2026-02-27T20:40:23.038876",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22940",
@@ -3740,7 +3908,8 @@
       "link": "https://arxiv.org/pdf/2602.22940v1",
       "first_seen": "2026-02-27T20:40:23.038935",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22938",
@@ -3761,7 +3930,8 @@
       "link": "https://arxiv.org/pdf/2602.22938v1",
       "first_seen": "2026-02-27T20:40:23.039010",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22937",
@@ -3778,7 +3948,8 @@
       "link": "https://arxiv.org/pdf/2602.22937v1",
       "first_seen": "2026-02-27T20:40:23.039074",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22936",
@@ -3800,7 +3971,8 @@
       "link": "https://arxiv.org/pdf/2602.22936v1",
       "first_seen": "2026-02-27T20:40:23.039136",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22935",
@@ -3821,7 +3993,8 @@
       "link": "https://arxiv.org/pdf/2602.22935v1",
       "first_seen": "2026-02-27T20:40:23.039180",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22932",
@@ -3845,7 +4018,8 @@
       "link": "https://arxiv.org/pdf/2602.22932v1",
       "first_seen": "2026-02-27T20:40:23.039237",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22925",
@@ -3865,7 +4039,8 @@
       "link": "https://arxiv.org/pdf/2602.22925v1",
       "first_seen": "2026-02-27T20:40:23.039298",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22923",
@@ -3894,7 +4069,8 @@
       "link": "https://arxiv.org/pdf/2602.22923v1",
       "first_seen": "2026-02-27T20:40:23.039348",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22922",
@@ -3921,7 +4097,8 @@
       "link": "https://arxiv.org/pdf/2602.22922v1",
       "first_seen": "2026-02-27T20:40:23.039420",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22920",
@@ -3941,7 +4118,8 @@
       "link": "https://arxiv.org/pdf/2602.22920v1",
       "first_seen": "2026-02-27T20:40:23.039467",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22919",
@@ -3963,7 +4141,8 @@
       "link": "https://arxiv.org/pdf/2602.22919v1",
       "first_seen": "2026-02-27T20:40:23.039531",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22917",
@@ -3985,7 +4164,8 @@
       "link": "https://arxiv.org/pdf/2602.22917v1",
       "first_seen": "2026-02-27T20:40:23.039590",
       "code_url": "https://github.com/lihongzhao99/SSMDG.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22913",
@@ -4011,7 +4191,8 @@
       "link": "https://arxiv.org/pdf/2602.22913v1",
       "first_seen": "2026-02-27T20:40:23.039644",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22911",
@@ -4030,7 +4211,8 @@
       "link": "https://arxiv.org/pdf/2602.22911v1",
       "first_seen": "2026-02-27T20:40:23.039703",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22903",
@@ -4053,7 +4235,8 @@
       "link": "https://arxiv.org/pdf/2602.22903v1",
       "first_seen": "2026-02-27T20:40:23.039755",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22902",
@@ -4077,7 +4260,8 @@
       "link": "https://arxiv.org/pdf/2602.22902v1",
       "first_seen": "2026-02-27T20:40:23.039820",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22897",
@@ -4108,7 +4292,8 @@
       "link": "https://arxiv.org/pdf/2602.22897v1",
       "first_seen": "2026-02-27T20:40:23.039896",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22896",
@@ -4130,7 +4315,8 @@
       "link": "https://arxiv.org/pdf/2602.22896v1",
       "first_seen": "2026-02-27T20:40:23.039955",
       "code_url": "https://github.com/PKU-SEC-Lab/DYSL_VLA.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22895",
@@ -4155,7 +4341,8 @@
       "link": "https://arxiv.org/pdf/2602.22895v1",
       "first_seen": "2026-02-27T20:40:23.040009",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22884",
@@ -4175,7 +4362,8 @@
       "link": "https://arxiv.org/pdf/2602.22884v1",
       "first_seen": "2026-02-27T20:40:23.040064",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22882",
@@ -4197,7 +4385,8 @@
       "link": "https://arxiv.org/pdf/2602.22882v1",
       "first_seen": "2026-02-27T20:40:23.040121",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22879",
@@ -4220,7 +4409,8 @@
       "link": "https://arxiv.org/pdf/2602.22879v1",
       "first_seen": "2026-02-27T20:40:23.040179",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22873",
@@ -4240,7 +4430,8 @@
       "link": "https://arxiv.org/pdf/2602.22873v1",
       "first_seen": "2026-02-27T20:40:23.040242",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22871",
@@ -4263,7 +4454,8 @@
       "link": "https://arxiv.org/pdf/2602.22871v1",
       "first_seen": "2026-02-27T20:40:23.040304",
       "code_url": "https://github.com/roymiles/diffusion-stitching.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22867",
@@ -4282,7 +4474,8 @@
       "link": "https://arxiv.org/pdf/2602.22867v1",
       "first_seen": "2026-02-27T20:40:23.040359",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22862",
@@ -4304,7 +4497,8 @@
       "link": "https://arxiv.org/pdf/2602.22862v1",
       "first_seen": "2026-02-27T20:40:23.040432",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22859",
@@ -4324,7 +4518,8 @@
       "link": "https://arxiv.org/pdf/2602.22859v1",
       "first_seen": "2026-02-27T20:40:23.040491",
       "code_url": "https://github.com/hongruijia/DPE.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22854",
@@ -4344,7 +4539,8 @@
       "link": "https://arxiv.org/pdf/2602.22854v1",
       "first_seen": "2026-02-27T20:40:23.040538",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": "\u5c3d\u7ba1\u57fa\u4e8e\u5e94\u53d8\u7684\u6a21\u578b\u5728\u673a\u5668\u4eba\u9886\u57df\u88ab\u5e7f\u6cdb\u91c7\u7528\uff0c\u4f46\u9664\u4e86\u5747\u5300\u5f2f\u66f2\u6d4b\u8bd5\u5916\uff0c\u76ee\u524d\u8fd8\u6ca1\u6709\u516c\u8ba4\u7684\u8bc4\u4f30\u5176\u6027\u80fd\u7684\u6bd4\u8f83\u65b9\u6cd5\u3002\u6b64\u5916\uff0c\u8fde\u7eed\u4f53\u673a\u5668\u4eba\u539f\u578b\u8bbe\u8ba1\u5de5\u4f5c\u7684\u65e5\u76ca\u589e\u591a\uff0c\u51f8\u663e\u4e86\u8bc4\u4f30\u8fd9\u4e9b\u6a21\u578b\u9002\u7528\u6027\u548c\u8fdb\u884c\u5168\u9762\u6027\u80fd\u8bc4\u4f30\u7684\u5fc5\u8981\u6027\u3002\n\n\u4e3a\u4e86\u89e3\u51b3\u8fd9\u4e00\u7a7a\u767d\uff0c\u672c\u7814\u7a76\u8c03\u67e5\u4e86\u4e09\u9636\u5e94\u53d8\u63d2\u503c\u65b9\u6cd5\u7684\u5f62\u72b6\u91cd\u5efa\u80fd\u529b\uff0c\u8003\u5bdf\u4e86\u5176\u6355\u6349\u5355\u4e2a\u548c\u7ec4\u5408\u53d8\u5f62\u6548\u5e94\u7684\u80fd\u529b\uff0c\u5e76\u4e0e\u51e0\u4f55\u53d8\u91cf\u5e94\u53d8\u65b9\u6cd5\u8fdb\u884c\u4e86\u6bd4\u8f83\u548c\u8ba8\u8bba\u3002\u968f\u540e\uff0c\u901a\u8fc7\u91cd\u65b0\u5851\u5f62\u7ec6\u957f\u6746\u5e76\u4f7f\u7528\u76f8\u673a\u8bb0\u5f55\u5176\u6784\u578b\uff0c\u5bf9\u4eff\u771f\u7ed3\u679c\u8fdb\u884c\u4e86\u5b9e\u9a8c\u9a8c\u8bc1\u3002\u6746\u7684\u6784\u578b\u901a\u8fc7\u673a\u68b0\u81c2\u79fb\u52a8\u5176\u4e00\u7aef\u6765\u65bd\u52a0\uff0c\u5e76\u901a\u8fc7\u53cd\u5c04\u6807\u8bb0\u63d0\u53d6\uff0c\u65e0\u9700\u4efb\u4f55\u5176\u4ed6\u5916\u90e8\u4f20\u611f\u5668\uff08\u5982\u6cbf\u6746\u653e\u7f6e\u7684\u5e94\u53d8\u8ba1\u6216\u529b\u4f20\u611f\u5668\uff09\u3002\u5b9e\u9a8c\u7ed3\u679c\u8868\u660e\uff0c\u6a21\u578b\u9884\u6d4b\u4e0e\u89c2\u6d4b\u5f62\u72b6\u543b\u5408\u826f\u597d\uff0c\u5e73\u5747\u8bef\u5dee\u4e3a\u6746\u957f\u76840.58%\uff0c\u6bcf\u4e2a\u6784\u578b\u7684\u5e73\u5747\u8ba1\u7b97\u65f6\u95f4\u4e3a0.32\u79d2\uff0c\u4f18\u4e8e\u73b0\u6709\u6a21\u578b\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.22850",
@@ -4367,7 +4563,8 @@
       "link": "https://arxiv.org/pdf/2602.22850v1",
       "first_seen": "2026-02-27T20:40:23.040600",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22847",
@@ -4389,7 +4586,8 @@
       "link": "https://arxiv.org/pdf/2602.22847v1",
       "first_seen": "2026-02-27T20:40:23.040665",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22843",
@@ -4417,7 +4615,8 @@
       "link": "https://arxiv.org/pdf/2602.22843v1",
       "first_seen": "2026-02-27T20:40:23.040755",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22842",
@@ -4436,7 +4635,8 @@
       "link": "https://arxiv.org/pdf/2602.22842v1",
       "first_seen": "2026-02-27T20:40:23.040824",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22839",
@@ -4462,7 +4662,8 @@
       "link": "https://arxiv.org/pdf/2602.22839v1",
       "first_seen": "2026-02-27T20:40:23.040888",
       "code_url": "https://github.com/icip-cas/PPTAgent",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22831",
@@ -4488,7 +4689,8 @@
       "link": "https://arxiv.org/pdf/2602.22831v1",
       "first_seen": "2026-02-27T20:40:23.040936",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22829",
@@ -4513,7 +4715,8 @@
       "link": "https://arxiv.org/pdf/2602.22829v1",
       "first_seen": "2026-02-27T20:40:23.041002",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22828",
@@ -4537,7 +4740,8 @@
       "link": "https://arxiv.org/pdf/2602.22828v1",
       "first_seen": "2026-02-27T20:40:23.041076",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22827",
@@ -4559,7 +4763,8 @@
       "link": "https://arxiv.org/pdf/2602.22827v1",
       "first_seen": "2026-02-27T20:40:23.041154",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22823",
@@ -4577,7 +4782,8 @@
       "link": "https://arxiv.org/pdf/2602.22823v1",
       "first_seen": "2026-02-27T20:40:23.041207",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22822",
@@ -4600,7 +4806,8 @@
       "link": "https://arxiv.org/pdf/2602.22822v1",
       "first_seen": "2026-02-27T20:40:23.041270",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22821",
@@ -4622,7 +4829,8 @@
       "link": "https://arxiv.org/pdf/2602.22821v1",
       "first_seen": "2026-02-27T20:40:23.041340",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22819",
@@ -4643,7 +4851,8 @@
       "link": "https://arxiv.org/pdf/2602.22819v1",
       "first_seen": "2026-02-27T20:40:23.041402",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22818",
@@ -4676,7 +4885,8 @@
       "link": "https://arxiv.org/pdf/2602.22818v1",
       "first_seen": "2026-02-27T20:40:23.041480",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22817",
@@ -4699,7 +4909,8 @@
       "link": "https://arxiv.org/pdf/2602.22817v1",
       "first_seen": "2026-02-27T20:40:23.041548",
       "code_url": "https://github.com/langfengQ/verl-agent",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22814",
@@ -4722,7 +4933,8 @@
       "link": "https://arxiv.org/pdf/2602.22814v1",
       "first_seen": "2026-02-27T20:40:23.041604",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22812",
@@ -4742,7 +4954,8 @@
       "link": "https://arxiv.org/pdf/2602.22812v1",
       "first_seen": "2026-02-27T20:40:23.041658",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22810",
@@ -4764,7 +4977,8 @@
       "link": "https://arxiv.org/pdf/2602.22810v1",
       "first_seen": "2026-02-27T20:40:23.041716",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22809",
@@ -4785,7 +4999,8 @@
       "link": "https://arxiv.org/pdf/2602.22809v1",
       "first_seen": "2026-02-27T20:40:23.041771",
       "code_url": "https://github.com/mdyao/PhotoAgent.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22808",
@@ -4817,7 +5032,8 @@
       "link": "https://arxiv.org/pdf/2602.22808v1",
       "first_seen": "2026-02-27T20:40:23.041829",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22801",
@@ -4849,7 +5065,8 @@
       "link": "https://arxiv.org/pdf/2602.22801v1",
       "first_seen": "2026-02-27T20:40:23.041895",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22800",
@@ -4871,7 +5088,8 @@
       "link": "https://arxiv.org/pdf/2602.22800v1",
       "first_seen": "2026-02-27T20:40:23.041962",
       "code_url": "https://github.com/DuhlLiamz/3DGS_turbulence",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22794",
@@ -4891,7 +5109,8 @@
       "link": "https://arxiv.org/pdf/2602.22794v1",
       "first_seen": "2026-02-27T20:40:23.042011",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22791",
@@ -4910,7 +5129,8 @@
       "link": "https://arxiv.org/pdf/2602.22791v1",
       "first_seen": "2026-02-27T20:40:23.042082",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22790",
@@ -4931,7 +5151,8 @@
       "link": "https://arxiv.org/pdf/2602.22790v1",
       "first_seen": "2026-02-27T20:40:23.042128",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22787",
@@ -4951,7 +5172,8 @@
       "link": "https://arxiv.org/pdf/2602.22787v1",
       "first_seen": "2026-02-27T20:40:23.042195",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22786",
@@ -4975,7 +5197,8 @@
       "link": "https://arxiv.org/pdf/2602.22786v1",
       "first_seen": "2026-02-27T20:40:23.043411",
       "code_url": "https://github.com/MaoMaoLYJ/pymarl-qsim.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22785",
@@ -5003,7 +5226,8 @@
       "link": "https://arxiv.org/pdf/2602.22785v1",
       "first_seen": "2026-02-27T20:40:23.043474",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22779",
@@ -5028,7 +5252,8 @@
       "link": "https://arxiv.org/pdf/2602.22779v1",
       "first_seen": "2026-02-27T20:40:23.043544",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22777",
@@ -5055,7 +5280,8 @@
       "link": "https://arxiv.org/pdf/2602.22777v1",
       "first_seen": "2026-02-27T20:40:23.043617",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22775",
@@ -5076,7 +5302,8 @@
       "link": "https://arxiv.org/pdf/2602.22775v1",
       "first_seen": "2026-02-27T20:40:23.043667",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22771",
@@ -5099,7 +5326,8 @@
       "link": "https://arxiv.org/pdf/2602.22771v1",
       "first_seen": "2026-02-27T20:40:23.043732",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22769",
@@ -5128,7 +5356,8 @@
       "link": "https://arxiv.org/pdf/2602.22769v1",
       "first_seen": "2026-02-27T20:40:23.043798",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22760",
@@ -5151,7 +5380,8 @@
       "link": "https://arxiv.org/pdf/2602.22760v1",
       "first_seen": "2026-02-27T20:40:23.043865",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22759",
@@ -5169,7 +5399,8 @@
       "link": "https://arxiv.org/pdf/2602.22759v1",
       "first_seen": "2026-02-27T20:40:23.043917",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22758",
@@ -5188,7 +5419,8 @@
       "link": "https://arxiv.org/pdf/2602.22758v1",
       "first_seen": "2026-02-27T20:40:23.043967",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22752",
@@ -5209,7 +5441,8 @@
       "link": "https://arxiv.org/pdf/2602.22752v1",
       "first_seen": "2026-02-27T20:40:23.044029",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22751",
@@ -5233,7 +5466,8 @@
       "link": "https://arxiv.org/pdf/2602.22751v1",
       "first_seen": "2026-02-27T20:40:23.044094",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22747",
@@ -5255,7 +5489,8 @@
       "link": "https://arxiv.org/pdf/2602.22747v1",
       "first_seen": "2026-02-27T20:40:23.044173",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22745",
@@ -5274,7 +5509,8 @@
       "link": "https://arxiv.org/pdf/2602.22745v1",
       "first_seen": "2026-02-27T20:40:23.044234",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22743",
@@ -5299,7 +5535,8 @@
       "link": "https://arxiv.org/pdf/2602.22743v1",
       "first_seen": "2026-02-27T20:40:23.044289",
       "code_url": "https://github.com/USTC-StarTeam/Taesar",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22742",
@@ -5319,7 +5556,8 @@
       "link": "https://arxiv.org/pdf/2602.22742v1",
       "first_seen": "2026-02-27T20:40:23.044341",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22740",
@@ -5346,7 +5584,8 @@
       "link": "https://arxiv.org/pdf/2602.22740v1",
       "first_seen": "2026-02-27T20:40:23.044404",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22735",
@@ -5366,7 +5605,8 @@
       "link": "https://arxiv.org/pdf/2602.22735v1",
       "first_seen": "2026-02-27T20:40:23.044438",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22734",
@@ -5387,7 +5627,8 @@
       "link": "https://arxiv.org/pdf/2602.22734v1",
       "first_seen": "2026-02-27T20:40:23.044486",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22733",
@@ -5407,7 +5648,8 @@
       "link": "https://arxiv.org/pdf/2602.22733v1",
       "first_seen": "2026-02-27T20:40:23.044539",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22732",
@@ -5453,7 +5695,8 @@
       "link": "https://arxiv.org/pdf/2602.22732v1",
       "first_seen": "2026-02-27T20:40:23.044609",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22731",
@@ -5477,7 +5720,8 @@
       "link": "https://arxiv.org/pdf/2602.22731v1",
       "first_seen": "2026-02-27T20:40:23.044681",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22727",
@@ -5499,7 +5743,8 @@
       "link": "https://arxiv.org/pdf/2602.22727v1",
       "first_seen": "2026-02-27T20:40:23.044757",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22724",
@@ -5527,7 +5772,8 @@
       "link": "https://arxiv.org/pdf/2602.22724v1",
       "first_seen": "2026-02-27T20:40:23.044824",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22719",
@@ -5547,7 +5793,8 @@
       "link": "https://arxiv.org/pdf/2602.22719v1",
       "first_seen": "2026-02-27T20:40:23.044894",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22718",
@@ -5572,7 +5819,8 @@
       "link": "https://arxiv.org/pdf/2602.22718v1",
       "first_seen": "2026-02-27T20:40:23.044948",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22717",
@@ -5591,7 +5839,8 @@
       "link": "https://arxiv.org/pdf/2602.22717v1",
       "first_seen": "2026-02-27T20:40:23.045014",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22716",
@@ -5618,7 +5867,8 @@
       "link": "https://arxiv.org/pdf/2602.22716v1",
       "first_seen": "2026-02-27T20:40:23.045074",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22714",
@@ -5638,7 +5888,8 @@
       "link": "https://arxiv.org/pdf/2602.22714v1",
       "first_seen": "2026-02-27T20:40:23.045136",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22712",
@@ -5663,7 +5914,8 @@
       "link": "https://arxiv.org/pdf/2602.22712v1",
       "first_seen": "2026-02-27T20:40:23.045190",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22710",
@@ -5684,7 +5936,8 @@
       "link": "https://arxiv.org/pdf/2602.22710v1",
       "first_seen": "2026-02-27T20:40:23.045242",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22707",
@@ -5707,7 +5960,8 @@
       "link": "https://arxiv.org/pdf/2602.22707v1",
       "first_seen": "2026-02-27T20:40:23.045295",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22703",
@@ -5728,7 +5982,8 @@
       "link": "https://arxiv.org/pdf/2602.22703v1",
       "first_seen": "2026-02-27T20:40:23.045352",
       "code_url": "https://github.com/Longin-Yu/GeoPerceive",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22702",
@@ -5747,7 +6002,8 @@
       "link": "https://arxiv.org/pdf/2602.22702v1",
       "first_seen": "2026-02-27T20:40:23.045407",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22700",
@@ -5774,7 +6030,8 @@
       "link": "https://arxiv.org/pdf/2602.22700v1",
       "first_seen": "2026-02-27T20:40:23.045487",
       "code_url": "https://github.com/guo-yanpei/Immaculate.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22699",
@@ -5796,7 +6053,8 @@
       "link": "https://arxiv.org/pdf/2602.22699v1",
       "first_seen": "2026-02-27T20:40:23.045524",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22698",
@@ -5817,7 +6075,8 @@
       "link": "https://arxiv.org/pdf/2602.22698v1",
       "first_seen": "2026-02-27T20:40:23.045584",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22697",
@@ -5843,7 +6102,8 @@
       "link": "https://arxiv.org/pdf/2602.22697v1",
       "first_seen": "2026-02-27T20:40:23.045649",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22695",
@@ -5864,7 +6124,8 @@
       "link": "https://arxiv.org/pdf/2602.22695v1",
       "first_seen": "2026-02-27T20:40:23.045712",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22689",
@@ -5886,7 +6147,8 @@
       "link": "https://arxiv.org/pdf/2602.22689v1",
       "first_seen": "2026-02-27T20:40:23.045771",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22685",
@@ -5904,7 +6166,8 @@
       "link": "https://arxiv.org/pdf/2602.22685v1",
       "first_seen": "2026-02-27T20:40:23.045842",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22683",
@@ -5928,7 +6191,8 @@
       "link": "https://arxiv.org/pdf/2602.22683v1",
       "first_seen": "2026-02-27T20:40:23.045911",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22681",
@@ -5951,7 +6215,8 @@
       "link": "https://arxiv.org/pdf/2602.22681v1",
       "first_seen": "2026-02-27T20:40:23.045979",
       "code_url": "https://github.com/SHUCHENZHU/LITE.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22680",
@@ -5975,7 +6240,8 @@
       "link": "https://arxiv.org/pdf/2602.22680v1",
       "first_seen": "2026-02-27T20:40:23.046034",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22678",
@@ -5995,7 +6261,8 @@
       "link": "https://arxiv.org/pdf/2602.22678v1",
       "first_seen": "2026-02-27T20:40:23.046098",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22674",
@@ -6016,7 +6283,8 @@
       "link": "https://arxiv.org/pdf/2602.22674v1",
       "first_seen": "2026-02-27T20:40:23.046161",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22673",
@@ -6034,7 +6302,8 @@
       "link": "https://arxiv.org/pdf/2602.22673v1",
       "first_seen": "2026-02-27T20:40:23.046217",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22671",
@@ -6053,7 +6322,8 @@
       "link": "https://arxiv.org/pdf/2602.22671v1",
       "first_seen": "2026-02-27T20:40:23.046284",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22667",
@@ -6074,7 +6344,8 @@
       "link": "https://arxiv.org/pdf/2602.22667v1",
       "first_seen": "2026-02-27T20:40:23.046353",
       "code_url": "https://github.com/JuIvyy/LegoOcc.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22666",
@@ -6096,7 +6367,8 @@
       "link": "https://arxiv.org/pdf/2602.22666v1",
       "first_seen": "2026-02-27T20:40:23.046407",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22663",
@@ -6127,7 +6399,8 @@
       "link": "https://arxiv.org/pdf/2602.22663v1",
       "first_seen": "2026-02-27T20:40:23.046474",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22661",
@@ -6149,7 +6422,8 @@
       "link": "https://arxiv.org/pdf/2602.22661v1",
       "first_seen": "2026-02-27T20:40:23.046545",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22660",
@@ -6171,7 +6445,8 @@
       "link": "https://arxiv.org/pdf/2602.22660v1",
       "first_seen": "2026-02-27T20:40:23.046601",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22659",
@@ -6195,7 +6470,8 @@
       "link": "https://arxiv.org/pdf/2602.22659v1",
       "first_seen": "2026-02-27T20:40:23.046678",
       "code_url": "https://github.com/renyu12/YT-NTU-AVQ",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22654",
@@ -6220,7 +6496,8 @@
       "link": "https://arxiv.org/pdf/2602.22654v1",
       "first_seen": "2026-02-27T20:40:23.046728",
       "code_url": "https://github.com/argsss/DPCache.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22650",
@@ -6242,7 +6519,8 @@
       "link": "https://arxiv.org/pdf/2602.22650v1",
       "first_seen": "2026-02-27T20:40:23.046787",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22649",
@@ -6264,7 +6542,8 @@
       "link": "https://arxiv.org/pdf/2602.22649v1",
       "first_seen": "2026-02-27T20:40:23.046866",
       "code_url": "https://github.com/SKKU-IBE/Medical-SAM2GUI",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22647",
@@ -6295,7 +6574,8 @@
       "link": "https://arxiv.org/pdf/2602.22647v1",
       "first_seen": "2026-02-27T20:40:23.046928",
       "code_url": "https://github.com/youtube/static-constraint-decoding.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22645",
@@ -6317,7 +6597,8 @@
       "link": "https://arxiv.org/pdf/2602.22645v1",
       "first_seen": "2026-02-27T20:40:23.046989",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22644",
@@ -6339,7 +6620,8 @@
       "link": "https://arxiv.org/pdf/2602.22644v1",
       "first_seen": "2026-02-27T20:40:23.047064",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22642",
@@ -6362,7 +6644,8 @@
       "link": "https://arxiv.org/pdf/2602.22642v1",
       "first_seen": "2026-02-27T20:40:23.047130",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22639",
@@ -6383,7 +6666,8 @@
       "link": "https://arxiv.org/pdf/2602.22639v1",
       "first_seen": "2026-02-27T20:40:23.047200",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22638",
@@ -6408,7 +6692,8 @@
       "link": "https://arxiv.org/pdf/2602.22638v1",
       "first_seen": "2026-02-27T20:40:23.047260",
       "code_url": "https://github.com/AMAP-ML/MobilityBench",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22633",
@@ -6428,7 +6713,8 @@
       "link": "https://arxiv.org/pdf/2602.22633v1",
       "first_seen": "2026-02-27T20:40:23.047313",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22631",
@@ -6453,7 +6739,8 @@
       "link": "https://arxiv.org/pdf/2602.22631v1",
       "first_seen": "2026-02-27T20:40:23.047379",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22630",
@@ -6473,7 +6760,8 @@
       "link": "https://arxiv.org/pdf/2602.22630v1",
       "first_seen": "2026-02-27T20:40:23.047439",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22629",
@@ -6500,7 +6788,8 @@
       "link": "https://arxiv.org/pdf/2602.22629v1",
       "first_seen": "2026-02-27T20:40:23.047501",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22628",
@@ -6522,7 +6811,8 @@
       "link": "https://arxiv.org/pdf/2602.22628v1",
       "first_seen": "2026-02-27T20:40:23.047550",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22625",
@@ -6544,7 +6834,8 @@
       "link": "https://arxiv.org/pdf/2602.22625v1",
       "first_seen": "2026-02-27T20:40:23.047606",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22624",
@@ -6564,7 +6855,8 @@
       "link": "https://arxiv.org/pdf/2602.22624v1",
       "first_seen": "2026-02-27T20:40:23.047656",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": "\u901a\u8fc7\u6307\u4ee4\u7f16\u8f91\u56fe\u50cf\u4e3a\u751f\u6210\u4ea4\u4e92\u5f0f\u5185\u5bb9\u63d0\u4f9b\u4e86\u4e00\u79cd\u81ea\u7136\u7684\u65b9\u5f0f\uff0c\u4f46\u7531\u4e8e\u5bf9\u573a\u666f\u7406\u89e3\u548c\u751f\u6210\u8981\u6c42\u8f83\u9ad8\uff0c\u8fd9\u662f\u4e00\u9879\u5de8\u5927\u6311\u6218\u3002\u73b0\u6709\u5de5\u4f5c\u5229\u7528\u5927\u578b\u8bed\u8a00\u6a21\u578b\u3001\u76ee\u6807\u5206\u5272\u6a21\u578b\u548c\u7f16\u8f91\u6a21\u578b\u7684\u94fe\u6761\u6765\u5b8c\u6210\u6b64\u4efb\u52a1\u3002\u7136\u800c\uff0c\u7406\u89e3\u6a21\u578b\u53ea\u63d0\u4f9b\u5355\u4e00\u6a21\u6001\u80fd\u529b\uff0c\u9650\u5236\u4e86\u7f16\u8f91\u8d28\u91cf\u3002\u6211\u4eec\u65e8\u5728\u901a\u8fc7\u4e00\u79cd\u65b0\u7684\u591a\u6a21\u6001\u6a21\u578b\u6765\u5f25\u5408\u7406\u89e3\u548c\u751f\u6210\u4e4b\u95f4\u7684\u9e3f\u6c9f\uff0c\u8be5\u6a21\u578b\u4e3a\u57fa\u4e8e\u6307\u4ee4\u7684\u56fe\u50cf\u7f16\u8f91\u6a21\u578b\u63d0\u4f9b\u667a\u80fd\u80fd\u529b\uff0c\u4ee5\u5904\u7406\u66f4\u590d\u6742\u7684\u6848\u4f8b\u3002\u4e3a\u5b9e\u73b0\u6b64\u76ee\u6807\uff0c\u6211\u4eec\u901a\u8fc7\u591a\u6a21\u6001\u601d\u7ef4\u94fe\u63d0\u793a\uff08\u5373\u601d\u7ef4\u94fe\u89c4\u5212\u3001\u7f16\u8f91\u533a\u57df\u63a8\u7406\u548c\u7f16\u8f91\uff09\u5c06\u6307\u4ee4\u7f16\u8f91\u4efb\u52a1\u5355\u72ec\u62c6\u5206\u3002\u5bf9\u4e8e\u601d\u7ef4\u94fe\u89c4\u5212\uff0c\u5927\u578b\u8bed\u8a00\u6a21\u578b\u53ef\u4ee5\u6839\u636e\u63d0\u4f9b\u7684\u6307\u4ee4\u548c\u7f16\u8f91\u7f51\u7edc\u7684\u80fd\u529b\u63a8\u65ad\u51fa\u5408\u9002\u7684\u5b50\u63d0\u793a\u3002\u5bf9\u4e8e\u7f16\u8f91\u533a\u57df\u63a8\u7406\uff0c\u6211\u4eec\u8bad\u7ec3\u4e86\u4e00\u4e2a\u57fa\u4e8e\u6307\u4ee4\u7684\u7f16\u8f91\u533a\u57df\u751f\u6210\u7f51\u7edc\uff0c\u5e76\u7ed3\u5408\u591a\u6a21\u6001\u5927\u578b\u8bed\u8a00\u6a21\u578b\u3002\u6700\u540e\uff0c\u6211\u4eec\u63d0\u51fa\u4e86\u4e00\u79cd\u63d0\u793a\u5f15\u5bfc\u7684\u57fa\u4e8e\u6307\u4ee4\u7684\u7f16\u8f91\u7f51\u7edc\uff0c\u7528\u4e8e\u57fa\u4e8e\u5927\u578b\u6587\u672c\u5230\u56fe\u50cf\u6269\u6563\u6a21\u578b\u8fdb\u884c\u56fe\u50cf\u751f\u6210\uff0c\u4ee5\u63a5\u53d7\u63d0\u793a\u8fdb\u884c\u751f\u6210\u3002\u5927\u91cf\u5b9e\u9a8c\u8868\u660e\uff0c\u6211\u4eec\u7684\u65b9\u6cd5\u5728\u590d\u6742\u7684\u771f\u5b9e\u4e16\u754c\u56fe\u50cf\u4e0a\u5177\u6709\u7ade\u4e89\u529b\u7684\u7f16\u8f91\u80fd\u529b\u3002",
+      "notion_synced": true
     },
     {
       "arxiv_id": "2602.22623",
@@ -6597,7 +6889,8 @@
       "link": "https://arxiv.org/pdf/2602.22623v1",
       "first_seen": "2026-02-27T20:40:23.047736",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22621",
@@ -6619,7 +6912,8 @@
       "link": "https://arxiv.org/pdf/2602.22621v1",
       "first_seen": "2026-02-27T20:40:23.047793",
       "code_url": "https://github.com/Michael-McQueen/CGSA.",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22620",
@@ -6640,7 +6934,8 @@
       "link": "https://arxiv.org/pdf/2602.22620v1",
       "first_seen": "2026-02-27T20:40:23.047842",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22618",
@@ -6659,7 +6954,8 @@
       "link": "https://arxiv.org/pdf/2602.22618v1",
       "first_seen": "2026-02-27T20:40:23.047893",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22617",
@@ -6678,7 +6974,8 @@
       "link": "https://arxiv.org/pdf/2602.22617v1",
       "first_seen": "2026-02-27T20:40:23.047963",
       "code_url": "https://github.com/galilai-group/llm-jepa",
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22613",
@@ -6702,7 +6999,8 @@
       "link": "https://arxiv.org/pdf/2602.22613v1",
       "first_seen": "2026-02-27T20:40:23.048014",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22611",
@@ -6723,7 +7021,8 @@
       "link": "https://arxiv.org/pdf/2602.22611v1",
       "first_seen": "2026-02-27T20:40:23.048078",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22610",
@@ -6745,7 +7044,8 @@
       "link": "https://arxiv.org/pdf/2602.22610v1",
       "first_seen": "2026-02-27T20:40:23.048143",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22609",
@@ -6766,7 +7066,8 @@
       "link": "https://arxiv.org/pdf/2602.22609v1",
       "first_seen": "2026-02-27T20:40:23.048213",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22607",
@@ -6785,7 +7086,8 @@
       "link": "https://arxiv.org/pdf/2602.22607v1",
       "first_seen": "2026-02-27T20:40:23.048278",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22606",
@@ -6809,7 +7111,8 @@
       "link": "https://arxiv.org/pdf/2602.22606v1",
       "first_seen": "2026-02-27T20:40:23.048344",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22603",
@@ -6828,7 +7131,8 @@
       "link": "https://arxiv.org/pdf/2602.22603v1",
       "first_seen": "2026-02-27T20:40:23.048400",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22601",
@@ -6850,7 +7154,8 @@
       "link": "https://arxiv.org/pdf/2602.22601v1",
       "first_seen": "2026-02-27T20:40:23.048454",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22600",
@@ -6868,7 +7173,8 @@
       "link": "https://arxiv.org/pdf/2602.22600v1",
       "first_seen": "2026-02-27T20:40:23.048516",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22596",
@@ -6890,7 +7196,8 @@
       "link": "https://arxiv.org/pdf/2602.22596v1",
       "first_seen": "2026-02-27T20:40:23.048579",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     },
     {
       "arxiv_id": "2602.22595",
@@ -6907,7 +7214,8 @@
       "link": "https://arxiv.org/pdf/2602.22595v1",
       "first_seen": "2026-02-27T20:40:23.048640",
       "code_url": null,
-      "summary_zh": null
+      "summary_zh": null,
+      "notion_synced": false
     }
   ]
 }

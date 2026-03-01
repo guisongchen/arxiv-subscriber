@@ -4,17 +4,19 @@ Simple arXiv subscriber for Computer Science papers.
 Fetches new papers and tracks what has been seen.
 """
 
-import xml.etree.ElementTree as ET
-import urllib.request
-import urllib.parse
+import glob
 import json
+import logging
 import os
 import re
-from datetime import datetime, timedelta
-from dataclasses import dataclass, asdict
-from typing import List, Set, Optional
+import shutil
 import time
-import logging
+import urllib.parse
+import urllib.request
+import xml.etree.ElementTree as ET
+from dataclasses import dataclass, asdict
+from datetime import datetime, timedelta
+from typing import List, Set, Optional
 
 # Load environment variables from .env file if python-dotenv is available
 try:
@@ -68,13 +70,7 @@ def translate_with_llm(text: str) -> Optional[str]:
 
     logger.debug(f"Starting translation for text of {len(text)} chars")
 
-    # Set up OpenAI with configured base URL
-    openai.api_key = TRANSLATE_API_TOKEN
-    openai.api_base = TRANSLATE_API_URL
-
-    # Truncate if too long
     truncated = text[:3000] if len(text) > 3000 else text
-
     prompt = f"""Translate the following academic paper summary to Chinese. Keep it concise and accurate.
 
 Text to translate:
@@ -84,17 +80,21 @@ Chinese translation:"""
 
     try:
         logger.debug(f"Calling translation API with model: {TRANSLATE_MODEL}")
-        response = openai.ChatCompletion.create(
-            model=TRANSLATE_MODEL,
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=2000,
-            temperature=0.3,
-            headers={
+        client = openai.OpenAI(
+            api_key=TRANSLATE_API_TOKEN,
+            base_url=TRANSLATE_API_URL,
+            default_headers={
                 "HTTP-Referer": "https://github.com/guisongchen/arxiv-subscriber",
                 "X-Title": "arXiv Subscriber"
             }
         )
-        if response.choices and len(response.choices) > 0:
+        response = client.chat.completions.create(
+            model=TRANSLATE_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=2000,
+            temperature=0.3,
+        )
+        if response.choices:
             translated = response.choices[0].message.content.strip()
             logger.debug(f"Translation successful, result length: {len(translated)} chars")
             return translated
@@ -208,6 +208,7 @@ class Paper:
     first_seen: str = None
     code_url: str = None
     summary_zh: str = None
+    notion_synced: bool = False
 
     def __post_init__(self):
         if self.first_seen is None:
@@ -217,13 +218,6 @@ class Paper:
             # Check both title and summary for code URLs
             combined_text = f"{self.title} {self.summary}"
             self.code_url = extract_code_url(combined_text)
-
-    def get_summary_zh(self) -> Optional[str]:
-        """Get Chinese translation (lazy - only translates when needed)."""
-        if self.summary_zh is None and TRANSLATION_AVAILABLE:
-            logger.debug(f"Translating summary for {self.arxiv_id}")
-            self.summary_zh = translate_with_llm(self.summary)
-        return self.summary_zh
 
 
 class NotionClient:
@@ -271,12 +265,14 @@ class NotionClient:
             }
         }
 
-        # Add Chinese summary if available (lazy translation)
-        summary_zh = paper.get_summary_zh()
-        if summary_zh:
+        # Add Chinese summary if available (translate now if not already cached)
+        if paper.summary_zh is None and TRANSLATION_AVAILABLE:
+            logger.debug(f"Translating summary for {paper.arxiv_id}")
+            paper.summary_zh = translate_with_llm(paper.summary)
+        if paper.summary_zh:
             data["properties"]["Summary (中文)"] = {
-                "rich_text": [{"text": {"content": summary_zh[:2000]}}]
-            }
+                    "rich_text": [{"text": {"content": paper.summary_zh[:2000]}}]
+                }
 
         try:
             req = urllib.request.Request(
@@ -289,6 +285,7 @@ class NotionClient:
             with urllib.request.urlopen(req, timeout=30) as response:
                 if response.status == 200:
                     logger.info(f"Successfully added paper to Notion: {paper.arxiv_id}")
+                    paper.notion_synced = True
                     return True
         except Exception as e:
             logger.error(f"Failed to add paper {paper.arxiv_id} to Notion: {e}")
@@ -296,6 +293,59 @@ class NotionClient:
                 logger.exception("Notion API error details:")
 
         return False
+
+    def _request(self, method: str, path: str, data: dict = None) -> Optional[dict]:
+        """Make a Notion API request."""
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json",
+            "Notion-Version": "2022-06-28"
+        }
+        req = urllib.request.Request(
+            f"{self.base_url}{path}",
+            data=json.dumps(data).encode('utf-8') if data is not None else None,
+            headers=headers,
+            method=method
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return json.loads(resp.read())
+        except Exception as e:
+            logger.error(f"Notion API {method} {path} failed: {e}")
+            if DEBUG_MODE:
+                logger.exception("Notion API error details:")
+            return None
+
+    def get_pages_missing_translation(self) -> list[tuple[str, str]]:
+        """Query Notion for pages with empty Summary (中文). Returns list of (page_id, pdf_link)."""
+        results = []
+        cursor = None
+        while True:
+            body = {
+                "filter": {"property": "Summary (中文)", "rich_text": {"is_empty": True}},
+                "page_size": 100
+            }
+            if cursor:
+                body["start_cursor"] = cursor
+            data = self._request("POST", f"/databases/{self.database_id}/query", body)
+            if not data:
+                break
+            for page in data.get("results", []):
+                link_prop = page.get("properties", {}).get("Link", {})
+                link = link_prop.get("url", "")
+                results.append((page["id"], link))
+            if not data.get("has_more"):
+                break
+            cursor = data.get("next_cursor")
+        return results
+
+    def update_translation(self, page_id: str, summary_zh: str) -> bool:
+        """Patch a Notion page with the Chinese translation."""
+        data = {"properties": {"Summary (中文)": {
+            "rich_text": [{"text": {"content": summary_zh[:2000]}}]
+        }}}
+        result = self._request("PATCH", f"/pages/{page_id}", data)
+        return result is not None
 
 
 class ArxivSubscriber:
@@ -326,7 +376,6 @@ class ArxivSubscriber:
             return
 
         # Find all YYYY-MM.json files in the papers directory
-        import glob
         pattern = os.path.join(self.data_dir, "[0-9][0-9][0-9][0-9]-[0-9][0-9].json")
         month_files = glob.glob(pattern)
 
@@ -399,7 +448,6 @@ class ArxivSubscriber:
         cutoff_str = cutoff.strftime("%Y-%m")
         logger.debug(f"Archiving month files older than {cutoff_str}")
 
-        import glob
         pattern = os.path.join(self.data_dir, "[0-9][0-9][0-9][0-9]-[0-9][0-9].json")
         month_files = glob.glob(pattern)
 
@@ -444,14 +492,12 @@ class ArxivSubscriber:
                 except Exception as e:
                     logger.warning(f"Failed to merge {filename}: {e}")
             else:
-                # Just move the file
-                import shutil
                 shutil.move(filepath, dest)
                 try:
                     with open(dest, 'r') as f:
                         data = json.load(f)
                         archived_count += len(data.get('papers', []))
-                except:
+                except Exception:
                     pass
 
             logger.info(f"Archived {filename} to papers/archive/")
@@ -528,11 +574,11 @@ class ArxivSubscriber:
                         authors.append(name.text)
 
                 # Get categories
-                categories = []
+                entry_categories = []
                 for cat in entry.findall('atom:category', ns):
                     term = cat.get('term')
                     if term:
-                        categories.append(term)
+                        entry_categories.append(term)
 
                 paper = Paper(
                     arxiv_id=id_text,
@@ -541,7 +587,7 @@ class ArxivSubscriber:
                     summary=summary.text.strip() if summary is not None else "",
                     published=published.text if published is not None else "",
                     updated=updated.text if updated is not None else "",
-                    categories=categories,
+                    categories=entry_categories,
                     link=link.get('href') if link is not None else ""
                 )
 
@@ -597,6 +643,18 @@ class ArxivSubscriber:
         # Save updated data
         self._save_data()
 
+        # Sync any previously-seen papers that were never sent to Notion
+        # (e.g. fetched on a device without Notion credentials)
+        if self.notion:
+            unsynced = [p for p in self.papers if not p.notion_synced and p not in new_papers]
+            if unsynced:
+                logger.info(f"Found {len(unsynced)} existing papers not yet synced to Notion, syncing now...")
+                for paper in unsynced:
+                    if self.matches_topics(paper):
+                        self.notion.add_paper(paper)
+                        time.sleep(0.5)
+                self._save_data()
+
         if filtered_count > 0:
             logger.info(f"Filtered out {filtered_count} papers not matching topics")
 
@@ -632,6 +690,46 @@ class ArxivSubscriber:
         logger.debug(f"Paper {paper.arxiv_id} did not match any topic keywords")
         return False
 
+    def backfill_translations(self):
+        """Find Notion pages missing Chinese translation and fill them in."""
+        if not self.notion or not TRANSLATION_AVAILABLE:
+            return
+
+        logger.info("Querying Notion for pages missing Chinese translation...")
+        pages = self.notion.get_pages_missing_translation()
+        if not pages:
+            logger.info("All Notion pages already have Chinese translations")
+            return
+
+        logger.info(f"Found {len(pages)} pages missing translation, backfilling...")
+        # Build a lookup from arxiv_id to local paper
+        paper_by_id = {p.arxiv_id: p for p in self.papers}
+
+        updated = 0
+        for page_id, link in pages:
+            # Extract arxiv_id from PDF link (e.g. https://arxiv.org/pdf/2602.17632v1)
+            match = re.search(r'(\d{4}\.\d{4,5})', link)
+            if not match:
+                continue
+            arxiv_id = match.group(1)
+            paper = paper_by_id.get(arxiv_id)
+            if not paper:
+                continue
+
+            if paper.summary_zh is None:
+                paper.summary_zh = translate_with_llm(paper.summary)
+            if not paper.summary_zh:
+                continue
+
+            if self.notion.update_translation(page_id, paper.summary_zh):
+                logger.info(f"Backfilled translation for {arxiv_id}")
+                updated += 1
+            time.sleep(0.5)
+
+        if updated:
+            self._save_data()
+        logger.info(f"Backfilled translations for {updated}/{len(pages)} pages")
+
 
 def print_paper(paper: Paper, show_summary: bool = False):
     """Pretty print a paper."""
@@ -646,9 +744,8 @@ def print_paper(paper: Paper, show_summary: bool = False):
         print(f"Code: {paper.code_url}")
     if show_summary:
         print(f"\nSummary:\n{paper.summary[:500]}...")
-        summary_zh = paper.get_summary_zh()
-        if summary_zh:
-            print(f"\nSummary (中文):\n{summary_zh[:500]}...")
+        if paper.summary_zh:
+            print(f"\nSummary (中文):\n{paper.summary_zh[:500]}...")
 
 
 def main():
@@ -683,6 +780,9 @@ def main():
 
     # Check for new papers
     new_papers = subscriber.check_for_new_papers()
+
+    # Backfill any Notion pages missing Chinese translation
+    subscriber.backfill_translations()
 
     if new_papers:
         logger.info(f"Found {len(new_papers)} new papers!")
